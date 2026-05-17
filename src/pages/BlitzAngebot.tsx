@@ -50,7 +50,13 @@ export default function BlitzAngebot() {
   }
 
   return (
-    <section className="kontakt kontakt--blitz">
+    <section
+      className="kontakt kontakt--blitz"
+      style={{
+        ['--kontakt-bg' as string]: 'url(/assets/img/photo-altbausanierung.jpg)',
+        ['--kontakt-bg-position' as string]: 'center top',
+      }}
+    >
       <div className="kontakt__inner">
         
         <div className="kontakt__intro reveal">
@@ -67,6 +73,14 @@ export default function BlitzAngebot() {
             <li style={{ color: 'var(--pv-bone)' }}><span className="num">02</span>Antwort garantiert in 24 Std.</li>
             <li style={{ color: 'var(--pv-bone)' }}><span className="num">03</span>Realistische Preisspanne</li>
           </ul>
+
+          <figure className="kontakt__media kontakt__media--blitz">
+            <img src="/assets/img/photo-altbausanierung.jpg" alt="Altbau vor der Sanierung als Grundlage für ein Blitz-Angebot" />
+            <figcaption>
+              <span className="num">№ 06</span>
+              <span>Substanzaufnahme · Vorab-Schätzung</span>
+            </figcaption>
+          </figure>
         </div>
 
         <div className="kontakt__form-wrap reveal" data-delay="1" style={sent ? { opacity: 0.7 } : undefined}>

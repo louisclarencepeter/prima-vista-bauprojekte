@@ -8,17 +8,17 @@ type TradeKey =
   | 'treppen' | 'heizung' | 'abdichtung' | 'maler' | 'trockenbau' | 'sanitaer';
 
 const PREVIEW_IMAGES: Record<TradeKey, string> = {
-  bad: '/assets/img/proj-bath-stone.jpg',
+  bad: '/assets/img/photo-bad-prima-vista.jpg',
   kueche: '/assets/img/proj-kitchen-oak.jpg',
-  fassade: '/assets/img/proj-team-jacket.jpg',
-  dach: '/assets/img/proj-concrete-corner.jpg',
-  elektro: '/assets/img/proj-lobby-tree.jpg',
-  boden: '/assets/img/proj-floor-oak.jpg',
+  fassade: '/assets/img/photo-haus-exterior.jpg',
+  dach: '/assets/img/photo-altbausanierung.jpg',
+  elektro: '/assets/img/photo-office-light.jpg',
+  boden: '/assets/img/photo-parkett-altbau.jpg',
   treppen: '/assets/img/proj-stairs-concrete.jpg',
   heizung: '/assets/img/photo-luftwaerme-clean.jpg',
   abdichtung: '/assets/img/proj-spa-corridor.jpg',
   maler: '/assets/img/proj-paint-swatches.jpg',
-  trockenbau: '/assets/img/proj-concrete-corner.jpg',
+  trockenbau: '/assets/img/photo-parkett-rohbau.jpg',
   sanitaer: '/assets/img/photo-heizstraenge-clean.jpg',
 };
 
@@ -49,7 +49,7 @@ const TRADES: TradeRow[] = [
 
 const FEATURED: Array<{ src: string; title: string; count: string; heading: ReactNode; desc: string; feature?: boolean; revealDelay?: number }> = [
   {
-    src: '/assets/img/proj-bath-stone.jpg',
+    src: '/assets/img/photo-bad-prima-vista.jpg',
     title: 'Badezimmer — Sanitär & Fliesen',
     count: '01 — 142 Projekte',
     heading: <>Bäder &amp;<br />Sanitär</>,
@@ -65,7 +65,7 @@ const FEATURED: Array<{ src: string; title: string; count: string; heading: Reac
     revealDelay: 1,
   },
   {
-    src: '/assets/img/proj-floor-oak.jpg',
+    src: '/assets/img/photo-parkett-altbau.jpg',
     title: 'Bodenbeläge',
     count: '03 — 187 Projekte',
     heading: <>Böden &amp;<br />Beläge</>,

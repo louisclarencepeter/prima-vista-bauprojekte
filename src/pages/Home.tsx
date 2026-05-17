@@ -178,7 +178,7 @@ export default function Home() {
         </div>
         <div className="packages__grid">
           <Link className="pkg-card reveal" data-delay="1" to="/komplett-pakete">
-            <img src="/assets/img/proj-concrete-sofa.jpg" alt="Haus-Sanierung" />
+            <img src="/assets/img/photo-haus-exterior.jpg" alt="Haus-Sanierung" />
             <div className="pkg-card__body">
               <span className="pkg-card__num">№ 01 — Komplett</span>
               <h3 className="pkg-card__title">Haus-<br />Sanierung</h3>
@@ -187,7 +187,7 @@ export default function Home() {
             </div>
           </Link>
           <Link className="pkg-card reveal" data-delay="2" to="/komplett-pakete">
-            <img src="/assets/img/proj-kitchen-oak.jpg" alt="Wohnung-Sanierung" />
+            <img src="/assets/img/photo-parkett-altbau.jpg" alt="Wohnung-Sanierung" />
             <div className="pkg-card__body">
               <span className="pkg-card__num">№ 02 — Modular</span>
               <h3 className="pkg-card__title">Wohnung-<br />Sanierung</h3>

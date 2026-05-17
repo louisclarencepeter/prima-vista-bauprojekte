@@ -71,7 +71,13 @@ export default function Kontakt() {
 
   return (
     <>
-      <section className="kontakt">
+      <section
+        className="kontakt"
+        style={{
+          ['--kontakt-bg' as string]: 'url(/assets/img/photo-office-light.jpg)',
+          ['--kontakt-bg-position' as string]: 'center',
+        }}
+      >
         <div className="kontakt__inner">
           <div className="kontakt__intro reveal">
             <div className="crumb crumb--on-dark"><span className="num">05</span> Kontakt</div>
@@ -142,6 +148,14 @@ export default function Kontakt() {
                   <a href="tel:+41782659332">+41 78 265 93 32</a></p>
               </div>
             </div>
+
+            <figure className="kontakt__media">
+              <img src="/assets/img/photo-office-light.jpg" alt="Heller Besprechungsraum für die Projektberatung" />
+              <figcaption>
+                <span className="num">№ 05</span>
+                <span>Erstberatung · Frankfurt &amp; Emmenbrücke</span>
+              </figcaption>
+            </figure>
           </div>
 
           <div className="kontakt__form-wrap reveal" data-delay="1" style={sent ? { opacity: 0.7 } : undefined}>

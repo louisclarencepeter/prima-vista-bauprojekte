@@ -22,7 +22,7 @@ type Pkg = {
 const PACKAGES: Pkg[] = [
   {
     num: '01',
-    photo: '/assets/img/proj-concrete-sofa.jpg',
+    photo: '/assets/img/photo-haus-exterior.jpg',
     alt: 'Haus-Sanierung',
     eyebrow: 'Komplettpaket · Haus',
     title: <>Haus-<br /><em>Sanierung.</em></>,
@@ -38,7 +38,7 @@ const PACKAGES: Pkg[] = [
     num: '02',
     variant: 'paper',
     reverse: true,
-    photo: '/assets/img/proj-kitchen-oak.jpg',
+    photo: '/assets/img/photo-parkett-altbau.jpg',
     alt: 'Wohnung-Sanierung',
     eyebrow: 'Komplettpaket · Wohnung',
     title: <>Wohnung-<br /><em>Sanierung.</em></>,
@@ -82,7 +82,7 @@ const COMPARE_ROWS: Array<{ feature: string; haus: React.ReactNode; wohnung: Rea
 export default function KomplettPakete() {
   return (
     <>
-      <section className="page-intro" style={{ ['--page-intro-bg' as string]: 'url(/assets/img/proj-concrete-sofa.jpg)' }}>
+      <section className="page-intro" style={{ ['--page-intro-bg' as string]: 'url(/assets/img/photo-haus-exterior.jpg)' }}>
         <div className="page-intro__inner">
           <div className="reveal">
             <div className="crumb"><span className="num">02</span> Komplett-Pakete</div>

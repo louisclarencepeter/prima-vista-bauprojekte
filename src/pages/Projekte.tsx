@@ -31,7 +31,7 @@ const PROJECTS: Project[] = [
   { num: '№ 138b', title: 'Concrete Corner · Luzern · 2024',          ttl: 'Concrete Corner',  meta: 'Wohnsitz · Luzern · 2024',        src: '/assets/img/proj-concrete-corner.jpg',      size: 'lg',   tags: ['wohnsitz'], revealDelay: 1 },
   { num: '№ 146',  title: 'Wine Bar · Frankfurt · 2026',              ttl: 'Wine Bar',         meta: 'Gastronomie · Frankfurt · 2026',  src: '/assets/img/proj-wine-restaurant.jpg',      size: 'sm',   tags: ['gastro'] },
   { num: '№ 141b', title: 'Spa-Korridor · Emmenbrücke · 2025',        ttl: 'Spa Korridor',     meta: 'Hotel · Emmenbrücke · 2025',      src: '/assets/img/proj-spa-corridor.jpg',         size: 'sm',   tags: ['commercial'], revealDelay: 1 },
-  { num: '№ 144',  title: 'Eiche Parkett · Wiesbaden · 2025',         ttl: 'Eiche Parkett',    meta: 'Wohnsitz · Wiesbaden · 2025',     src: '/assets/img/proj-floor-oak.jpg',            size: 'sm',   tags: ['wohnsitz'], revealDelay: 2 },
+  { num: '№ 144',  title: 'Eiche Parkett · Wiesbaden · 2025',         ttl: 'Eiche Parkett',    meta: 'Wohnsitz · Wiesbaden · 2025',     src: '/assets/img/photo-parkett-altbau.jpg',      size: 'sm',   tags: ['wohnsitz'], revealDelay: 2 },
   { num: '№ 145b', title: 'Lobby Garden · Frankfurt · 2026',          ttl: 'Lobby Garden',     meta: 'Commercial · Frankfurt · 2026',   src: '/assets/img/proj-lobby-tree.jpg',           size: 'wide', tags: ['commercial'] },
   { num: '№ 142c', title: 'Riad — Lampen · Frankfurt · 2025',         ttl: 'Riad Lampen',      meta: 'Gastronomie · Frankfurt · 2025',  src: '/assets/img/proj-moroccan-lamps.jpg',       size: 'tall', tags: ['gastro'], revealDelay: 1 },
 ];
