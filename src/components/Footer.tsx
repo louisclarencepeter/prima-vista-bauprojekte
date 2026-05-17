@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FacebookIcon, InstagramIcon, MailIcon } from './icons';
+import { FacebookIcon, InstagramIcon, MailIcon, YoutubeIcon } from './icons';
 
 export default function Footer() {
   return (
@@ -124,15 +124,21 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a className="pv-footer__contact-link" href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <a className="pv-footer__contact-link" href="https://www.instagram.com/primavista.bauprojekte" target="_blank" rel="noopener noreferrer">
                   <span className="pv-footer__contact-icon" aria-hidden="true"><InstagramIcon /></span>
                   <span>Instagram</span>
                 </a>
               </li>
               <li>
-                <a className="pv-footer__contact-link" href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <a className="pv-footer__contact-link" href="https://www.facebook.com/profile.php?id=61584837772416" target="_blank" rel="noopener noreferrer">
                   <span className="pv-footer__contact-icon" aria-hidden="true"><FacebookIcon /></span>
                   <span>Facebook</span>
+                </a>
+              </li>
+              <li>
+                <a className="pv-footer__contact-link" href="https://www.youtube.com/@PrimaVistaBauprojekte" target="_blank" rel="noopener noreferrer">
+                  <span className="pv-footer__contact-icon" aria-hidden="true"><YoutubeIcon /></span>
+                  <span>YouTube</span>
                 </a>
               </li>
             </ul>

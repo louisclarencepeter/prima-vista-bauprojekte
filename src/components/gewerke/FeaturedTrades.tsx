@@ -35,7 +35,7 @@ export default function FeaturedTrades({ items, onOpen }: FeaturedTradesProps) {
               <img src={card.src} alt={card.title} />
               <div className="ft-card__body">
                 <span className="ft-card__count">{card.count}</span>
-                <h3 className="ft-card__title">{card.heading}</h3>
+                <h3 className="ft-card__title">{card.heading[0]}<br />{card.heading[1]}</h3>
                 <p className="ft-card__desc">{card.desc}</p>
               </div>
             </a>
