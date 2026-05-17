@@ -86,7 +86,7 @@ export default function Gewerke() {
       <section className="page-intro" style={{ ['--page-intro-bg' as string]: 'url(/assets/img/proj-spa-bath.jpg)' }}>
         <div className="page-intro__inner">
           <div className="reveal">
-            <div className="crumb"><span className="num">02</span> Gewerke · Bauleistungen</div>
+            <div className="crumb"><span className="num">03</span> Gewerke · Bauleistungen</div>
             <h1>
               Zwanzig<br />
               Gewerke,<br />

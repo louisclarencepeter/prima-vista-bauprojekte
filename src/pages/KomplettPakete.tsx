@@ -85,7 +85,7 @@ export default function KomplettPakete() {
       <section className="page-intro" style={{ ['--page-intro-bg' as string]: 'url(/assets/img/proj-concrete-sofa.jpg)' }}>
         <div className="page-intro__inner">
           <div className="reveal">
-            <div className="crumb"><span className="num">03</span> Komplett-Pakete</div>
+            <div className="crumb"><span className="num">02</span> Komplett-Pakete</div>
             <h1>
               Drei Wege<br />
               zum fertigen<br />
