@@ -2,9 +2,10 @@ import { NavLink, Link } from 'react-router-dom';
 
 const NAV = [
   { to: '/', label: 'Start' },
-  { to: '/gewerke', label: 'Gewerke' },
   { to: '/komplett-pakete', label: 'Komplett-Pakete' },
+  { to: '/gewerke', label: 'Gewerke' },
   { to: '/projekte', label: 'Projekte' },
+  { to: '/blitz-angebot', label: 'Blitz Angebot' },
   { to: '/kontakt', label: 'Kontakt' },
 ];
 

@@ -112,17 +112,27 @@
   color: var(--pv-ink);
   padding: 56px 56px 56px;
   position: relative;
+  overflow: hidden;
 }
 .kontakt__form-num {
   position: absolute;
-  top: -32px; left: -16px;
+  top: -18px;
+  left: 10px;
   font-family: var(--pv-font-serif);
   font-style: italic;
   font-weight: 500;
-  font-size: 160px;
-  line-height: 0.85;
+  font-size: 136px;
+  line-height: 0.82;
   color: var(--pv-copper);
+  opacity: 0.72;
+  z-index: 0;
   pointer-events: none;
+}
+.kontakt__form-eyebrow,
+.kontakt__form-title,
+.kontakt__form-wrap form {
+  position: relative;
+  z-index: 1;
 }
 .kontakt__form-eyebrow {
   display: inline-flex; align-items: center; gap: 14px;
