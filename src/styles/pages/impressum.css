@@ -1,0 +1,142 @@
+.impressum-intro {
+  min-height: 68vh;
+  min-height: 68svh;
+}
+
+.impressum-page {
+  background: var(--pv-cream-paper);
+  padding: 96px 0 128px;
+  color: var(--pv-ink);
+}
+
+.impressum-page__grid {
+  max-width: var(--pv-container);
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: minmax(260px, .72fr) minmax(0, 1.28fr);
+  gap: 72px;
+  align-items: start;
+}
+
+.impressum-page__summary {
+  position: sticky;
+  top: 112px;
+  background: var(--pv-ink-1);
+  color: var(--pv-bone);
+  padding: 40px 36px;
+}
+
+.impressum-page__summary address {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 32px 0 36px;
+  font-family: var(--pv-font-serif);
+  font-style: italic;
+  font-size: clamp(26px, 2.4vw, 34px);
+  line-height: 1.16;
+}
+
+.impressum-page__contact {
+  border-top: 1px solid rgba(236, 229, 223, .16);
+  padding-top: 28px;
+}
+
+.impressum-page__contact h2,
+.impressum-section h2 {
+  margin: 0 0 14px;
+  font-family: var(--pv-font-display);
+  font-size: 13px;
+  line-height: 1.4;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+.impressum-page__contact p,
+.impressum-section p {
+  margin: 0;
+  font-family: var(--pv-font-body);
+  font-size: 16px;
+  line-height: 1.78;
+  color: var(--pv-text-on-light-muted);
+}
+
+.impressum-page__contact p {
+  color: var(--pv-text-on-dark-muted);
+}
+
+.impressum-page a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(151, 111, 71, .45);
+  text-underline-offset: 4px;
+}
+
+.impressum-page a:hover {
+  color: var(--pv-copper);
+}
+
+.impressum-page__summary a:hover {
+  color: var(--pv-copper-bright);
+}
+
+.impressum-page__content {
+  background: var(--pv-cream);
+  border: 1px solid rgba(20, 19, 18, .08);
+}
+
+.impressum-section {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 28px;
+  padding: 36px 40px;
+  border-bottom: 1px solid rgba(20, 19, 18, .08);
+}
+
+.impressum-section:last-child {
+  border-bottom: 0;
+}
+
+.impressum-section__num {
+  font-family: var(--pv-font-mono);
+  font-size: 12px;
+  letter-spacing: .22em;
+  color: var(--pv-copper);
+}
+
+.impressum-section p + p {
+  margin-top: 18px;
+}
+
+@media (max-width: 880px) {
+  .impressum-page {
+    padding: 64px 0 96px;
+  }
+
+  .impressum-page__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .impressum-page__summary {
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .impressum-page__grid {
+    padding: 0 20px;
+  }
+
+  .impressum-page__summary,
+  .impressum-section {
+    padding: 28px 22px;
+  }
+
+  .impressum-section {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

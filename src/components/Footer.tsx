@@ -147,8 +147,8 @@ export default function Footer() {
         <div className="pv-footer__bottom">
           <small>© 2026 Prima Vista Bauprojekte GmbH</small>
           <div className="pv-footer__legal">
-            <a href="#">Impressum</a>
-            <a href="#">Datenschutz</a>
+            <Link to="/impressum">Impressum</Link>
+            <Link to="/datenschutz">Datenschutz</Link>
             <a href="#">AGB</a>
           </div>
         </div>

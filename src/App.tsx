@@ -7,6 +7,8 @@ import Projekte from './pages/Projekte';
 import Kontakt from './pages/Kontakt';
 import BlitzAngebot from './pages/BlitzAngebot';
 import Kalkulator from './pages/Kalkulator';
+import Impressum from './pages/Impressum';
+import Datenschutz from './pages/Datenschutz';
 
 export default function App() {
   return (
@@ -19,6 +21,8 @@ export default function App() {
         <Route path="/kontakt" element={<Kontakt />} />
         <Route path="/blitz-angebot" element={<BlitzAngebot />} />
         <Route path="/kalkulator" element={<Kalkulator />} />
+        <Route path="/impressum" element={<Impressum />} />
+        <Route path="/datenschutz" element={<Datenschutz />} />
       </Route>
     </Routes>
   );
