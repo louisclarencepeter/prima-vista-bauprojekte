@@ -47,8 +47,8 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          <Link className="btn btn--light pv-header__cta" to="/kontakt">
-            Jetzt anfragen <span className="arrow">&gt;</span>
+          <Link className="btn btn--light pv-header__cta" to="/blitz-angebot">
+            Blitz-Angebot <span className="arrow">&gt;</span>
           </Link>
           <button
             type="button"
@@ -81,8 +81,8 @@ export default function Header() {
             </li>
           ))}
         </ul>
-        <Link className="btn btn--solid pv-mobile-menu__cta" to="/kontakt">
-          Jetzt anfragen <span className="arrow">&gt;</span>
+        <Link className="btn btn--solid pv-mobile-menu__cta" to="/blitz-angebot">
+          Blitz-Angebot <span className="arrow">&gt;</span>
         </Link>
       </div>
     </header>
