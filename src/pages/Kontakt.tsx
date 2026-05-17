@@ -74,7 +74,7 @@ export default function Kontakt() {
       <section className="kontakt">
         <div className="kontakt__inner">
           <div className="kontakt__intro reveal">
-            <div className="eyebrow eyebrow--on-dark"><span className="rule-red"></span>&nbsp;&nbsp;Kontakt · № 05</div>
+            <div className="eyebrow eyebrow--on-dark"><span className="rule-red"></span>&nbsp;&nbsp;Kontakt</div>
             <h2 style={{ marginTop: 20 }}>
               Sprechen wir<br />
               über Ihr<br />
@@ -135,7 +135,6 @@ export default function Kontakt() {
           </div>
 
           <div className="kontakt__form-wrap reveal" data-delay="1" style={sent ? { opacity: 0.7 } : undefined}>
-            <span className="kontakt__form-num">05</span>
             <div className="kontakt__form-eyebrow"><span className="rule-red"></span> Anfrage senden</div>
             <h3 className="kontakt__form-title">
               Erzählen Sie uns von<br />
