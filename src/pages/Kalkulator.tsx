@@ -9,9 +9,11 @@ import {
   type Objekt,
   type Quality,
 } from '../data/kalkulator';
+import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/kalkulator.css';
 
 export default function Kalkulator() {
+  usePageTitle('Kostenkalkulator für Sanierung & Bau');
   const [objekt, setObjekt] = useState<Objekt>('wohnung');
   const [flaeche, setFlaeche] = useState<number>(120);
   const [quality, setQuality] = useState<Quality>('gehoben');

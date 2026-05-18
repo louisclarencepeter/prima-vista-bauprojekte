@@ -6,9 +6,11 @@ import ProjectFilter from '../components/projekte/ProjectFilter';
 import ProjectGallery from '../components/projekte/ProjectGallery';
 import { useLightbox, type LightboxItem } from '../components/Lightbox';
 import { PROJECTS, type Project, type ProjectTag } from '../data/projects';
+import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/projekte.css';
 
 export default function Projekte() {
+  usePageTitle('Projekte & Referenzen');
   const { open } = useLightbox();
   const [filter, setFilter] = useState<'all' | ProjectTag>('all');
 

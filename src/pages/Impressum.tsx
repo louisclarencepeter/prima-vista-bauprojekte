@@ -1,4 +1,5 @@
 import PageIntro from '../components/common/PageIntro';
+import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/impressum.css';
 
 const COMPANY_DETAILS = [
@@ -87,6 +88,7 @@ const LEGAL_SECTIONS = [
 ];
 
 export default function Impressum() {
+  usePageTitle('Impressum');
   return (
     <>
       <PageIntro

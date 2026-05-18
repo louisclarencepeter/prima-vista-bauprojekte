@@ -6,9 +6,11 @@ import ProcessSection from '../components/gewerke/ProcessSection';
 import TradeIndex from '../components/gewerke/TradeIndex';
 import { useLightbox, type LightboxItem } from '../components/Lightbox';
 import { FEATURED_TRADES, TRADES, type TradeRow } from '../data/gewerke';
+import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/gewerke.css';
 
 export default function Gewerke() {
+  usePageTitle('Gewerke – alle Leistungen im Überblick');
   const { open } = useLightbox();
   const [active, setActive] = useState<TradeRow>(TRADES[0]);
 

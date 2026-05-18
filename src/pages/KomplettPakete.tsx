@@ -3,9 +3,11 @@ import PageIntro from '../components/common/PageIntro';
 import PackageCompare from '../components/komplett-pakete/PackageCompare';
 import PackageDetailSection from '../components/komplett-pakete/PackageDetailSection';
 import { PACKAGES } from '../data/komplettPakete';
+import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/komplett-pakete.css';
 
 export default function KomplettPakete() {
+  usePageTitle('Komplett-Pakete für Sanierung & Bau');
   return (
     <>
       <PageIntro

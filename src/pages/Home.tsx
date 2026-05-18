@@ -4,9 +4,11 @@ import FeaturedProjects from '../components/home/FeaturedProjects';
 import HomeHero from '../components/home/HomeHero';
 import HomeMarquee from '../components/home/HomeMarquee';
 import { TRADES_PREVIEW } from '../data/home';
+import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/home.css';
 
 export default function Home() {
+  usePageTitle('Premium Sanierung & Bau in Frankfurt und Emmenbrücke');
   return (
     <>
       <HomeHero />

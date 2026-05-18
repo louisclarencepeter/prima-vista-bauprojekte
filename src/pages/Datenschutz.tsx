@@ -1,4 +1,5 @@
 import PageIntro from '../components/common/PageIntro';
+import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/impressum.css';
 
 const PRIVACY_SECTIONS = [
@@ -144,6 +145,7 @@ const PRIVACY_SECTIONS = [
 ];
 
 export default function Datenschutz() {
+  usePageTitle('Datenschutzerklärung');
   return (
     <>
       <PageIntro
