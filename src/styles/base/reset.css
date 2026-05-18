@@ -1,0 +1,17 @@
+/* ----- Reset & globals ----- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--pv-cream);
+  color: var(--pv-ink);
+  font-family: var(--pv-font-body);
+  font-size: 16px;
+  line-height: var(--pv-leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; border: none; background: none; cursor: pointer; }
+::selection { background: var(--pv-copper); color: var(--pv-white); }

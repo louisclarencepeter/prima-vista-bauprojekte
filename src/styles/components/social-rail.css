@@ -1,0 +1,29 @@
+/* ----- Social rail (left edge, fixed) ----- */
+.pv-social-rail {
+  position: fixed;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.pv-social-rail a {
+  width: 36px; height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(26, 26, 26, .15);
+  border-radius: 50%;
+  color: var(--pv-ink);
+  background: rgba(255, 255, 255, .8);
+  backdrop-filter: blur(8px);
+  transition: all 200ms var(--pv-ease-out);
+}
+.pv-social-rail a:hover {
+  color: var(--pv-copper);
+  border-color: var(--pv-copper);
+  transform: translateY(-2px);
+}
+.pv-social-rail svg { width: 16px; height: 16px; }

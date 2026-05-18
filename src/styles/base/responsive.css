@@ -1,0 +1,67 @@
+/* ----- Responsive trim (basic) ----- */
+@media (max-width: 1180px) {
+  .pv-header__inner { padding: 0 32px; gap: 20px; }
+  .pv-nav { gap: 20px; }
+  .pv-nav__list { gap: 18px; }
+  .pv-nav__list a { font-size: 10.5px; letter-spacing: 0.18em; }
+}
+@media (max-width: 880px) {
+  .pv-nav__list { display: none; }
+  .pv-header__cta { display: none; }
+  .pv-burger { display: block; }
+  .pv-social-rail { display: none; }
+  .pv-footer { padding: 64px 0 28px; }
+  .pv-footer__inner { padding: 0 24px; }
+  .pv-footer__bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .pv-footer__legal { flex-wrap: wrap; gap: 14px 20px; }
+  .pv-footer__grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .page-intro__inner { grid-template-columns: 1fr; gap: 32px; }
+  .pv-cookie__content {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  .pv-cookie__actions {
+    justify-content: stretch;
+  }
+  .pv-cookie__actions .btn {
+    flex: 1 1 220px;
+  }
+}
+@media (max-width: 600px) {
+  .pv-header__inner { padding: 0 20px; height: 72px; }
+  .pv-mobile-menu { top: 72px; }
+  .pv-logo img { height: 36px; }
+  .pv-logo__name { font-size: 14px; letter-spacing: 0.18em; }
+  .pv-logo__tag { font-size: 8px; letter-spacing: 0.26em; }
+  .pv-chat {
+    right: 16px;
+    bottom: 16px;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    justify-content: center;
+    gap: 0;
+    font-size: 0;
+  }
+  .pv-chat svg { width: 18px; height: 18px; }
+  .pv-footer__grid { grid-template-columns: 1fr; gap: 32px; padding-bottom: 40px; }
+  .page-intro { padding: 100px 20px 56px; }
+  .page-intro__inner { padding: 0; gap: 24px; }
+  .pv-cookie {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+  }
+  .pv-cookie__content {
+    padding: 22px 18px;
+    gap: 20px;
+  }
+  .pv-cookie__actions {
+    flex-direction: column;
+  }
+  .pv-cookie__actions .btn {
+    width: 100%;
+    flex-basis: auto;
+    white-space: normal;
+  }
+}

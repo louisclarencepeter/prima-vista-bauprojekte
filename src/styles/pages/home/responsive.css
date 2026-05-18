@@ -1,0 +1,221 @@
+@media (max-width: 1080px) {
+  .trades-preview__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .trade-chip:nth-child(4n) { border-right: 1px solid rgba(20, 19, 18, .12); }
+  .trade-chip:nth-child(2n) { border-right: none; }
+}
+
+@media (max-width: 880px) {
+  .hero__meta, .promise__inner, .packages__head, .stats__intro, .featured__head, .founders__inner, .trades-preview__head, .kalk__inner, .blitz-home__inner { grid-template-columns: 1fr; gap: 32px; }
+  .blitz-home__inner > .blitz-home__head { order: -1; }
+  .blitz-home__doc { padding: 12px 12px 24px 0; }
+  .blitz-home__doc-paper { transform: rotate(0); }
+  .packages__grid, .featured__grid, .heating__grid, .stats__grid { grid-template-columns: 1fr; }
+  .featured__grid { grid-auto-rows: 280px; }
+  .proj--a, .proj--b, .proj--c, .proj--d, .proj--e { grid-column: 1 / -1; grid-row: span 2; }
+  .end-cta__buttons { flex-direction: column; align-items: center; }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: calc(100svh - 72px);
+    padding: 28px 0 36px;
+  }
+  .hero__bg-slide { background-position: 58% center; }
+  .hero__bg-overlay {
+    background:
+      linear-gradient(90deg, rgba(232, 223, 223, .96) 0%, rgba(232, 223, 223, .82) 64%, rgba(232, 223, 223, .54) 100%),
+      linear-gradient(to top, rgba(232, 223, 223, .76) 0%, rgba(232, 223, 223, .68) 48%, rgba(232, 223, 223, .9) 100%);
+  }
+  .hero__inner { padding: 0 20px; }
+  .hero__inner::before {
+    inset: -18px 0 -18px 0;
+    width: auto;
+    background: linear-gradient(90deg, rgba(232, 223, 223, .58) 0%, rgba(232, 223, 223, .28) 100%);
+  }
+  .hero__topline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    padding-bottom: 28px;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    line-height: 1.5;
+  }
+  .hero__topline > span:nth-child(2) { display: none; }
+  .hero__headline {
+    font-size: 64px;
+    line-height: 0.94;
+    letter-spacing: 0;
+  }
+  .hero__meta {
+    gap: 24px;
+    padding-top: 32px;
+  }
+  .hero__meta > div:nth-child(2) { display: none; }
+  .hero__lede {
+    font-size: 16px;
+    line-height: 1.58;
+  }
+  .hero__cta { align-items: stretch; }
+  .hero__cta small { font-size: 10px; letter-spacing: 0.18em; }
+  .hero__cta .btn { justify-content: center; width: 100%; }
+
+  .marquee { padding: 16px 0; }
+  .marquee__track { gap: 36px; }
+  .marquee__item {
+    gap: 36px;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+  }
+
+  .promise,
+  .packages,
+  .trades-preview,
+  .featured,
+  .founders,
+  .heating,
+  .kalk,
+  .blitz-home,
+  .testimonial,
+  .end-cta { padding: 88px 0; }
+  .founders { scroll-margin-top: 72px; }
+
+  .promise__inner,
+  .packages__head,
+  .packages__grid,
+  .trades-preview__head,
+  .trades-preview__grid,
+  .trades-preview__more,
+  .stats__inner,
+  .featured__head,
+  .featured__grid,
+  .founders__inner,
+  .heating__head,
+  .heating__grid,
+  .kalk__inner,
+  .blitz-home__inner,
+  .testimonial__inner,
+  .end-cta__inner { padding-left: 20px; padding-right: 20px; }
+
+  .blitz-home__head h2 { font-size: 40px; letter-spacing: 0; }
+  .blitz-home__doc-paper { padding: 28px 24px 24px; }
+  .blitz-home__doc-rows li { grid-template-columns: 96px 1fr; }
+
+  .kalk__head h2 { font-size: 40px; letter-spacing: 0; }
+  .kalk__card { padding: 24px; }
+
+  .trades-preview__grid { grid-template-columns: 1fr; }
+  .trade-chip { border-right: none !important; min-height: 0; }
+  .trade-chip__link { padding: 22px 0 24px; }
+  .trades-preview__head h2 { font-size: 40px; letter-spacing: 0; }
+
+  .promise__num { margin-bottom: 20px; font-size: 11px; letter-spacing: 0.18em; }
+  .promise__title,
+  .packages__head h2,
+  .stats__intro h2,
+  .featured__head h2,
+  .founders__body h2,
+  .heating__head h2 { font-size: 40px; letter-spacing: 0; }
+  .promise__copy p,
+  .founders__body p,
+  .heating__head p { font-size: 16px; line-height: 1.65; }
+  .promise__list { grid-template-columns: 1fr; gap: 16px; }
+  .promise__list li { font-size: 11px; letter-spacing: 0.14em; }
+
+  .packages__head,
+  .featured__head { margin-bottom: 40px; }
+  .packages__head p { font-size: 15px; line-height: 1.65; }
+  .packages__grid,
+  .heating__grid { gap: 20px; }
+  .pkg-card {
+    aspect-ratio: 4 / 5;
+    min-height: 390px;
+  }
+  .pkg-card__body { inset: auto 22px 24px; }
+  .pkg-card__title { font-size: 23px; }
+  .pkg-card__desc { font-size: 14px; margin-bottom: 18px; }
+
+  .stats { padding: 88px 0; }
+  .stats__intro { gap: 24px; margin-bottom: 52px; }
+  .stats__intro p { font-size: 15px; line-height: 1.7; }
+  .stats__grid { gap: 32px; padding-top: 40px; }
+  .stat__num { font-size: 72px; }
+  .stat__desc { max-width: none; }
+
+  .featured__head .meta { text-align: left; }
+  .featured__grid {
+    grid-auto-rows: auto;
+    gap: 18px;
+    margin-bottom: 36px;
+  }
+  .proj,
+  .proj--a,
+  .proj--b,
+  .proj--c,
+  .proj--d,
+  .proj--e {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    aspect-ratio: 4 / 3;
+  }
+  .proj--b { aspect-ratio: 4 / 5; }
+  .proj__cap {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+  }
+  .proj__cap .ttl { font-size: 13px; letter-spacing: 0.04em; }
+  .proj__cap .yr { font-size: 10px; letter-spacing: 0.14em; }
+
+  .founders__inner { gap: 40px; }
+  .founders__photo { aspect-ratio: 4 / 4.7; }
+  .founders__photo-label {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    line-height: 1.4;
+  }
+  .founders__body h2 { margin: 20px 0 24px; }
+  .founders__sig {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .heating__head { margin-bottom: 40px; }
+  .heating__head .eyebrow { margin-bottom: 18px; justify-content: center; }
+  .heat-card__body { padding: 26px 22px 30px; }
+  .heat-card__title { font-size: 20px; }
+
+  .testimonial .quote-mark { font-size: 92px; margin-bottom: 12px; }
+  .testimonial blockquote {
+    font-size: 28px;
+    line-height: 1.25;
+    letter-spacing: 0;
+    margin-bottom: 32px;
+  }
+  .testimonial__attr {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    line-height: 1.5;
+  }
+  .testimonial__attr .sep { display: none; }
+
+  .end-cta h2 {
+    font-size: 44px;
+    letter-spacing: 0;
+    margin-bottom: 28px;
+  }
+  .end-cta p { font-size: 16px; margin-bottom: 32px; }
+  .end-cta__buttons {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+  }
+  .end-cta__buttons .btn { justify-content: center; width: 100%; }
+}

@@ -1,0 +1,17 @@
+/* ----- End CTA (light, centered) — used on inner pages ----- */
+.end-cta-local {
+  background: var(--pv-cream);
+  padding: 120px 0;
+  text-align: center;
+}
+.end-cta-local__inner { max-width: 720px; margin: 0 auto; padding: 0 48px; }
+.end-cta-local h2 {
+  font-family: var(--pv-font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(32px, 4vw, 56px);
+  line-height: 1.05;
+  color: var(--pv-ink);
+  margin: 0 0 32px;
+}
+.end-cta-local h2 em { color: var(--pv-copper); }

@@ -1,0 +1,46 @@
+/* ----- Buttons ----- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 24px;
+  font-family: var(--pv-font-display);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 1.5px solid transparent;
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+  transition: color 200ms var(--pv-ease-out), background 200ms var(--pv-ease-out), border-color 200ms var(--pv-ease-out), transform 200ms var(--pv-ease-out);
+  white-space: nowrap;
+}
+.btn .arrow { font-weight: 300; font-size: 16px; margin-left: 2px; }
+.btn--light {
+  color: var(--pv-brown-deep);
+  border-color: var(--pv-brown-deep);
+}
+.btn--light:hover {
+  color: var(--pv-copper);
+  border-color: var(--pv-copper);
+}
+.btn--dark {
+  color: var(--pv-bone);
+  border-color: rgba(236, 229, 223, .5);
+  background: rgba(255, 255, 255, .04);
+}
+.btn--dark:hover {
+  color: var(--pv-copper-bright);
+  border-color: var(--pv-copper-bright);
+  background: rgba(200, 154, 106, .10);
+}
+.btn--solid {
+  color: var(--pv-white);
+  background: var(--pv-copper);
+  border-color: var(--pv-copper);
+}
+.btn--solid:hover {
+  background: var(--pv-copper-warm);
+  border-color: var(--pv-copper-warm);
+}

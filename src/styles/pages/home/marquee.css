@@ -1,0 +1,37 @@
+/* ---- Marquee ticker ---- */
+.marquee {
+  background: var(--pv-cream);
+  border-top: 1px solid rgba(26, 26, 26, .12);
+  border-bottom: 1px solid rgba(26, 26, 26, .12);
+  padding: 24px 0;
+  overflow: hidden;
+}
+.marquee__track {
+  display: flex;
+  gap: 60px;
+  white-space: nowrap;
+  animation: marquee 60s linear infinite;
+  width: max-content;
+}
+.marquee__item {
+  font-family: var(--pv-font-display);
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pv-ink-2);
+  display: inline-flex;
+  align-items: center;
+  gap: 60px;
+}
+.marquee__item::after {
+  content: '';
+  width: 8px; height: 8px;
+  background: var(--pv-copper);
+  border-radius: 50%;
+  display: inline-block;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}

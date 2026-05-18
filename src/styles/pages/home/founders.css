@@ -1,0 +1,81 @@
+/* ---- Founders / Über uns ---- */
+.founders {
+  background: var(--pv-ink-2);
+  color: var(--pv-bone);
+  padding: 140px 0;
+  position: relative;
+  overflow: hidden;
+  scroll-margin-top: 88px;
+}
+.founders__inner {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 96px;
+  align-items: center;
+}
+.founders__photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--pv-ink-1);
+}
+.founders__photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.founders__photo-label {
+  position: absolute;
+  left: 24px; bottom: 24px;
+  font-family: var(--pv-font-display);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--pv-bone);
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.founders__photo-label .num { color: var(--pv-copper-bright); font-family: var(--pv-font-mono); }
+.founders__body .eyebrow { color: var(--pv-copper-bright); }
+.founders__body h2 {
+  font-family: var(--pv-font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(40px, 4.8vw, 68px);
+  line-height: 1.05;
+  letter-spacing: -0.012em;
+  color: var(--pv-bone);
+  margin: 24px 0 32px;
+}
+.founders__body h2 em { color: var(--pv-copper-bright); }
+.founders__body p {
+  font-family: var(--pv-font-body);
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--pv-text-on-dark-muted);
+  margin: 0 0 22px;
+  max-width: 520px;
+}
+.founders__sig {
+  margin-top: 36px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.founders__sig-name {
+  font-family: var(--pv-font-serif);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--pv-copper-bright);
+}
+.founders__sig-role {
+  font-family: var(--pv-font-display);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--pv-text-on-dark-muted);
+}

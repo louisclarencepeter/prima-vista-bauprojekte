@@ -1,0 +1,44 @@
+/* ---- Testimonial ---- */
+.testimonial {
+  background: var(--pv-cream);
+  padding: 160px 0;
+  text-align: center;
+}
+.testimonial__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+.testimonial .quote-mark {
+  font-family: var(--pv-font-serif);
+  font-style: italic;
+  font-size: 140px;
+  line-height: 0.6;
+  color: var(--pv-copper);
+  margin-bottom: 24px;
+  display: inline-block;
+}
+.testimonial blockquote {
+  font-family: var(--pv-font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(28px, 3vw, 44px);
+  line-height: 1.25;
+  letter-spacing: -0.008em;
+  color: var(--pv-ink);
+  margin: 0 0 48px;
+  text-wrap: balance;
+}
+.testimonial blockquote em { color: var(--pv-copper); }
+.testimonial__attr {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--pv-font-display);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--pv-text-on-light-muted);
+}
+.testimonial__attr .name { color: var(--pv-ink); }
+.testimonial__attr .sep { color: var(--pv-copper); }

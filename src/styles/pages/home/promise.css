@@ -1,0 +1,66 @@
+/* ---- Promise band (manifesto) ---- */
+.promise {
+  background: var(--pv-cream);
+  padding: 160px 0 160px;
+}
+.promise__inner {
+  max-width: var(--pv-container);
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 80px;
+  align-items: start;
+}
+.promise__num {
+  font-family: var(--pv-font-mono);
+  font-size: 13px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--pv-copper);
+  margin-bottom: 32px;
+}
+.promise__title {
+  font-family: var(--pv-font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(36px, 4.4vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -0.012em;
+  color: var(--pv-ink);
+  margin: 0;
+}
+.promise__title em { color: var(--pv-copper); font-style: italic; }
+.promise__copy p {
+  font-family: var(--pv-font-body);
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--pv-ink-2);
+  margin: 0 0 22px;
+}
+.promise__list {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(26, 26, 26, .15);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 32px;
+  list-style: none;
+  padding-left: 0;
+}
+.promise__list li {
+  font-family: var(--pv-font-display);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pv-ink-2);
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.promise__list .num {
+  font-family: var(--pv-font-mono);
+  font-size: 11px;
+  color: var(--pv-copper);
+  font-weight: 500;
+}

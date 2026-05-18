@@ -1,0 +1,52 @@
+/* ----- Type utility classes ----- */
+.eyebrow {
+  font-family: var(--pv-font-display);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: var(--pv-track-widest);
+  text-transform: uppercase;
+  color: var(--pv-copper);
+}
+.eyebrow--mute { color: var(--pv-text-on-light-muted); }
+.eyebrow--on-dark { color: var(--pv-copper-bright); }
+
+.rule-red {
+  display: inline-block;
+  width: 38px;
+  height: 3px;
+  background: var(--pv-red);
+  vertical-align: middle;
+}
+.rule-thin {
+  width: 100%;
+  height: 1px;
+  background: rgba(26, 26, 26, .15);
+  border: 0;
+}
+.rule-thin--dark { background: rgba(236, 229, 223, .15); }
+
+.serif {
+  font-family: var(--pv-font-serif);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.012em;
+  line-height: 1.05;
+}
+.serif--alt {
+  font-family: var(--pv-font-serif-alt);
+  font-style: italic;
+  font-weight: 600;
+}
+.sans-display {
+  font-family: var(--pv-font-display);
+  font-weight: 800;
+  letter-spacing: var(--pv-track-wide);
+  text-transform: uppercase;
+}
+.mono-label {
+  font-family: var(--pv-font-mono);
+  font-size: 11px;
+  letter-spacing: var(--pv-track-wider);
+  text-transform: uppercase;
+  color: var(--pv-text-on-light-muted);
+}

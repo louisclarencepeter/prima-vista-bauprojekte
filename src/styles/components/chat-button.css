@@ -1,0 +1,24 @@
+/* ----- Chat bubble (bottom-right) ----- */
+.pv-chat {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px 14px 16px;
+  background: var(--pv-ink-1);
+  color: var(--pv-bone);
+  border-radius: 999px;
+  box-shadow: 0 18px 40px -12px rgba(0, 0, 0, .35);
+  font-family: var(--pv-font-display);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 200ms var(--pv-ease-out), background 200ms var(--pv-ease-out);
+}
+.pv-chat:hover { background: var(--pv-copper); transform: translateY(-2px); }
+.pv-chat svg { width: 16px; height: 16px; }

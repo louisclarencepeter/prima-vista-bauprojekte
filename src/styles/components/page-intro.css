@@ -1,0 +1,120 @@
+/* ----- Page-intro band (used on inner pages) ----- */
+.page-intro {
+  background: var(--pv-cream);
+  padding: 140px 0 72px;
+  border-bottom: 1px solid rgba(26, 26, 26, .08);
+  min-height: calc(100vh - 89px);
+  min-height: calc(100svh - 89px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+.page-intro::before,
+.page-intro::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.page-intro::before {
+  background-image: var(--page-intro-bg, none);
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.04);
+  z-index: 0;
+}
+.page-intro::after {
+  /* Heavier wash at the bottom (where content sits) for legibility,
+     softer at the top so the image shows through the empty space. */
+  background: linear-gradient(to bottom,
+    rgba(232, 223, 223, 0.45) 0%,
+    rgba(232, 223, 223, 0.78) 50%,
+    rgba(232, 223, 223, 0.95) 100%);
+  z-index: 1;
+}
+.page-intro__inner {
+  max-width: var(--pv-container);
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 80px;
+  align-items: end;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+.crumb {
+  font-family: var(--pv-font-display);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--pv-text-on-light-muted);
+  margin-bottom: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.crumb .num {
+  color: var(--pv-copper);
+  font-family: var(--pv-font-mono);
+  font-weight: 500;
+}
+.crumb--on-dark { color: var(--pv-text-on-dark-muted); }
+.crumb--on-dark .num { color: var(--pv-copper-bright); }
+
+/* Default spacing between an eyebrow and the heading that follows it.
+   Lets pages drop the per-h2 inline marginTop overrides.
+   `body` prefix added so this longhand wins over per-page
+   `.section h2 { margin: 0 0 X }` shorthands of equal class specificity. */
+body .eyebrow + h1,
+body .eyebrow + h2,
+body .eyebrow + h3 { margin-top: 24px; }
+.page-intro h1 {
+  font-family: var(--pv-font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(60px, 7.2vw, 116px);
+  line-height: 0.96;
+  letter-spacing: -0.018em;
+  color: var(--pv-ink);
+  margin: 0;
+}
+.page-intro h1 em {
+  color: var(--pv-copper);
+  font-style: italic;
+}
+.page-intro .lede {
+  font-family: var(--pv-font-body);
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--pv-text-on-light-muted);
+  max-width: 380px;
+  margin: 0 0 8px;
+}
+.page-intro .meta-list {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 24px 0 0;
+  border-top: 1px solid rgba(26, 26, 26, .15);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 32px;
+}
+.page-intro .meta-list li {
+  font-family: var(--pv-font-display);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.page-intro .meta-list li span {
+  display: block;
+  font-family: var(--pv-font-body);
+  font-size: 15px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--pv-ink);
+  margin-top: 6px;
+}

@@ -1,0 +1,16 @@
+/* ----- Container helpers ----- */
+.container {
+  max-width: var(--pv-container);
+  margin: 0 auto;
+  padding: 0 48px;
+}
+.container--wide {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+.container--narrow {
+  max-width: var(--pv-container-narrow);
+  margin: 0 auto;
+  padding: 0 48px;
+}
