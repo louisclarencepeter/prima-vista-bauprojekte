@@ -77,13 +77,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link className="pv-footer__contact-link" to="/kontakt">
+                <Link className="pv-footer__contact-link" to="/kalkulator">
                   <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">04</span>
-                  <span>Service</span>
+                  <span>Kalkulator</span>
                 </Link>
               </li>
               <li>
-                <Link className="pv-footer__contact-link" to="/kontakt">
+                <Link className="pv-footer__contact-link" to="/blitz-angebot">
                   <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">05</span>
                   <span>Blitz-Angebote</span>
                 </Link>
