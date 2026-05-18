@@ -747,114 +747,11 @@ body.pv-chat-open {
   }
 }
 
-@media (max-width: 720px) {
-  .pv-chat-launcher {
-    right: 16px;
-    bottom: 18px;
-  }
-
-  .pv-chat-preview {
-    display: none;
-  }
-
-  .pv-chat {
-    width: auto;
-    height: auto;
-    padding: 13px 18px;
-    font-size: 10.5px;
-    gap: 9px;
-    justify-content: center;
-  }
-
+/* Chat is desktop-only — hide launcher and panel on mobile. */
+@media (max-width: 880px) {
+  .pv-chat-launcher,
   .pv-chat-panel {
-    top: 0;
-    right: 0;
-    bottom: auto;
-    left: 0;
-    width: 100%;
-    height: var(--pv-chat-vv-h, 100dvh);
-    max-width: 100%;
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
-    transform: translateY(var(--pv-chat-vv-top, 0));
-  }
-
-  .pv-chat-panel__header {
-    padding: max(12px, env(safe-area-inset-top)) 14px 12px;
-  }
-
-  .pv-chat-panel__human {
-    display: none;
-  }
-
-  .pv-chat-panel__messages {
-    padding: 20px 16px 8px;
-  }
-
-  .pv-chat-welcome {
-    margin: auto 0 12px;
-  }
-
-  .pv-chat-welcome h2 {
-    font-size: 40px;
-  }
-
-  .pv-chat-welcome p {
-    font-size: 14px;
-  }
-
-  .pv-chat-msg {
-    gap: 8px;
-  }
-
-  .pv-chat-msg--assistant,
-  .pv-chat-msg--user {
-    max-width: 94%;
-  }
-
-  .pv-chat-msg--user {
-    max-width: 88%;
-  }
-
-  .pv-chat-msg__bubble {
-    padding: 11px 14px;
-    font-size: 14px;
-  }
-
-  .pv-chat-panel__suggestions {
-    padding: 0 16px 12px 52px;
-  }
-
-  .pv-chat-panel__suggestions button {
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    white-space: normal;
-  }
-
-  .pv-chat-panel__form {
-    padding: 12px 12px 8px;
-  }
-
-  .pv-chat-panel__send {
-    min-width: 44px;
-    width: 44px;
-    height: 38px;
-    padding: 0;
-  }
-
-  .pv-chat-panel__send span {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
-  }
-
-  .pv-chat-panel__footnote {
-    padding: 0 12px max(12px, env(safe-area-inset-bottom));
-    font-size: 10px;
+    display: none !important;
   }
 }
 
