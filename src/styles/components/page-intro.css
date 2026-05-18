@@ -3,8 +3,7 @@
   background: var(--pv-cream);
   padding: 140px 0 72px;
   border-bottom: 1px solid rgba(26, 26, 26, .08);
-  min-height: calc(100vh - 89px);
-  min-height: calc(100svh - 89px);
+  min-height: calc(100dvh - 89px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

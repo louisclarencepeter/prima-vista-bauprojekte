@@ -4,6 +4,12 @@
   .trade-chip:nth-child(2n) { border-right: none; }
 }
 
+@media (max-width: 1400px) and (min-width: 881px) {
+  .hero__inner {
+    padding-left: 96px;
+  }
+}
+
 @media (max-width: 880px) {
   .hero__meta, .promise__inner, .packages__head, .stats__intro, .featured__head, .founders__inner, .trades-preview__head, .kalk__inner, .blitz-home__inner { grid-template-columns: 1fr; gap: 32px; }
   .blitz-home__inner > .blitz-home__head { order: -1; }
@@ -18,7 +24,7 @@
 @media (max-width: 600px) {
   .hero {
     min-height: calc(100svh - 72px);
-    padding: 28px 0 36px;
+    padding: 28px 0 56px;
   }
   .hero__bg-slide { background-position: 58% center; }
   .hero__bg-overlay {
