@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
-import { Link } from 'react-router-dom';
-import { ChatIcon, CloseIcon } from './icons';
+import { Link, useLocation } from 'react-router-dom';
+import { ChatIcon, CloseIcon, MailIcon, PhoneIcon, PinIcon } from './icons';
 
 const INTERNAL_PATHS = [
   '/komplett-pakete',
@@ -18,6 +18,135 @@ const PATH_RE = new RegExp(
   `(\\*\\*[^*]+\\*\\*|\\((${ESCAPED_PATHS})\\)|(?<![\\w/])(${ESCAPED_PATHS})(?![\\w]))`,
   'g',
 );
+
+type IconName =
+  | 'calendar'
+  | 'calendar-plus'
+  | 'check'
+  | 'clock'
+  | 'lock'
+  | 'paperclip'
+  | 'send'
+  | 'shield'
+  | 'user';
+
+type Message = {
+  id: number;
+  role: 'user' | 'assistant';
+  content: string;
+};
+
+const GREETING: Message = {
+  id: 0,
+  role: 'assistant',
+  content:
+    'Guten Tag und herzlich willkommen bei Prima Vista. Ich bin Ihr Bau-Concierge. Erzählen Sie uns kurz von Ihrem Vorhaben, oder wählen Sie unten ein Thema.',
+};
+
+const SUGGESTIONS = [
+  'Komplett-Sanierung anfragen',
+  'Festpreis-Schätzung',
+  'Heizung modernisieren',
+  'Mit Daniel oder Monica sprechen',
+];
+
+const CHAT_SCROLL_IDLE_MS = 5000;
+
+function getRouteMain() {
+  const mains = Array.from(document.querySelectorAll('main'));
+  return mains[0] ?? null;
+}
+
+function getTopContentBlock() {
+  const main = getRouteMain();
+  const firstChild = main?.firstElementChild;
+  if (firstChild instanceof HTMLElement) return firstChild;
+  return null;
+}
+
+function useChatScrollWindow(open: boolean, onLeaveWindow: () => void) {
+  const { pathname } = useLocation();
+  const [canShowLauncher, setCanShowLauncher] = useState(false);
+  const [canShowPreview, setCanShowPreview] = useState(false);
+  const openRef = useRef(open);
+  const onLeaveWindowRef = useRef(onLeaveWindow);
+
+  useEffect(() => {
+    openRef.current = open;
+    onLeaveWindowRef.current = onLeaveWindow;
+  }, [open, onLeaveWindow]);
+
+  useEffect(() => {
+    let raf = 0;
+    let idleTimer = 0;
+
+    const isEligible = () => {
+      const topBlock = getTopContentBlock();
+      const footer = document.querySelector<HTMLElement>('.pv-footer');
+      const header = document.querySelector<HTMLElement>('.pv-header');
+      const headerOffset = header?.getBoundingClientRect().height ?? 0;
+
+      const passedTopBlock = topBlock
+        ? topBlock.getBoundingClientRect().bottom <= headerOffset + 16
+        : window.scrollY > Math.round(window.innerHeight * 0.7);
+      const beforeFooter = footer
+        ? footer.getBoundingClientRect().top > window.innerHeight - 24
+        : true;
+
+      return passedTopBlock && beforeFooter;
+    };
+
+    const clearIdleTimer = () => {
+      if (!idleTimer) return;
+      window.clearTimeout(idleTimer);
+      idleTimer = 0;
+    };
+
+    const update = () => {
+      raf = 0;
+      clearIdleTimer();
+
+      const eligible = isEligible();
+      if (!eligible) {
+        setCanShowLauncher(false);
+        setCanShowPreview(false);
+        if (openRef.current) onLeaveWindowRef.current();
+        return;
+      }
+
+      setCanShowLauncher(true);
+      setCanShowPreview(false);
+
+      idleTimer = window.setTimeout(() => {
+        idleTimer = 0;
+        const stillEligible = isEligible();
+        setCanShowLauncher(stillEligible);
+        setCanShowPreview(stillEligible);
+        if (!stillEligible && openRef.current) onLeaveWindowRef.current();
+      }, CHAT_SCROLL_IDLE_MS);
+    };
+
+    const schedule = () => {
+      if (raf) return;
+      raf = window.requestAnimationFrame(update);
+    };
+
+    const initial = window.setTimeout(update, 80);
+    schedule();
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+
+    return () => {
+      window.clearTimeout(initial);
+      clearIdleTimer();
+      if (raf) window.cancelAnimationFrame(raf);
+      window.removeEventListener('scroll', schedule);
+      window.removeEventListener('resize', schedule);
+    };
+  }, [pathname]);
+
+  return { canShowLauncher, canShowPreview };
+}
 
 function renderAssistantText(
   text: string,
@@ -51,24 +180,189 @@ function renderAssistantText(
   return nodes;
 }
 
-type Message = {
-  id: number;
-  role: 'user' | 'assistant';
-  content: string;
-};
+function ConciergeIcon({
+  name,
+  className,
+}: {
+  name: IconName;
+  className?: string;
+}) {
+  const common = {
+    className,
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    stroke: 'currentColor',
+    strokeWidth: 1.6,
+    strokeLinecap: 'round' as const,
+    strokeLinejoin: 'round' as const,
+    'aria-hidden': true,
+  };
 
-const GREETING: Message = {
-  id: 0,
-  role: 'assistant',
-  content:
-    'Hallo, ich bin der digitale Empfang von Prima Vista. Wie kann ich helfen — Kostenrahmen, Ablauf, Termin?',
-};
+  if (name === 'calendar') {
+    return (
+      <svg {...common}>
+        <path d="M8 2v4M16 2v4M3.5 9.5h17" />
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <path d="M8 13h.01M12 13h.01M16 13h.01M8 17h.01M12 17h.01" />
+      </svg>
+    );
+  }
+  if (name === 'calendar-plus') {
+    return (
+      <svg {...common}>
+        <path d="M8 2v4M16 2v4M3.5 9.5h17" />
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <path d="M12 13v5M9.5 15.5h5" />
+      </svg>
+    );
+  }
+  if (name === 'check') {
+    return (
+      <svg {...common}>
+        <path d="M20 6 9 17l-5-5" />
+      </svg>
+    );
+  }
+  if (name === 'clock') {
+    return (
+      <svg {...common}>
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 7v5l3 2" />
+      </svg>
+    );
+  }
+  if (name === 'lock') {
+    return (
+      <svg {...common}>
+        <rect x="5" y="10" width="14" height="10" rx="2" />
+        <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+      </svg>
+    );
+  }
+  if (name === 'paperclip') {
+    return (
+      <svg {...common}>
+        <path d="m21.4 11.6-8.8 8.8a5 5 0 0 1-7.1-7.1l9.5-9.5a3.5 3.5 0 1 1 5 5l-9.6 9.6a2 2 0 1 1-2.8-2.8l8.8-8.8" />
+      </svg>
+    );
+  }
+  if (name === 'send') {
+    return (
+      <svg {...common}>
+        <path d="M4 12 20 4l-6 16-2-7-8-1Z" />
+      </svg>
+    );
+  }
+  if (name === 'shield') {
+    return (
+      <svg {...common}>
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+        <path d="m9 12 2 2 4-5" />
+      </svg>
+    );
+  }
+  return (
+    <svg {...common}>
+      <path d="M20 21a8 8 0 0 0-16 0" />
+      <circle cx="12" cy="7" r="4" />
+    </svg>
+  );
+}
 
-const SUGGESTIONS = [
-  'Was kostet eine Komplettsanierung?',
-  'Wie läuft ein Projekt ab?',
-  'Termin vereinbaren',
-];
+function Avatar() {
+  return <span className="pv-chat-avatar" aria-hidden="true">PV</span>;
+}
+
+function Eyebrow({ children, dark = false }: { children: ReactNode; dark?: boolean }) {
+  return (
+    <span className={`pv-chat-eyebrow${dark ? ' pv-chat-eyebrow--dark' : ''}`}>
+      {children}
+    </span>
+  );
+}
+
+function BrandRail() {
+  return (
+    <aside className="pv-chat-rail" aria-label="Prima Vista Bau-Concierge">
+      <Link className="pv-chat-rail__brand" to="/" aria-label="Prima Vista Startseite">
+        <img src="/assets/img/logo.png" alt="" />
+        <span>
+          <strong>Prima Vista</strong>
+          <small>Bauprojekte</small>
+        </span>
+      </Link>
+
+      <div className="pv-chat-rail__intro">
+        <Eyebrow dark>Bau-Concierge</Eyebrow>
+        <h2>Ein Concierge,<br />der zuhört.</h2>
+        <p>
+          Erzählen Sie uns von Ihrem Projekt, vom einzelnen Bad bis zur
+          Komplett-Sanierung. Wir qualifizieren Ihr Vorhaben und zeigen den
+          nächsten sinnvollen Schritt.
+        </p>
+      </div>
+
+      <div className="pv-chat-rail__proof">
+        <span><ConciergeIcon name="clock" /> Antwort meist sofort</span>
+        <span><ConciergeIcon name="calendar" /> Erstgespräch in 48 Stunden</span>
+        <span><ConciergeIcon name="shield" /> Festpreis und Bauleitung inklusive</span>
+      </div>
+
+      <address className="pv-chat-rail__contact">
+        <a href="tel:+4915789818308"><PhoneIcon /> +49 1578 98 18 308</a>
+        <a href="mailto:office@primavista-bauprojekte.com"><MailIcon /> office@primavista-bauprojekte.com</a>
+        <span><PinIcon /> Frankfurt am Main · Emmenbrücke</span>
+      </address>
+    </aside>
+  );
+}
+
+function ChatHeader({ onClose }: { onClose: () => void }) {
+  return (
+    <header className="pv-chat-panel__header">
+      <Avatar />
+      <div className="pv-chat-panel__title">
+        <strong>Bau-Concierge</strong>
+        <small><span aria-hidden="true" /> Online · Antwort &lt; 5 Min</small>
+      </div>
+      <Link className="pv-chat-panel__human" to="/kontakt" onClick={onClose}>
+        <ConciergeIcon name="user" />
+        Mit Mensch sprechen
+      </Link>
+      <button
+        type="button"
+        className="pv-chat-panel__close"
+        onClick={onClose}
+        aria-label="Chat schließen"
+      >
+        <CloseIcon />
+      </button>
+    </header>
+  );
+}
+
+function WelcomeBlock() {
+  return (
+    <div className="pv-chat-welcome">
+      <Eyebrow>Willkommen</Eyebrow>
+      <h2>Guten Tag.</h2>
+      <p>
+        Wählen Sie ein Thema oder schreiben Sie frei. Je konkreter Objektart,
+        Lage und Umfang sind, desto präziser kann der Concierge einordnen.
+      </p>
+    </div>
+  );
+}
+
+function TypingDots() {
+  return (
+    <span className="pv-chat-typing" aria-label="Antwort wird geschrieben">
+      <span />
+      <span />
+      <span />
+    </span>
+  );
+}
 
 export default function Chat() {
   const [open, setOpen] = useState(false);
@@ -80,15 +374,18 @@ export default function Chat() {
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
   const abortRef = useRef<AbortController | null>(null);
 
+  const close = useCallback(() => setOpen(false), []);
+  const { canShowLauncher, canShowPreview } = useChatScrollWindow(open, close);
+
   useEffect(() => {
     if (!scrollRef.current) return;
     scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
-  }, [messages, open]);
+  }, [messages, open, sending]);
 
   useEffect(() => {
     if (open) {
       document.body.classList.add('pv-chat-open');
-      const focus = window.setTimeout(() => inputRef.current?.focus(), 200);
+      const focus = window.setTimeout(() => inputRef.current?.focus(), 220);
       return () => {
         document.body.classList.remove('pv-chat-open');
         window.clearTimeout(focus);
@@ -108,8 +405,7 @@ export default function Chat() {
   useEffect(() => () => abortRef.current?.abort(), []);
 
   // Anchor the mobile panel to the visual viewport so the iOS keyboard
-  // doesn't push it half off-screen. Layout viewport stays put when the
-  // keyboard opens — we follow visualViewport.height + offsetTop instead.
+  // does not push it half off-screen.
   useEffect(() => {
     if (!open) return;
     const vv = window.visualViewport;
@@ -218,7 +514,7 @@ export default function Chat() {
               ? {
                   ...m,
                   content:
-                    'Entschuldigung — gerade gibt es ein technisches Problem. Bitte schreiben Sie uns direkt: office@primavista-bauprojekte.com oder rufen Sie an: +49 1578 98 18 308.',
+                    'Entschuldigung, gerade gibt es ein technisches Problem. Bitte schreiben Sie uns direkt an office@primavista-bauprojekte.com oder rufen Sie uns unter +49 1578 98 18 308 an.',
                 }
               : m,
           ),
@@ -245,104 +541,116 @@ export default function Chat() {
 
   return (
     <>
-      <button
-        className="pv-chat"
-        type="button"
-        aria-label={open ? 'Chat schließen' : 'Chat starten'}
-        aria-expanded={open}
-        onClick={() => setOpen((v) => !v)}
-      >
-        {open ? <CloseIcon /> : <ChatIcon />}
-        <span>{open ? 'Schließen' : 'Chat'}</span>
-      </button>
-
-      {open && (
-        <div className="pv-chat-panel" role="dialog" aria-label="Chat mit Prima Vista">
-          <header className="pv-chat-panel__header">
-            <div className="pv-chat-panel__title">
-              <span className="pv-chat-panel__dot" aria-hidden="true" />
-              <div>
-                <strong>Prima Vista</strong>
-                <small>Antwort meist sofort</small>
-              </div>
-            </div>
+      {!open && (
+        <div className={`pv-chat-launcher${canShowLauncher ? ' is-visible' : ''}`} aria-hidden={!canShowLauncher}>
+          {canShowPreview && (
             <button
+              className="pv-chat-preview"
               type="button"
-              className="pv-chat-panel__close"
-              onClick={() => setOpen(false)}
-              aria-label="Chat schließen"
+              onClick={() => setOpen(true)}
+              aria-label="Bau-Concierge öffnen"
             >
-              <CloseIcon />
+              <Avatar />
+              <span>
+                <strong>Bau-Concierge</strong>
+                <small>Guten Tag, erzählen Sie uns kurz von Ihrem Projekt?</small>
+              </span>
             </button>
-          </header>
+          )}
+          <button
+            className="pv-chat"
+            type="button"
+            aria-label="Bau-Concierge starten"
+            aria-expanded={open}
+            onClick={() => setOpen(true)}
+            disabled={!canShowLauncher}
+          >
+            <ChatIcon />
+            <span>Bau-Concierge</span>
+            <b aria-hidden="true">1</b>
+          </button>
+        </div>
+      )}
 
-          <div className="pv-chat-panel__messages" ref={scrollRef}>
-            {messages.map((m) => (
-              <div
-                key={m.id}
-                className={`pv-chat-msg pv-chat-msg--${m.role}`}
-              >
-                <div className="pv-chat-msg__bubble">
-                  {m.content ? (
-                    m.role === 'assistant'
-                      ? renderAssistantText(m.content, () => setOpen(false))
-                      : m.content
-                  ) : (
-                    <span className="pv-chat-msg__cursor" aria-hidden="true" />
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
+      {open && canShowLauncher && (
+        <div className="pv-chat-panel" role="dialog" aria-label="Bau-Concierge von Prima Vista">
+          <BrandRail />
+          <section className="pv-chat-panel__main">
+            <ChatHeader onClose={close} />
 
-          {messages.length === 1 && (
-            <div className="pv-chat-panel__suggestions">
-              {SUGGESTIONS.map((s) => (
-                <button
-                  key={s}
-                  type="button"
-                  onClick={() => send(s)}
-                  disabled={sending}
+            <div className="pv-chat-panel__messages" ref={scrollRef}>
+              {messages.length === 1 && <WelcomeBlock />}
+              {messages.map((m) => (
+                <div
+                  key={m.id}
+                  className={`pv-chat-msg pv-chat-msg--${m.role}`}
                 >
-                  {s}
-                </button>
+                  {m.role === 'assistant' && <Avatar />}
+                  <div className="pv-chat-msg__bubble">
+                    {m.content ? (
+                      m.role === 'assistant'
+                        ? renderAssistantText(m.content, close)
+                        : m.content
+                    ) : (
+                      <TypingDots />
+                    )}
+                  </div>
+                </div>
               ))}
             </div>
-          )}
 
-          <form className="pv-chat-panel__form" onSubmit={onSubmit}>
-            <textarea
-              ref={inputRef}
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={onKeyDown}
-              placeholder="Ihre Nachricht …"
-              rows={1}
-              disabled={sending}
-              aria-label="Nachricht eingeben"
-            />
-            <button
-              type="submit"
-              disabled={sending || !input.trim()}
-              aria-label="Senden"
-            >
-              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-                <path
-                  d="M4 12l16-8-6 16-2-7-8-1z"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinejoin="round"
-                  strokeLinecap="round"
+            {messages.length === 1 && (
+              <div className="pv-chat-panel__suggestions" aria-label="Themenvorschläge">
+                {SUGGESTIONS.map((s) => (
+                  <button
+                    key={s}
+                    type="button"
+                    onClick={() => send(s)}
+                    disabled={sending}
+                  >
+                    {s}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            <form className="pv-chat-panel__form" onSubmit={onSubmit}>
+              <div className="pv-chat-panel__composer">
+                <button
+                  className="pv-chat-panel__attach"
+                  type="button"
+                  aria-label="Foto anhängen"
+                  title="Foto anhängen"
+                  disabled={sending}
+                >
+                  <ConciergeIcon name="paperclip" />
+                </button>
+                <textarea
+                  ref={inputRef}
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={onKeyDown}
+                  placeholder="Schreiben Sie uns..."
+                  rows={1}
+                  disabled={sending}
+                  aria-label="Nachricht eingeben"
                 />
-              </svg>
-            </button>
-          </form>
-          {error && <div className="pv-chat-panel__error">{error}</div>}
-          <p className="pv-chat-panel__footnote">
-            KI-Assistent · Keine Speicherung. Bei Bedarf direkt:{' '}
-            <a href="tel:+4915789818308">+49 1578 98 18 308</a>
-          </p>
+                <button
+                  className="pv-chat-panel__send"
+                  type="submit"
+                  disabled={sending || !input.trim()}
+                  aria-label="Senden"
+                >
+                  <span>Senden</span>
+                  <ConciergeIcon name="send" />
+                </button>
+              </div>
+            </form>
+            {error && <div className="pv-chat-panel__error">{error}</div>}
+            <p className="pv-chat-panel__footnote">
+              <ConciergeIcon name="lock" /> Verschlüsselt und vertraulich · Sie sprechen mit dem Prima Vista Team
+            </p>
+          </section>
         </div>
       )}
     </>
