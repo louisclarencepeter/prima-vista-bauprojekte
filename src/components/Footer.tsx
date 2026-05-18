@@ -149,7 +149,6 @@ export default function Footer() {
           <div className="pv-footer__legal">
             <Link to="/impressum">Impressum</Link>
             <Link to="/datenschutz">Datenschutz</Link>
-            <a href="#">AGB</a>
           </div>
         </div>
       </div>

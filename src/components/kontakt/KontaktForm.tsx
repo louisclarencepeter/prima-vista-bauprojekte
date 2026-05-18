@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from 'react';
+import { Link } from 'react-router-dom';
 import {
   CONTACT_ART_OPTIONS,
   INITIAL_CONTACT_FORM,
@@ -105,7 +106,7 @@ export default function KontaktForm() {
             onChange={(e) => update('dsgvo', e.target.checked)}
           />
           <label htmlFor="dsgvo">
-            Ich bin damit einverstanden, dass meine Angaben zur Beantwortung verwendet werden. Eine Weitergabe an Dritte erfolgt nicht. <a href="#">Datenschutz</a>.
+            Ich bin damit einverstanden, dass meine Angaben zur Beantwortung verwendet werden. Eine Weitergabe an Dritte erfolgt nicht. <Link to="/datenschutz">Datenschutz</Link>.
           </label>
         </div>
 

@@ -30,8 +30,8 @@ const LEGAL_SECTIONS = [
       <p>
         Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
         {' '}
-        <a href="https://ec.europa.org/consumers/odr/" target="_blank" rel="noopener noreferrer">
-          https://ec.europa.org/consumers/odr/
+        <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">
+          https://ec.europa.eu/consumers/odr/
         </a>
         . Unsere E-Mail-Adresse finden Sie oben im Impressum.
       </p>
