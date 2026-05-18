@@ -135,6 +135,17 @@
   border-bottom-right-radius: 4px;
 }
 
+.pv-chat-link {
+  color: var(--pv-copper);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 500;
+}
+
+.pv-chat-link:hover { color: var(--pv-brown-deep); }
+
+.pv-chat-msg--user .pv-chat-link { color: var(--pv-copper-bright); }
+
 .pv-chat-msg__cursor {
   display: inline-block;
   width: 7px;
@@ -268,22 +279,26 @@
 /* ----- Mobile: full-screen takeover ----- */
 @media (max-width: 720px) {
   .pv-chat-panel {
-    inset: 0;
+    top: 0;
     right: 0;
-    bottom: 0;
+    bottom: auto;
     left: 0;
     width: 100%;
     max-width: 100%;
-    max-height: 100%;
-    height: 100dvh;
+    max-height: none;
+    /* Track the visual viewport so the iOS keyboard doesn't shove the
+       panel out of the layout viewport. JS keeps these vars in sync;
+       fall back to 100dvh when JS hasn't set them yet. */
+    height: var(--pv-chat-vv-h, 100dvh);
+    transform: translateY(var(--pv-chat-vv-top, 0));
     border-radius: 0;
     border: 0;
     animation: pv-chat-in-mobile 280ms var(--pv-ease-out);
   }
 
   @keyframes pv-chat-in-mobile {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
   .pv-chat-panel__header {

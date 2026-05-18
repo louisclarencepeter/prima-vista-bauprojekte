@@ -1,5 +1,55 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 import { ChatIcon, CloseIcon } from './icons';
+
+const INTERNAL_PATHS = [
+  '/komplett-pakete',
+  '/gewerke',
+  '/projekte',
+  '/kalkulator',
+  '/blitz-angebot',
+  '/kontakt',
+  '/impressum',
+  '/datenschutz',
+] as const;
+
+const ESCAPED_PATHS = INTERNAL_PATHS.map((p) => p.replace(/[/\-]/g, '\\$&')).join('|');
+const PATH_RE = new RegExp(
+  `(\\*\\*[^*]+\\*\\*|\\((${ESCAPED_PATHS})\\)|(?<![\\w/])(${ESCAPED_PATHS})(?![\\w]))`,
+  'g',
+);
+
+function renderAssistantText(
+  text: string,
+  onLinkClick: () => void,
+): ReactNode[] {
+  const nodes: ReactNode[] = [];
+  let last = 0;
+  let i = 0;
+  for (const m of text.matchAll(PATH_RE)) {
+    const idx = m.index ?? 0;
+    if (idx > last) nodes.push(text.slice(last, idx));
+    const token = m[0];
+    if (token.startsWith('**') && token.endsWith('**')) {
+      nodes.push(<strong key={`b-${i++}`}>{token.slice(2, -2)}</strong>);
+    } else {
+      const path = token.startsWith('(') ? token.slice(1, -1) : token;
+      nodes.push(
+        <Link
+          key={`l-${i++}`}
+          to={path}
+          className="pv-chat-link"
+          onClick={onLinkClick}
+        >
+          {path}
+        </Link>,
+      );
+    }
+    last = idx + token.length;
+  }
+  if (last < text.length) nodes.push(text.slice(last));
+  return nodes;
+}
 
 type Message = {
   id: number;
@@ -56,6 +106,29 @@ export default function Chat() {
   }, [open]);
 
   useEffect(() => () => abortRef.current?.abort(), []);
+
+  // Anchor the mobile panel to the visual viewport so the iOS keyboard
+  // doesn't push it half off-screen. Layout viewport stays put when the
+  // keyboard opens — we follow visualViewport.height + offsetTop instead.
+  useEffect(() => {
+    if (!open) return;
+    const vv = window.visualViewport;
+    if (!vv) return;
+    const root = document.documentElement;
+    const update = () => {
+      root.style.setProperty('--pv-chat-vv-h', `${vv.height}px`);
+      root.style.setProperty('--pv-chat-vv-top', `${vv.offsetTop}px`);
+    };
+    update();
+    vv.addEventListener('resize', update);
+    vv.addEventListener('scroll', update);
+    return () => {
+      vv.removeEventListener('resize', update);
+      vv.removeEventListener('scroll', update);
+      root.style.removeProperty('--pv-chat-vv-h');
+      root.style.removeProperty('--pv-chat-vv-top');
+    };
+  }, [open]);
 
   const send = useCallback(
     async (text: string) => {
@@ -210,7 +283,13 @@ export default function Chat() {
                 className={`pv-chat-msg pv-chat-msg--${m.role}`}
               >
                 <div className="pv-chat-msg__bubble">
-                  {m.content || <span className="pv-chat-msg__cursor" aria-hidden="true" />}
+                  {m.content ? (
+                    m.role === 'assistant'
+                      ? renderAssistantText(m.content, () => setOpen(false))
+                      : m.content
+                  ) : (
+                    <span className="pv-chat-msg__cursor" aria-hidden="true" />
+                  )}
                 </div>
               </div>
             ))}
