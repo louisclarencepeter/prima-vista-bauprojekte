@@ -38,9 +38,9 @@ export default function GoogleReviews({ fallback }: Props) {
     };
   }, []);
 
-  const pick = (data?.reviews ?? []).find((r) => r.text && r.rating >= 4);
+  const reviews = data?.reviews?.filter((r) => r.text && r.rating >= 4) ?? [];
 
-  if (error || !pick) {
+  if (error || reviews.length === 0) {
     return (
       <section className="testimonial">
         <div className="testimonial__inner reveal reveal--scale">
@@ -56,23 +56,33 @@ export default function GoogleReviews({ fallback }: Props) {
     );
   }
 
-  const meta = [
-    `${pick.rating} / 5 Sterne`,
-    pick.relativeTime,
-    'Google Bewertung',
-  ]
-    .filter(Boolean)
-    .join(' · ');
-
   return (
     <section className="testimonial">
       <div className="testimonial__inner reveal reveal--scale">
-        <div className="quote-mark">&ldquo;</div>
-        <blockquote>{pick.text}</blockquote>
-        <div className="testimonial__attr">
-          <span className="name">{pick.author}</span>
-          <span className="sep">·</span>
-          <span>{meta}</span>
+        <div className="testimonial__grid" style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gap: '48px',
+          textAlign: 'left'
+        }}>
+          {reviews.slice(0, 3).map((r, i) => {
+            const meta = [
+              `${r.rating} / 5 Sterne`,
+              r.relativeTime,
+              'Google Bewertung',
+            ].filter(Boolean).join(' · ');
+
+            return (
+              <div key={i} className="testimonial__item">
+                <div className="quote-mark" style={{ fontSize: '80px', marginBottom: '16px', textAlign: 'left' }}>&ldquo;</div>
+                <blockquote style={{ fontSize: '20px', marginBottom: '24px', textAlign: 'left' }}>{r.text}</blockquote>
+                <div className="testimonial__attr" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '4px' }}>
+                  <span className="name">{r.author}</span>
+                  <span>{meta}</span>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
