@@ -1,4 +1,5 @@
 import type { LightboxItem } from '../components/Lightbox';
+import type { TradeKey } from './gewerke';
 
 export const HERO_IMAGES = [
   '/assets/img/proj-moroccan-dining-wide.jpg',
@@ -11,15 +12,15 @@ export const HOME_TRADES = [
   'Elektro', 'Heizung', 'Fassade', 'Maler & Lack', 'Treppen', 'Trockenbau',
 ];
 
-export const TRADES_PREVIEW: Array<{ num: string; name: string; lead: string; detailTo?: string }> = [
-  { num: '01', name: 'Bäder & Sanitär', lead: 'Wanne, Dusche, WC', detailTo: '/badsanierung' },
-  { num: '02', name: 'Küchen & Möbelbau', lead: 'Schreinerei', detailTo: '/kuechen-moebelbau' },
-  { num: '03', name: 'Böden & Beläge', lead: 'Parkett, Stein, Vinyl', detailTo: '/boeden-belaege' },
-  { num: '04', name: 'Elektroinstallation', lead: 'Strom, Licht, KNX', detailTo: '/elektroinstallation' },
-  { num: '05', name: 'Heizungsbau', lead: 'Wärmepumpe, FBH' },
-  { num: '06', name: 'Maler & Lackierer', lead: 'Farben, Tapeten', detailTo: '/maler-lackierer' },
-  { num: '07', name: 'Fassadensanierung', lead: 'Putz, WDVS', detailTo: '/fassadensanierung' },
-  { num: '08', name: 'Trockenbau', lead: 'Wände, Decken', detailTo: '/trockenbau' },
+export const TRADES_PREVIEW: Array<{ num: string; name: string; lead: string; key: TradeKey; detailTo?: string }> = [
+  { num: '01', name: 'Bäder & Sanitär', lead: 'Wanne, Dusche, WC', key: 'bad', detailTo: '/badsanierung' },
+  { num: '02', name: 'Küchen & Möbelbau', lead: 'Schreinerei', key: 'kueche', detailTo: '/kuechen-moebelbau' },
+  { num: '03', name: 'Böden & Beläge', lead: 'Parkett, Stein, Vinyl', key: 'boden', detailTo: '/boeden-belaege' },
+  { num: '04', name: 'Elektroinstallation', lead: 'Strom, Licht, KNX', key: 'elektro', detailTo: '/elektroinstallation' },
+  { num: '05', name: 'Heizungsbau', lead: 'Wärmepumpe, FBH', key: 'heizung', detailTo: '/heizmethoden' },
+  { num: '06', name: 'Maler & Lackierer', lead: 'Farben, Tapeten', key: 'maler', detailTo: '/maler-lackierer' },
+  { num: '07', name: 'Fassadensanierung', lead: 'Putz, WDVS', key: 'fassade', detailTo: '/fassadensanierung' },
+  { num: '08', name: 'Trockenbau', lead: 'Wände, Decken', key: 'trockenbau', detailTo: '/trockenbau' },
 ];
 
 export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { gridClass: string; year: string; alt: string; revealDelay?: number }> = [

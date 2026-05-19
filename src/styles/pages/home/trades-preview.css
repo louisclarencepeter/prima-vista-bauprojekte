@@ -44,18 +44,13 @@
 }
 .trade-chip {
   position: relative;
-  min-height: 120px;
   border-bottom: 1px solid rgba(20, 19, 18, .12);
   border-right: 1px solid rgba(20, 19, 18, .12);
   transition: background 200ms;
 }
 .trade-chip__link {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto auto;
-  column-gap: 16px;
-  row-gap: 8px;
-  padding: 28px 24px 32px;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   color: inherit;
@@ -63,6 +58,31 @@
 }
 .trade-chip:nth-child(4n) { border-right: none; }
 .trade-chip:hover { background: var(--pv-cream-paper); }
+.trade-chip:hover .trade-chip__thumb img { transform: scale(1.04); }
+.trade-chip__thumb {
+  display: block;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: rgba(20, 19, 18, .06);
+}
+.trade-chip__thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+.trade-chip__body {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto auto;
+  column-gap: 16px;
+  row-gap: 8px;
+  padding: 22px 22px 26px;
+}
 .trade-chip__num {
   font-family: var(--pv-font-mono);
   font-size: 11px;

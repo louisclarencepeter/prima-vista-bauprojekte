@@ -1,9 +1,10 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import PageIntro from '../components/common/PageIntro';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import MapBand from '../components/projekte/MapBand';
 import ProjectFilter from '../components/projekte/ProjectFilter';
-import ProjectGallery from '../components/projekte/ProjectGallery';
+import ProjectGallery, { projectAnchorId } from '../components/projekte/ProjectGallery';
 import { useLightbox, type LightboxItem } from '../components/Lightbox';
 import { PROJECTS, type Project, type ProjectTag } from '../data/projects';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -12,7 +13,9 @@ import '../styles/pages/projekte.css';
 export default function Projekte() {
   usePageTitle('Projekte & Referenzen');
   const { open } = useLightbox();
+  const { hash } = useLocation();
   const [filter, setFilter] = useState<'all' | ProjectTag>('all');
+  const openedHashRef = useRef<string | null>(null);
 
   const visible = useMemo(
     () => PROJECTS.map((p) => ({ p, match: filter === 'all' || p.tags.includes(filter) })),
@@ -21,6 +24,18 @@ export default function Projekte() {
   const shownProjects = visible.filter((v) => v.match).map((v) => v.p);
   const lightboxItems: LightboxItem[] = shownProjects.map((p) => ({ src: p.src, title: p.title }));
   const indexInShown = (p: Project) => shownProjects.indexOf(p);
+
+  useEffect(() => {
+    const target = hash.replace(/^#/, '');
+    if (!target || openedHashRef.current === target) return;
+    const idx = PROJECTS.findIndex((p) => projectAnchorId(p.src) === target);
+    if (idx === -1) return;
+    openedHashRef.current = target;
+    setFilter('all');
+    const allItems: LightboxItem[] = PROJECTS.map((p) => ({ src: p.src, title: p.title }));
+    document.getElementById(target)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    open(allItems, idx);
+  }, [hash, open]);
 
   return (
     <>

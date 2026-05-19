@@ -1,11 +1,8 @@
 import { Link } from 'react-router-dom';
-import { useLightbox, type LightboxItem } from '../Lightbox';
 import { FEATURED_HOME_PROJECTS, FEATURED_HOME_TITLES } from '../../data/home';
+import { projectAnchorId } from '../projekte/ProjectGallery';
 
 export default function FeaturedProjects() {
-  const { open } = useLightbox();
-  const items: LightboxItem[] = FEATURED_HOME_PROJECTS.map((p) => ({ src: p.src, title: p.title }));
-
   return (
     <section className="featured">
       <div className="featured__head">
@@ -23,23 +20,19 @@ export default function FeaturedProjects() {
       </div>
 
       <div className="featured__grid">
-        {FEATURED_HOME_PROJECTS.map((p, i) => (
-          <a
+        {FEATURED_HOME_PROJECTS.map((p) => (
+          <Link
             key={p.src}
             className={`proj ${p.gridClass} reveal`}
             data-delay={p.revealDelay}
-            href={p.src}
-            onClick={(e) => {
-              e.preventDefault();
-              open(items, i);
-            }}
+            to={`/projekte#${projectAnchorId(p.src)}`}
           >
             <img src={p.src} alt={p.alt} />
             <div className="proj__cap">
               <span className="ttl">{FEATURED_HOME_TITLES[p.gridClass]}</span>
               <span className="yr">{p.year}</span>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
 

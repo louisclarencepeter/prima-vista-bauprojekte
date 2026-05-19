@@ -1,6 +1,11 @@
 import type { LightboxItem } from '../Lightbox';
 import type { Project } from '../../data/projects';
 
+export function projectAnchorId(src: string): string {
+  const file = src.split('/').pop() ?? src;
+  return `proj-${file.replace(/\.[^.]+$/, '')}`;
+}
+
 type VisibleProject = {
   p: Project;
   match: boolean;
@@ -25,6 +30,7 @@ export default function ProjectGallery({
         {visible.map(({ p, match }) => (
           <a
             key={p.num}
+            id={projectAnchorId(p.src)}
             className={`g-card reveal${match ? '' : ' is-hidden'}`}
             data-size={p.size}
             data-delay={p.revealDelay}

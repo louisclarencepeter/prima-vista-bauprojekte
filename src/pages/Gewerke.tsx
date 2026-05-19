@@ -22,10 +22,10 @@ export default function Gewerke() {
         backgroundImage="/assets/img/proj-spa-bath.jpg"
         crumbNumber="03"
         crumbLabel="Gewerke · Bauleistungen"
-        title={<>Zwanzig<br />Gewerke,<br /><em>eine Hand.</em></>}
+        title={<>Achtzehn<br />Gewerke,<br /><em>eine Hand.</em></>}
         lede="Entdecken Sie individuelle Produkte, Baumaterialien und Komplettpakete für alle Gewerke — koordiniert durch unsere Bauleitung in Frankfurt und Emmenbrücke."
         meta={[
-          { label: 'Auswahl', value: '20 Gewerke' },
+          { label: 'Auswahl', value: '18 Gewerke' },
           { label: 'Koordination', value: 'Inhouse-Bauleitung' },
           { label: 'Materialien', value: 'Inklusive Festpreis' },
           { label: 'Garantie', value: '5 Jahre' },

@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import Counter from '../components/Counter';
 import FeaturedProjects from '../components/home/FeaturedProjects';
+import GoogleReviews from '../components/home/GoogleReviews';
 import HomeHero from '../components/home/HomeHero';
 import HomeMarquee from '../components/home/HomeMarquee';
 import { TRADES_PREVIEW } from '../data/home';
+import { PREVIEW_IMAGES } from '../data/gewerke';
 import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/home.css';
 
@@ -254,7 +256,7 @@ export default function Home() {
           <div className="reveal">
             <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;Gewerke</div>
             <h2>
-              Zwanzig Gewerke,<br />
+              Achtzehn Gewerke,<br />
               <em>eine Hand.</em>
             </h2>
           </div>
@@ -266,17 +268,22 @@ export default function Home() {
           {TRADES_PREVIEW.map((t, i) => (
             <li key={t.num} className="trade-chip reveal" data-delay={i % 4 || undefined}>
               <Link className="trade-chip__link" to={t.detailTo ?? '/gewerke'}>
-                <span className="trade-chip__num">{t.num}</span>
-                <span className="trade-chip__name">{t.name}</span>
-                <span className="trade-chip__lead">{t.lead}</span>
-                {t.detailTo ? <span className="trade-chip__more">Kostenrechner öffnen ›</span> : null}
+                <span className="trade-chip__thumb">
+                  <img src={PREVIEW_IMAGES[t.key]} alt="" loading="lazy" />
+                </span>
+                <span className="trade-chip__body">
+                  <span className="trade-chip__num">{t.num}</span>
+                  <span className="trade-chip__name">{t.name}</span>
+                  <span className="trade-chip__lead">{t.lead}</span>
+                  {t.detailTo ? <span className="trade-chip__more">Kostenrechner öffnen ›</span> : null}
+                </span>
               </Link>
             </li>
           ))}
         </ul>
         <div className="trades-preview__more reveal">
           <Link className="btn btn--light" to="/gewerke">
-            Alle 20 Gewerke ansehen <span className="arrow">&gt;</span>
+            Alle 18 Gewerke ansehen <span className="arrow">&gt;</span>
           </Link>
         </div>
       </section>
@@ -367,19 +374,14 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIAL */}
-      <section className="testimonial">
-        <div className="testimonial__inner reveal reveal--scale">
-          <div className="quote-mark">&ldquo;</div>
-          <blockquote>
-            Wir hatten Angst vor der Sanierung — und wurden überrascht: Prima Vista lieferte pünktlich, sauber und so präzise, dass wir <em>schon einen Monat früher</em> einziehen konnten.
-          </blockquote>
-          <div className="testimonial__attr">
-            <span className="name">Familie Brauer</span>
-            <span className="sep">·</span>
-            <span>Komplettsanierung Eigentumswohnung · Sachsenhausen</span>
-          </div>
-        </div>
-      </section>
+      <GoogleReviews
+        fallback={{
+          quote:
+            'Wir hatten Angst vor der Sanierung — und wurden überrascht: Prima Vista lieferte pünktlich, sauber und so präzise, dass wir schon einen Monat früher einziehen konnten.',
+          name: 'Familie Brauer',
+          meta: 'Komplettsanierung Eigentumswohnung · Sachsenhausen',
+        }}
+      />
 
       {/* FINAL CTA */}
       <section className="end-cta">
