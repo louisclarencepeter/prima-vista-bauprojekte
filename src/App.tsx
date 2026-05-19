@@ -8,6 +8,17 @@ import BoedenBelaege from './pages/BoedenBelaege';
 import Elektroinstallation from './pages/Elektroinstallation';
 import Trockenbau from './pages/Trockenbau';
 import MalerLackierer from './pages/MalerLackierer';
+import Fassadensanierung from './pages/Fassadensanierung';
+import AbdichtungKeller from './pages/AbdichtungKeller';
+import Dachsanierung from './pages/Dachsanierung';
+import TreppenGelaender from './pages/TreppenGelaender';
+import GartenAussenanlagen from './pages/GartenAussenanlagen';
+import Barrierefreiheit from './pages/Barrierefreiheit';
+import Fenstertechnik from './pages/Fenstertechnik';
+import RohbauAbbruch from './pages/RohbauAbbruch';
+import TuerenZargen from './pages/TuerenZargen';
+import Sanitaerinstallation from './pages/Sanitaerinstallation';
+import Zaeune from './pages/Zaeune';
 import KomplettPakete from './pages/KomplettPakete';
 import Projekte from './pages/Projekte';
 import Kontakt from './pages/Kontakt';
@@ -38,6 +49,17 @@ export default function App() {
         <Route path="/elektroinstallation" element={<Elektroinstallation />} />
         <Route path="/trockenbau" element={<Trockenbau />} />
         <Route path="/maler-lackierer" element={<MalerLackierer />} />
+        <Route path="/fassadensanierung" element={<Fassadensanierung />} />
+        <Route path="/abdichtung-keller" element={<AbdichtungKeller />} />
+        <Route path="/dachsanierung" element={<Dachsanierung />} />
+        <Route path="/treppen-gelaender" element={<TreppenGelaender />} />
+        <Route path="/garten-aussenanlagen" element={<GartenAussenanlagen />} />
+        <Route path="/barrierefreiheit" element={<Barrierefreiheit />} />
+        <Route path="/fenstertechnik" element={<Fenstertechnik />} />
+        <Route path="/rohbau-abbruch" element={<RohbauAbbruch />} />
+        <Route path="/tueren-zargen" element={<TuerenZargen />} />
+        <Route path="/sanitaerinstallation" element={<Sanitaerinstallation />} />
+        <Route path="/zaeune" element={<Zaeune />} />
         <Route path="/komplett-pakete" element={<KomplettPakete />} />
         <Route path="/projekte" element={<Projekte />} />
         <Route path="/kontakt" element={<Kontakt />} />

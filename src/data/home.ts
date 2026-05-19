@@ -18,7 +18,7 @@ export const TRADES_PREVIEW: Array<{ num: string; name: string; lead: string; de
   { num: '04', name: 'Elektroinstallation', lead: 'Strom, Licht, KNX', detailTo: '/elektroinstallation' },
   { num: '05', name: 'Heizungsbau', lead: 'Wärmepumpe, FBH' },
   { num: '06', name: 'Maler & Lackierer', lead: 'Farben, Tapeten', detailTo: '/maler-lackierer' },
-  { num: '07', name: 'Fassadensanierung', lead: 'Putz, WDVS' },
+  { num: '07', name: 'Fassadensanierung', lead: 'Putz, WDVS', detailTo: '/fassadensanierung' },
   { num: '08', name: 'Trockenbau', lead: 'Wände, Decken', detailTo: '/trockenbau' },
 ];
 
