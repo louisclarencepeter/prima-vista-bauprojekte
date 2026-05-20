@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
   BLITZ_ART_OPTIONS,
@@ -34,6 +34,16 @@ export default function BlitzForm() {
   const [step, setStep] = useState(handoff ? 2 : 1);
 
   const totalSteps = 5;
+
+  // Auto-grow the Besonderheiten textarea so the full prefilled summary
+  // (and anything the user adds) is visible without internal scrolling.
+  const msgRef = useRef<HTMLTextAreaElement | null>(null);
+  useEffect(() => {
+    const el = msgRef.current;
+    if (!el || step !== 4) return;
+    el.style.height = 'auto';
+    el.style.height = `${el.scrollHeight}px`;
+  }, [step, form.msg]);
 
   function update<K extends keyof BlitzFormState>(key: K, value: BlitzFormState[K]) {
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -216,7 +226,13 @@ export default function BlitzForm() {
             <div className="form-step fade-in">
               <div className="form-field">
                 <label htmlFor="msg">Besonderheiten / Kurzfassung Ihres Vorhabens</label>
-                <textarea id="msg" placeholder="Gibt es Besonderheiten, wie z.B. Denkmalschutz, spezielle Wünsche, oder Herausforderungen? Beschreiben Sie es kurz hier." value={form.msg} onChange={(e) => update('msg', e.target.value)} />
+                <textarea
+                  ref={msgRef}
+                  id="msg"
+                  placeholder="Gibt es Besonderheiten, wie z.B. Denkmalschutz, spezielle Wünsche, oder Herausforderungen? Beschreiben Sie es kurz hier."
+                  value={form.msg}
+                  onChange={(e) => update('msg', e.target.value)}
+                />
               </div>
             </div>
           )}
