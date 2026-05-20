@@ -48,7 +48,16 @@ export default function Header() {
   return (
     <header className={`pv-header${open ? ' is-menu-open' : ''}`}>
       <div className="pv-header__inner">
-        <Link className="pv-logo" to="/" aria-label="Prima Vista — Startseite">
+        <Link
+          className="pv-logo"
+          to="/"
+          aria-label="Prima Vista — Startseite"
+          onClick={() => {
+            if (pathname === '/') {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }}
+        >
           <img src="/assets/img/logo.png" alt="" />
           <span className="pv-logo__txt">
             <span className="pv-logo__name">Prima Vista</span>

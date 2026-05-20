@@ -1,13 +1,23 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ChatIcon, FacebookIcon, InstagramIcon, MailIcon, YoutubeIcon } from './icons';
 
 export default function Footer() {
+  const { pathname } = useLocation();
   return (
     <footer className="pv-footer">
       <div className="pv-footer__inner">
         <div className="pv-footer__grid">
           <div className="pv-footer__brand">
-            <Link className="pv-logo" to="/" aria-label="Prima Vista">
+            <Link
+              className="pv-logo"
+              to="/"
+              aria-label="Prima Vista"
+              onClick={() => {
+                if (pathname === '/') {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+              }}
+            >
               <img src="/assets/img/logo.png" alt="" style={{ filter: 'brightness(1.2)' }} />
               <span className="pv-logo__txt">
                 <span className="pv-logo__name">Prima Vista</span>
