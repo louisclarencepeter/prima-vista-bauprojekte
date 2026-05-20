@@ -65,7 +65,7 @@ export default function GoogleReviews({ fallback }: Props) {
           gap: '48px',
           textAlign: 'left'
         }}>
-          {reviews.slice(0, 3).map((r, i) => {
+          {reviews.slice(0, 4).map((r, i) => {
             const meta = [
               `${r.rating} / 5 Sterne`,
               r.relativeTime,
