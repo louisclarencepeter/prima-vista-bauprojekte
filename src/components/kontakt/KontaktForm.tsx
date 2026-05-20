@@ -55,8 +55,37 @@ export default function KontaktForm() {
     setSent(true);
   }
 
+  if (sent) {
+    const firstName = form.vorname.trim();
+    const email = form.email.trim();
+    return (
+      <div className="kontakt__form-wrap kontakt__form-wrap--success reveal reveal--right" data-delay="1">
+        <div className="kontakt__form-success">
+          <div className="kontakt__form-eyebrow"><span className="rule-red"></span> Gesendet</div>
+          <h3 className="kontakt__form-title">
+            Vielen Dank{firstName && <>, <em>{firstName}</em></>}.
+          </h3>
+          <p className="kontakt__form-success-body">
+            Ihre Anfrage ist bei uns eingegangen. Wir prüfen Ihr Vorhaben und melden uns
+            innerhalb von <strong>24&nbsp;Stunden</strong> bei Ihnen — per E-Mail an{' '}
+            <strong>{email}</strong>{form.tel.trim() && <> oder telefonisch unter <strong>{form.tel.trim()}</strong></>}.
+          </p>
+          <ol className="kontakt__form-success-steps">
+            <li><span className="num">01</span>Wir lesen Ihre Angaben und bereiten erste Fragen vor.</li>
+            <li><span className="num">02</span>Sie erhalten eine schriftliche Antwort oder einen Rückruf.</li>
+            <li><span className="num">03</span>Auf Wunsch vereinbaren wir einen Termin vor Ort.</li>
+          </ol>
+          <div className="kontakt__form-success-actions">
+            <Link className="btn btn--light" to="/">Zur Startseite <span className="arrow">&gt;</span></Link>
+            <Link className="btn btn--light" to="/projekte">Projekte ansehen <span className="arrow">&gt;</span></Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="kontakt__form-wrap reveal reveal--right" data-delay="1" style={sent ? { opacity: 0.7 } : undefined}>
+    <div className="kontakt__form-wrap reveal reveal--right" data-delay="1">
       <div className="kontakt__form-eyebrow"><span className="rule-red"></span> Anfrage senden</div>
       <h3 className="kontakt__form-title">
         Erzählen Sie uns von<br />
@@ -201,8 +230,8 @@ export default function KontaktForm() {
 
         <div className="form-actions">
           <span className="form-actions__note"><span className="dot"></span>Antwort in 24 Std.</span>
-          <button className="btn btn--solid" type="submit" disabled={sent}>
-            {sent ? 'Gesendet ✓' : <>Absenden <span className="arrow">&gt;</span></>}
+          <button className="btn btn--solid" type="submit">
+            Absenden <span className="arrow">&gt;</span>
           </button>
         </div>
       </form>
