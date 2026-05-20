@@ -17,6 +17,28 @@ export default function Footer() {
             <p className="pv-footer__brand-blurb">
               Sanierung &amp; Renovierung aus einer Hand &mdash; für Wohnsitz und Gastronomie, in Frankfurt und Emmenbrücke.
             </p>
+            <div style={{ display: 'flex', gap: '12px', marginTop: '24px' }}>
+              <Link className="pv-footer__contact-icon pv-footer__contact-icon--text" to="/#ueber-uns" title="Über uns" style={{
+                display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '32px', height: '32px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.2)', color: 'inherit', textDecoration: 'none'
+              }}>
+                PV
+              </Link>
+              <a className="pv-footer__contact-icon" href="https://www.instagram.com/primavista.bauprojekte" target="_blank" rel="noopener noreferrer" title="Instagram" style={{
+                display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '32px', height: '32px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.2)', color: 'inherit', textDecoration: 'none'
+              }}>
+                <InstagramIcon />
+              </a>
+              <a className="pv-footer__contact-icon" href="https://www.facebook.com/profile.php?id=61584837772416" target="_blank" rel="noopener noreferrer" title="Facebook" style={{
+                display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '32px', height: '32px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.2)', color: 'inherit', textDecoration: 'none'
+              }}>
+                <FacebookIcon />
+              </a>
+              <a className="pv-footer__contact-icon" href="https://www.youtube.com/@PrimaVistaBauprojekte" target="_blank" rel="noopener noreferrer" title="YouTube" style={{
+                display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '32px', height: '32px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.2)', color: 'inherit', textDecoration: 'none'
+              }}>
+                <YoutubeIcon />
+              </a>
+            </div>
           </div>
           <div>
             <h4>Standorte</h4>
@@ -103,30 +125,6 @@ export default function Footer() {
                 <a className="pv-footer__contact-link" href="mailto:info@primavista-bauprojekte.ch">
                   <span className="pv-footer__contact-icon" aria-hidden="true"><MailIcon /></span>
                   <span>info@primavista-bauprojekte.ch</span>
-                </a>
-              </li>
-              <li>
-                <Link className="pv-footer__contact-link" to="/#ueber-uns">
-                  <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">PV</span>
-                  <span>Über uns</span>
-                </Link>
-              </li>
-              <li>
-                <a className="pv-footer__contact-link" href="https://www.instagram.com/primavista.bauprojekte" target="_blank" rel="noopener noreferrer">
-                  <span className="pv-footer__contact-icon" aria-hidden="true"><InstagramIcon /></span>
-                  <span>Instagram</span>
-                </a>
-              </li>
-              <li>
-                <a className="pv-footer__contact-link" href="https://www.facebook.com/profile.php?id=61584837772416" target="_blank" rel="noopener noreferrer">
-                  <span className="pv-footer__contact-icon" aria-hidden="true"><FacebookIcon /></span>
-                  <span>Facebook</span>
-                </a>
-              </li>
-              <li>
-                <a className="pv-footer__contact-link" href="https://www.youtube.com/@PrimaVistaBauprojekte" target="_blank" rel="noopener noreferrer">
-                  <span className="pv-footer__contact-icon" aria-hidden="true"><YoutubeIcon /></span>
-                  <span>YouTube</span>
                 </a>
               </li>
             </ul>
