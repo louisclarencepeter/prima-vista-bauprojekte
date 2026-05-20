@@ -1,19 +1,37 @@
 import { useState, type FormEvent } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {
   BLITZ_ART_OPTIONS,
   BLITZ_GEWERKE_OPTIONS,
   INITIAL_BLITZ_FORM,
+  formatKalkulatorMessage,
+  mapKalkulatorPicksToBlitzGewerke,
   type BlitzFormState,
+  type KalkulatorHandoff,
 } from '../../data/blitzAngebot';
 
 type BlitzErrors = Partial<Record<keyof BlitzFormState, string>>;
 
+type LocationState = { kalkulator?: KalkulatorHandoff } | null;
+
 export default function BlitzForm() {
-  const [form, setForm] = useState(INITIAL_BLITZ_FORM);
+  const location = useLocation();
+  const handoff = (location.state as LocationState)?.kalkulator ?? null;
+
+  const [form, setForm] = useState<BlitzFormState>(() => {
+    if (!handoff) return INITIAL_BLITZ_FORM;
+    return {
+      ...INITIAL_BLITZ_FORM,
+      art: handoff.kind,
+      groesse: String(handoff.area),
+      gewerke: mapKalkulatorPicksToBlitzGewerke(handoff.picks),
+      msg: formatKalkulatorMessage(handoff),
+    };
+  });
   const [errors, setErrors] = useState<BlitzErrors>({});
   const [sent, setSent] = useState(false);
-  const [step, setStep] = useState(1);
+  // If we came in from the kalkulator, skip the object-type step
+  const [step, setStep] = useState(handoff ? 2 : 1);
 
   const totalSteps = 5;
 
@@ -101,6 +119,19 @@ export default function BlitzForm() {
           <div className="kontakt__form-eyebrow">
             Schritt {step} von {totalSteps}
           </div>
+
+          {handoff && (
+            <div className="blitz-handoff" role="status">
+              <span className="blitz-handoff__eyebrow">
+                <span className="rule-red"></span> Aus dem Kalkulator übernommen
+              </span>
+              <p>
+                <strong>{handoff.kindLabel}</strong> · {handoff.area}&nbsp;m² ·{' '}
+                {handoff.picks.length} {handoff.picks.length === 1 ? 'Gewerk' : 'Gewerke'} ·
+                Vorab-Schätzung € {Math.round(handoff.totalMin / 1000).toLocaleString('de-DE')} – {Math.round(handoff.totalMax / 1000).toLocaleString('de-DE')}&nbsp;Tsd.
+              </p>
+            </div>
+          )}
 
           {step === 1 && (
             <div className="form-step fade-in">

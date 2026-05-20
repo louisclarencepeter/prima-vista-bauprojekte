@@ -235,6 +235,34 @@
 }
 .kontakt__form-title em { color: var(--pv-copper); }
 
+/* ----- Kalkulator → Blitz handoff banner ----- */
+.blitz-handoff {
+  margin: -4px 0 28px;
+  padding: 16px 20px;
+  background: rgba(200, 154, 106, 0.08);
+  border-left: 2px solid var(--pv-copper);
+  border-radius: 2px;
+}
+.blitz-handoff__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--pv-font-display);
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--pv-copper);
+  margin-bottom: 6px;
+}
+.blitz-handoff p {
+  font-family: var(--pv-font-body);
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--pv-ink);
+  margin: 0;
+}
+
 /* ----- Success state ----- */
 .kontakt__form-wrap--success { padding-bottom: 56px; }
 .kontakt__form-success { position: relative; z-index: 1; }

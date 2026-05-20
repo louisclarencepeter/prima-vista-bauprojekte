@@ -60,6 +60,7 @@ export default function GastronomieAusbauEmbed() {
         area={area}
         picked={picked}
         factor={factor}
+        kindLabel={GASTRONOMIE_TYPES.find((t) => t.value === gastronomieType)?.label ?? 'Gastronomie-Ausbau'}
       />
     </div>
   );

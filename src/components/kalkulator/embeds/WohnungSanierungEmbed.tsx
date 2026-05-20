@@ -61,6 +61,7 @@ export default function WohnungSanierungEmbed() {
         area={area}
         picked={picked}
         factor={factor}
+        kindLabel={WOHNUNG_TYPES.find((t) => t.value === wohnungType)?.label ?? 'Wohnungs-Sanierung'}
       />
     </div>
   );

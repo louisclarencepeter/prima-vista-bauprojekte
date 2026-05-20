@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { GASTRONOMIE_GEWERKE, formatTsd } from '../../data/gastronomieAusbau';
+import type { KalkulatorHandoff } from '../../data/blitzAngebot';
 
 type Props = {
   hasPicks: boolean;
@@ -10,6 +11,7 @@ type Props = {
   area: number;
   picked: string[];
   factor: number;
+  kindLabel: string;
 };
 
 export default function GastronomieAusbauResult({
@@ -21,7 +23,25 @@ export default function GastronomieAusbauResult({
   area,
   picked,
   factor,
+  kindLabel,
 }: Props) {
+  const pickedGewerke = GASTRONOMIE_GEWERKE.filter((g) => picked.includes(g.key));
+  const handoff: KalkulatorHandoff | null = hasPicks
+    ? {
+        kind: 'gastro',
+        kindLabel,
+        area,
+        picks: pickedGewerke.map((g) => ({
+          key: g.key,
+          label: g.label,
+          subtotal: g.pricePerM2 * area * factor,
+        })),
+        totalMin,
+        totalMax,
+        totalMid,
+        perM2,
+      }
+    : null;
   return (
     <aside className="kalk-result">
       <div className="kalk-result__sticky">
@@ -63,7 +83,7 @@ export default function GastronomieAusbauResult({
               <span>nach Gewerk</span>
             </div>
             <ul>
-              {GASTRONOMIE_GEWERKE.filter((g) => picked.includes(g.key)).map((g) => {
+              {pickedGewerke.map((g) => {
                 const sub = g.pricePerM2 * area * factor;
                 return (
                   <li key={g.key}>
@@ -82,7 +102,11 @@ export default function GastronomieAusbauResult({
         </p>
 
         <div className="kalk-result__actions">
-          <Link className="btn btn--solid" to="/blitz-angebot">
+          <Link
+            className="btn btn--solid"
+            to="/blitz-angebot"
+            state={handoff ? { kalkulator: handoff } : undefined}
+          >
             Verbindliches Angebot <span className="arrow">&gt;</span>
           </Link>
           <Link className="btn btn--light kalk-result__btn-light" to="/kontakt">

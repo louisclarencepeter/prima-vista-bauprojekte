@@ -62,6 +62,7 @@ export default function HausSanierungEmbed() {
         area={area}
         picked={picked}
         factor={factor}
+        kindLabel={HOUSE_TYPES.find((t) => t.value === houseType)?.label ?? 'Haus-Sanierung'}
       />
     </div>
   );
