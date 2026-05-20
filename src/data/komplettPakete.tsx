@@ -54,7 +54,7 @@ export const PACKAGES: Package[] = [
   {
     num: '03',
     variant: 'ink',
-    photo: '/assets/img/proj-moroccan-dining.jpg',
+    photo: '/assets/img/proj-sushi.jpg',
     alt: 'Gastronomie-Ausbau',
     eyebrow: 'Komplettpaket · Gastronomie',
     detailTo: '/gastronomie-ausbau',
