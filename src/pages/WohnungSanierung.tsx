@@ -85,6 +85,7 @@ export default function WohnungSanierung() {
             area={area}
             picked={picked}
             factor={factor}
+            kindLabel={WOHNUNG_TYPES.find((t) => t.value === wohnungType)?.label ?? 'Wohnungs-Sanierung'}
           />
         </div>
       </section>
