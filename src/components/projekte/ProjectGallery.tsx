@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import type { LightboxItem } from '../Lightbox';
 import type { Project } from '../../data/projects';
 
@@ -28,25 +29,38 @@ export default function ProjectGallery({
     <section className="gallery">
       <div className="gallery__grid">
         {visible.map(({ p, match }) => (
-          <a
+          <div
             key={p.num}
             id={projectAnchorId(p.src)}
             className={`g-card reveal${match ? '' : ' is-hidden'}`}
             data-size={p.size}
             data-delay={p.revealDelay}
-            href={p.src}
-            onClick={(e) => {
-              e.preventDefault();
-              if (match) onOpen(lightboxItems, getIndex(p));
-            }}
           >
-            <img src={p.src} alt="" />
+            <a
+              className="g-card__img-link"
+              href={p.src}
+              onClick={(e) => {
+                e.preventDefault();
+                if (match) onOpen(lightboxItems, getIndex(p));
+              }}
+            >
+              <img src={p.src} alt="" />
+            </a>
             <div className="g-card__body">
               <span className="g-card__num">{p.num}</span>
               <h3 className="g-card__ttl">{p.ttl}</h3>
               <span className="g-card__meta">{p.meta}</span>
+              {p.detail && (
+                <Link
+                  className="g-card__more"
+                  to={`/projekte/${p.slug}`}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  Mehr erfahren <span>›</span>
+                </Link>
+              )}
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </section>

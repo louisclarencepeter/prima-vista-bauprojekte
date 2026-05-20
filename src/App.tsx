@@ -21,6 +21,7 @@ import Sanitaerinstallation from './pages/Sanitaerinstallation';
 import Zaeune from './pages/Zaeune';
 import KomplettPakete from './pages/KomplettPakete';
 import Projekte from './pages/Projekte';
+import ProjektDetail from './pages/ProjektDetail';
 import Kontakt from './pages/Kontakt';
 import BlitzAngebot from './pages/BlitzAngebot';
 import Kalkulator from './pages/Kalkulator';
@@ -63,6 +64,7 @@ export default function App() {
         <Route path="/zaeune" element={<Zaeune />} />
         <Route path="/komplett-pakete" element={<KomplettPakete />} />
         <Route path="/projekte" element={<Projekte />} />
+        <Route path="/projekte/:slug" element={<ProjektDetail />} />
         <Route path="/kontakt" element={<Kontakt />} />
         <Route path="/blitz-angebot" element={<BlitzAngebot />} />
         <Route path="/kalkulator" element={<Kalkulator />} />
