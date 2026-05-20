@@ -95,7 +95,7 @@ export default function SaunaofenCalculator({ embedded }: { embedded?: boolean }
         {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
-            <img src="/assets/img/proj-spa-tub.jpg" alt="Wellnessbereich als Referenz für Saunaofen und Ofenplanung" />
+            <img src="/assets/img/proj-spa-tub.jpg" alt="Wellnessbereich als Referenz für Saunaofen und Ofenplanung" loading="lazy" />
             <span>№ 16</span>
           </div>
           <div className="hk-product__copy">

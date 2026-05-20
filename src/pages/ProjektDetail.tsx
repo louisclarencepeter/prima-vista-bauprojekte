@@ -1,4 +1,4 @@
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useMemo } from 'react';
 import { PROJECTS } from '../data/projects';
 import { useLightbox, type LightboxItem } from '../components/Lightbox';
@@ -8,7 +8,6 @@ import '../styles/pages/projekt-detail.css';
 
 export default function ProjektDetail() {
   const { slug } = useParams<{ slug: string }>();
-  const navigate = useNavigate();
   const { open } = useLightbox();
 
   const project = useMemo(() => PROJECTS.find((p) => p.slug === slug), [slug]);

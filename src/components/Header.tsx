@@ -61,7 +61,16 @@ export default function Header() {
               const active = navItemMatches(item, pathname);
               return (
                 <li key={item.to}>
-                  <NavLink to={item.to} end={item.to === '/'} className={active ? 'is-active' : ''}>
+                  <NavLink
+                    to={item.to}
+                    end={item.to === '/'}
+                    className={active ? 'is-active' : ''}
+                    onClick={() => {
+                      if (pathname === item.to || (item.to === '/' && pathname === '/')) {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }
+                    }}
+                  >
                     {item.label}
                   </NavLink>
                 </li>
@@ -121,6 +130,12 @@ export default function Header() {
                   to={item.to}
                   end={item.to === '/'}
                   className={`pv-mobile-menu__link${active ? ' is-active' : ''}`}
+                  onClick={() => {
+                    if (pathname === item.to || (item.to === '/' && pathname === '/')) {
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                      setOpen(false);
+                    }
+                  }}
                 >
                   <span className="pv-mobile-menu__label">{item.label}</span>
                   <span className="pv-mobile-menu__num">{String(i + 1).padStart(2, '0')}</span>

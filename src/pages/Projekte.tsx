@@ -22,7 +22,7 @@ export default function Projekte() {
     [filter],
   );
   const shownProjects = visible.filter((v) => v.match).map((v) => v.p);
-  const lightboxItems: LightboxItem[] = shownProjects.map((p) => ({ src: p.src, title: p.title }));
+  const lightboxItems: LightboxItem[] = shownProjects.map((p) => ({ src: p.src, title: p.title, slug: p.detail ? p.slug : undefined }));
   const indexInShown = (p: Project) => shownProjects.indexOf(p);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export default function Projekte() {
     if (idx === -1) return;
     openedHashRef.current = target;
     setFilter('all');
-    const allItems: LightboxItem[] = PROJECTS.map((p) => ({ src: p.src, title: p.title }));
+    const allItems: LightboxItem[] = PROJECTS.map((p) => ({ src: p.src, title: p.title, slug: p.detail ? p.slug : undefined }));
     document.getElementById(target)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     open(allItems, idx);
   }, [hash, open]);

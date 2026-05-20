@@ -76,7 +76,7 @@ export default function WaermepumpeCalculator({ embedded }: { embedded?: boolean
         {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
-            <img src="/assets/img/photo-haus-exterior.jpg" alt="Modernisiertes Haus als Einsatzort für eine Luft-Wärmepumpe" />
+            <img src="/assets/img/photo-haus-exterior.jpg" alt="Modernisiertes Haus als Einsatzort für eine Luft-Wärmepumpe" loading="lazy" />
             <span>№ 13</span>
           </div>
           <div className="hk-product__copy">

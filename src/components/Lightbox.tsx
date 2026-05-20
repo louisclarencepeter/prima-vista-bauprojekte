@@ -1,7 +1,8 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowLeftIcon, ArrowRightIcon, CloseIcon } from './icons';
 
-export type LightboxItem = { src: string; title?: string };
+export type LightboxItem = { src: string; title?: string; slug?: string };
 
 type LightboxContextValue = {
   open: (items: LightboxItem[], index: number) => void;
@@ -84,12 +85,19 @@ export function LightboxProvider({ children }: { children: ReactNode }) {
           <ArrowRightIcon />
         </button>
         <div className="pv-lightbox__caption">
-          <span className="index">
-            {items.length
-              ? `${String(index + 1).padStart(2, '0')} / ${String(items.length).padStart(2, '0')}`
-              : ''}
-          </span>
-          <span className="title">{current?.title ?? ''}</span>
+          <div className="pv-lightbox__caption-info">
+            <span className="index">
+              {items.length
+                ? `${String(index + 1).padStart(2, '0')} / ${String(items.length).padStart(2, '0')}`
+                : ''}
+            </span>
+            <span className="title">{current?.title ?? ''}</span>
+          </div>
+          {current?.slug && (
+            <Link className="pv-lightbox__more" to={`/projekte/${current.slug}`} onClick={close}>
+              Mehr erfahren <span>›</span>
+            </Link>
+          )}
         </div>
       </div>
     </LightboxContext.Provider>

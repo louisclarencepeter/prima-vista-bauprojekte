@@ -96,7 +96,7 @@ export default function HeizkoerperCalculator({ embedded }: { embedded?: boolean
         {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
-            <img src="/assets/img/photo-bad-prima-vista.jpg" alt="Modernisiertes Bad mit Heizkörper- und Sanitärdetails" />
+            <img src="/assets/img/photo-bad-prima-vista.jpg" alt="Modernisiertes Bad mit Heizkörper- und Sanitärdetails" loading="lazy" />
             <span>№ 10</span>
           </div>
           <div className="hk-product__copy">

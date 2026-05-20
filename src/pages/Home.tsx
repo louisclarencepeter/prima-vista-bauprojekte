@@ -62,7 +62,7 @@ export default function Home() {
         </div>
         <div className="packages__grid">
           <Link className="pkg-card reveal" data-delay="1" to="/haus-sanierung">
-            <img src="/assets/img/photo-haus-exterior.jpg" alt="Haus-Sanierung" />
+            <img src="/assets/img/photo-haus-exterior.jpg" alt="Haus-Sanierung" loading="lazy" />
             <div className="pkg-card__body">
               <span className="pkg-card__num">№ 01 — Komplett</span>
               <h3 className="pkg-card__title">Haus-<br />Sanierung</h3>
@@ -71,7 +71,7 @@ export default function Home() {
             </div>
           </Link>
           <Link className="pkg-card reveal" data-delay="2" to="/wohnung-sanierung">
-            <img src="/assets/img/photo-parkett-altbau.jpg" alt="Wohnung-Sanierung" />
+            <img src="/assets/img/photo-parkett-altbau.jpg" alt="Wohnung-Sanierung" loading="lazy" />
             <div className="pkg-card__body">
               <span className="pkg-card__num">№ 02 — Modular</span>
               <h3 className="pkg-card__title">Wohnung-<br />Sanierung</h3>
@@ -80,7 +80,7 @@ export default function Home() {
             </div>
           </Link>
           <Link className="pkg-card reveal" data-delay="3" to="/komplett-pakete">
-            <img src="/assets/img/proj-moroccan-corner.jpg" alt="Gastronomie-Ausbau" />
+            <img src="/assets/img/proj-moroccan-corner.jpg" alt="Gastronomie-Ausbau" loading="lazy" />
             <div className="pkg-card__body">
               <span className="pkg-card__num">№ 03 — Konzept</span>
               <h3 className="pkg-card__title">Gastronomie-<br />Ausbau</h3>
@@ -302,7 +302,7 @@ export default function Home() {
         <div className="heating__grid">
           <Link className="heat-card reveal" to="/waermepumpe">
             <div className="heat-card__photo">
-              <img src="/assets/img/proj-stairs-concrete.jpg" alt="Luftwärmepumpe" />
+              <img src="/assets/img/proj-stairs-concrete.jpg" alt="Luftwärmepumpe" loading="lazy" />
             </div>
             <div className="heat-card__body">
               <span className="heat-card__num">№ 01</span>
@@ -313,7 +313,7 @@ export default function Home() {
           </Link>
           <Link className="heat-card reveal" data-delay="1" to="/heizstraenge">
             <div className="heat-card__photo">
-              <img src="/assets/img/proj-floor-oak.jpg" alt="Heizungsstränge" />
+              <img src="/assets/img/proj-floor-oak.jpg" alt="Heizungsstränge" loading="lazy" />
             </div>
             <div className="heat-card__body">
               <span className="heat-card__num">№ 02</span>
@@ -324,7 +324,7 @@ export default function Home() {
           </Link>
           <Link className="heat-card reveal" data-delay="2" to="/heizkoerper">
             <div className="heat-card__photo">
-              <img src="/assets/img/proj-spa-corridor.jpg" alt="Heizkörper" />
+              <img src="/assets/img/proj-spa-corridor.jpg" alt="Heizkörper" loading="lazy" />
             </div>
             <div className="heat-card__body">
               <span className="heat-card__num">№ 03</span>
@@ -345,7 +345,7 @@ export default function Home() {
       <section className="founders" id="ueber-uns">
         <div className="founders__inner">
           <div className="founders__photo reveal reveal--left">
-            <img src="/assets/img/founders.jpg" alt="Daniel und Monica — Gründer Prima Vista Bauprojekte" />
+            <img src="/assets/img/founders.jpg" alt="Daniel und Monica — Gründer Prima Vista Bauprojekte" loading="lazy" />
             <div className="founders__photo-label">
               <span>Daniel &amp; Monica — Frankfurt, 2026</span>
             </div>

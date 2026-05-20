@@ -65,7 +65,7 @@ export default function HeizstraengeCalculator({ embedded }: { embedded?: boolea
         {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
-            <img src="/assets/img/photo-parkett-rohbau.jpg" alt="Rohbau mit vorbereiteter Leitungsführung" />
+            <img src="/assets/img/photo-parkett-rohbau.jpg" alt="Rohbau mit vorbereiteter Leitungsführung" loading="lazy" />
             <span>№ 11</span>
           </div>
           <div className="hk-product__copy">

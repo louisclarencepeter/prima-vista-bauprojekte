@@ -96,7 +96,7 @@ export default function FussbodenheizungCalculator({ embedded }: { embedded?: bo
         {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
-            <img src="/assets/img/proj-floor-oak.jpg" alt="Holzboden als Oberfläche für Fußbodenheizung" />
+            <img src="/assets/img/proj-floor-oak.jpg" alt="Holzboden als Oberfläche für Fußbodenheizung" loading="lazy" />
             <span>№ 12</span>
           </div>
           <div className="hk-product__copy">

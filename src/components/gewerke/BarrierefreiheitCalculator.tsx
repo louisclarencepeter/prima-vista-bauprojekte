@@ -69,7 +69,7 @@ export default function BarrierefreiheitCalculator({ embedded }: { embedded?: bo
         {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
-            <img src={variant.image} alt={variant.title} />
+            <img src={variant.image} alt={variant.title} loading="lazy" />
             <span>№ {variant.num}</span>
           </div>
           <div className="hk-product__copy">

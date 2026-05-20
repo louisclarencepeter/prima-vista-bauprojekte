@@ -14,7 +14,7 @@ export default function PackageDetailSection({ pkg }: PackageDetailSectionProps)
   const photoInner = (
     <>
       <span className="pkg-detail__photo-num">№&nbsp;{pkg.num}</span>
-      <img src={pkg.photo} alt={pkg.alt} />
+      <img src={pkg.photo} alt={pkg.alt} loading="lazy" />
     </>
   );
   const photo = pkg.detailTo ? (

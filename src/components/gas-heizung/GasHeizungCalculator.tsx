@@ -63,7 +63,7 @@ export default function GasHeizungCalculator({ embedded }: { embedded?: boolean 
         {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
-            <img src="/assets/img/proj-stairs-concrete.jpg" alt="Sanierter Innenbereich als Referenz für Heiztechnik im Bestand" />
+            <img src="/assets/img/proj-stairs-concrete.jpg" alt="Sanierter Innenbereich als Referenz für Heiztechnik im Bestand" loading="lazy" />
             <span>№ 14</span>
           </div>
           <div className="hk-product__copy">

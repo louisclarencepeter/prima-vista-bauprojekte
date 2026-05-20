@@ -82,7 +82,7 @@ export default function PelletofenCalculator({ embedded }: { embedded?: boolean 
         {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
-            <img src="/assets/img/proj-concrete-sofa.jpg" alt="Wohnbereich mit ruhiger Oberfläche als Referenz für Pelletofen-Wärme" />
+            <img src="/assets/img/proj-concrete-sofa.jpg" alt="Wohnbereich mit ruhiger Oberfläche als Referenz für Pelletofen-Wärme" loading="lazy" />
             <span>№ 15</span>
           </div>
           <div className="hk-product__copy">
