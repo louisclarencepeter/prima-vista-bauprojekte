@@ -2,6 +2,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useMemo } from 'react';
 import { PROJECTS } from '../data/projects';
 import { useLightbox, type LightboxItem } from '../components/Lightbox';
+import { projectAnchorId } from '../components/projekte/ProjectGallery';
 import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/projekt-detail.css';
 
@@ -42,17 +43,9 @@ export default function ProjektDetail() {
       <section className="pd-hero">
         <div className="pd-hero__bg" style={{ backgroundImage: `url(${detail.heroImg})` }} />
         <div className="pd-hero__content">
-          <button
-            className="pd-hero__back"
-            onClick={() => {
-              const hasInternalHistory = (window.history.state?.idx ?? 0) > 0;
-              if (hasInternalHistory) navigate(-1);
-              else navigate('/projekte');
-            }}
-            type="button"
-          >
+          <Link className="pd-hero__back" to="/projekte" state={{ targetId: projectAnchorId(project.src) }}>
             ← Alle Projekte
-          </button>
+          </Link>
           <div className="pd-hero__text">
             <span className="pd-hero__num">{project.num}</span>
             <h1 className="pd-hero__headline">{detail.headline}</h1>

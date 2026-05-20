@@ -24,7 +24,7 @@ function useIsDesktop() {
 }
 
 function ScrollToTop() {
-  const { hash, pathname } = useLocation();
+  const { hash, pathname, state } = useLocation();
 
   useEffect(() => {
     if (hash) {
@@ -35,8 +35,36 @@ function ScrollToTop() {
       return () => window.cancelAnimationFrame(frame);
     }
 
+    if (state && state.targetId) {
+      const frame = window.requestAnimationFrame(() => {
+        const target = document.getElementById(state.targetId);
+        if (target) {
+          // Force all reveal elements to be visible instantly to prevent a sluggish feeling
+          document.querySelectorAll('.reveal, .reveal-group').forEach((el) => {
+            const htmlEl = el as HTMLElement;
+            htmlEl.style.transition = 'none';
+            htmlEl.style.animation = 'none';
+            htmlEl.classList.add('is-in');
+          });
+          target.scrollIntoView({ block: 'center', behavior: 'instant' as ScrollBehavior });
+          
+          // Cleanup inline styles after a moment so future reveals work
+          setTimeout(() => {
+            document.querySelectorAll('.reveal, .reveal-group').forEach((el) => {
+              const htmlEl = el as HTMLElement;
+              htmlEl.style.transition = '';
+              htmlEl.style.animation = '';
+            });
+          }, 50);
+        } else {
+          window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+        }
+      });
+      return () => window.cancelAnimationFrame(frame);
+    }
+
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
-  }, [hash, pathname]);
+  }, [hash, pathname, state]);
 
   return null;
 }

@@ -44,7 +44,7 @@ export default function ProjectGallery({
                 if (match) onOpen(lightboxItems, getIndex(p));
               }}
             >
-              <img src={p.src} alt="" />
+              <img src={p.src} alt="" loading="lazy" />
             </a>
             <div className="g-card__body">
               <span className="g-card__num">{p.num}</span>
