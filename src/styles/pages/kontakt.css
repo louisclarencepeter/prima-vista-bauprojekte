@@ -365,6 +365,14 @@
   color: var(--pv-text-on-light-muted);
 }
 .form-check label a { color: var(--pv-copper); }
+.form-check.is-invalid input { outline: 2px solid var(--pv-red); outline-offset: 2px; border-radius: 2px; }
+.form-check.is-invalid label { color: var(--pv-red); }
+.form-field__hint {
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  opacity: 0.6;
+  margin-left: 4px;
+}
 
 .form-actions {
   display: flex;
