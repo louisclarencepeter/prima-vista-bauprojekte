@@ -94,8 +94,25 @@ export function useReveal() {
       document.querySelectorAll<HTMLElement>('.reveal:not(.is-in), .reveal-group:not(.is-in)').forEach((el) => io.observe(el));
     };
 
+    // Anything currently inside the viewport at this moment should be revealed
+    // immediately instead of waiting for the (async) IO callback. Without this,
+    // elements that are already on screen at mount time can stay invisible for
+    // a few frames — and in StrictMode dev the first IO is disconnected before
+    // its callback fires, so an above-the-fold .g-card can stay clipped.
+    const revealIfVisible = () => {
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      document.querySelectorAll<HTMLElement>('.reveal:not(.is-in), .reveal-group:not(.is-in)').forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < viewportHeight && rect.bottom > 0) {
+          el.classList.add('is-in');
+          io.unobserve(el);
+        }
+      });
+    };
+
     autoTag();
     observeAll();
+    revealIfVisible();
 
     let scheduled = false;
     const mo = new MutationObserver(() => {
