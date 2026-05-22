@@ -1,6 +1,7 @@
 export type TradeKey =
   | 'bad' | 'kueche' | 'fassade' | 'dach' | 'elektro' | 'boden'
-  | 'treppen' | 'heizung' | 'abdichtung' | 'maler' | 'trockenbau' | 'sanitaer' | 'rohbau' | 'tueren' | 'zaun';
+  | 'treppen' | 'heizung' | 'abdichtung' | 'maler' | 'trockenbau' | 'sanitaer' | 'rohbau' | 'tueren' | 'zaun'
+  | 'garten' | 'barrierefreiheit' | 'fenster';
 
 export type TradeRow = {
   num: string;
@@ -22,21 +23,24 @@ export type FeaturedTrade = {
 };
 
 export const PREVIEW_IMAGES: Record<TradeKey, string> = {
-  bad: '/assets/img/photo-bad-prima-vista.jpg',
+  bad: '/assets/img/proj-bath-double.jpg',
   kueche: '/assets/img/proj-kitchen-oak.jpg',
   fassade: '/assets/img/photo-haus-exterior.jpg',
   dach: '/assets/img/photo-altbausanierung.jpg',
   elektro: '/assets/img/photo-office-light.jpg',
   boden: '/assets/img/photo-parkett-altbau.jpg',
   treppen: '/assets/img/proj-stairs-concrete.jpg',
-  heizung: '/assets/img/photo-haus-exterior.jpg',
+  heizung: '/assets/img/proj-floor-oak.jpg',
   abdichtung: '/assets/img/proj-spa-corridor.jpg',
   maler: '/assets/img/proj-paint-swatches.jpg',
-  trockenbau: '/assets/img/photo-parkett-rohbau.jpg',
-  sanitaer: '/assets/img/photo-bad-prima-vista.jpg',
+  trockenbau: '/assets/img/proj-concrete-corner.jpg',
+  sanitaer: '/assets/img/proj-spa-tub.jpg',
   rohbau: '/assets/img/photo-parkett-rohbau.jpg',
   tueren: '/assets/img/proj-lobby-tree.jpg',
-  zaun: '/assets/img/photo-haus-exterior.jpg',
+  zaun: '/assets/img/proj-concrete-sofa-tall.jpg',
+  garten: '/assets/img/proj-moroccan-corner.jpg',
+  barrierefreiheit: '/assets/img/proj-bath-stone.jpg',
+  fenster: '/assets/img/proj-lobby-tree-wide.jpg',
 };
 
 export const TRADES: TradeRow[] = [
@@ -52,9 +56,9 @@ export const TRADES: TradeRow[] = [
   { num: '10', name: 'Dachsanierung', lead: 'Eindeckung, Dämmung', key: 'dach', detailTo: '/dachsanierung' },
   { num: '11', name: 'Abdichtung & Keller', lead: 'Feuchtigkeit', key: 'abdichtung', detailTo: '/abdichtung-keller' },
   { num: '12', name: 'Treppen & Geländer', lead: 'Holz, Beton, Stahl', key: 'treppen', detailTo: '/treppen-gelaender' },
-  { num: '13', name: 'Garten & Außenanlagen', lead: 'Terrasse, Wege', key: 'fassade', detailTo: '/garten-aussenanlagen' },
-  { num: '14', name: 'Barrierefreiheit', lead: 'Bad, Dusche, WC', key: 'bad', detailTo: '/barrierefreiheit' },
-  { num: '15', name: 'Fenstertechnik', lead: 'Fenster, Türen, Sonnenschutz', key: 'elektro', detailTo: '/fenstertechnik' },
+  { num: '13', name: 'Garten & Außenanlagen', lead: 'Terrasse, Wege', key: 'garten', detailTo: '/garten-aussenanlagen' },
+  { num: '14', name: 'Barrierefreiheit', lead: 'Bad, Dusche, WC', key: 'barrierefreiheit', detailTo: '/barrierefreiheit' },
+  { num: '15', name: 'Fenstertechnik', lead: 'Fenster, Türen, Sonnenschutz', key: 'fenster', detailTo: '/fenstertechnik' },
   { num: '16', name: 'Rohbau & Abbruch', lead: 'Fundament, Mauerwerk, Decken', key: 'rohbau', detailTo: '/rohbau-abbruch' },
   { num: '17', name: 'Türen & Zargen', lead: 'Innen, Haus, Schiebe', key: 'tueren', detailTo: '/tueren-zargen' },
   { num: '18', name: 'Zäune & Tore', lead: 'Doppelstab, Holz, Sichtschutz', key: 'zaun', detailTo: '/zaeune' },
