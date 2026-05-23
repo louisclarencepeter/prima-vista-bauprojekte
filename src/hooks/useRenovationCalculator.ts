@@ -1,21 +1,21 @@
 import { useEffect, useMemo, useReducer } from 'react';
-import {
-  RENOVATION_CATEGORIES,
-  RENOVATION_DEFAULT_AREA,
-  RENOVATION_MIN_AREA,
-  RENOVATION_VAT_RATE,
-  createRenovationProducts,
-  type RenovationProduct,
-  type RenovationProductAlternative,
-} from '../data/renovationCalculator';
+import { RENOVATION_PACKAGES, getRenovationPackage } from '../data/calculator/packages';
+import { computeQuantity, clampQuantity } from '../data/calculator/engine';
+import type { RenovationProduct, RenovationProductAlternative } from '../data/calculator/types';
+
+export const RENOVATION_VAT_RATE = 0.19;
+export const RENOVATION_MIN_AREA = 10;
 
 export type RenovationCalculatorState = {
+  packageId: string;
   livingArea: number;
+  floorCount: number;
   rows: RenovationProduct[];
   collapsed: Record<string, boolean>;
 };
 
 type RenovationCalculatorAction =
+  | { type: 'switchPackage'; packageId: string }
   | { type: 'setArea'; value: number }
   | { type: 'toggleRow'; id: string }
   | { type: 'updateQuantity'; id: string; value: number }
@@ -28,36 +28,27 @@ type RenovationCalculatorAction =
 
 type PersistedState = Partial<Pick<RenovationCalculatorState, 'livingArea' | 'rows' | 'collapsed'>>;
 
-const STORAGE_KEY = 'prima-vista-renovation-calculator-v1';
+const getStorageKey = (packageId: string) => `prima-vista-renovation-calculator-modular-${packageId}`;
 
-function clampQuantity(value: number, min: number): number {
-  if (!Number.isFinite(value)) return min;
-  return Math.max(min, value);
-}
-
-function scaleQuantity(row: RenovationProduct, livingArea: number): number {
-  if (!row.scalable) return row.quantity;
-
-  const raw = row.scalingFactor > 0
-    ? livingArea * row.scalingFactor
-    : row.baseQuantity * (livingArea / RENOVATION_DEFAULT_AREA);
-  const stepped = Math.round(raw / row.quantityStep) * row.quantityStep;
-
-  return clampQuantity(stepped, row.minQuantity);
-}
-
-function createInitialState(): RenovationCalculatorState {
-  const collapsed = RENOVATION_CATEGORIES.reduce<Record<string, boolean>>((acc, category) => {
-    acc[category.id] = false;
+function createInitialState(packageId: string): RenovationCalculatorState {
+  const pkg = getRenovationPackage(packageId) || RENOVATION_PACKAGES[0];
+  const collapsed = pkg.categories.reduce<Record<string, boolean>>((acc, category) => {
+    acc[category.id] = Boolean(category.collapsedByDefault);
     category.subsections.forEach((subsection) => {
       if (subsection.collapsedByDefault) acc[`${category.id}:${subsection.id}`] = true;
     });
     return acc;
   }, {});
 
+  const rows = pkg.categories.flatMap(category => 
+    category.subsections.flatMap(subsection => subsection.products)
+  );
+
   return {
-    livingArea: RENOVATION_DEFAULT_AREA,
-    rows: createRenovationProducts(),
+    packageId: pkg.id,
+    livingArea: pkg.defaultArea,
+    floorCount: pkg.defaultFloorCount,
+    rows,
     collapsed,
   };
 }
@@ -74,12 +65,12 @@ function isValidRow(row: unknown): row is RenovationProduct {
     && typeof maybe.quantity === 'number';
 }
 
-function readPersistedState(): RenovationCalculatorState {
-  const initial = createInitialState();
+function readPersistedState(packageId: string): RenovationCalculatorState {
+  const initial = createInitialState(packageId);
   if (typeof window === 'undefined') return initial;
 
   try {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
+    const raw = window.localStorage.getItem(getStorageKey(packageId));
     if (!raw) return initial;
 
     const saved = JSON.parse(raw) as PersistedState;
@@ -94,6 +85,8 @@ function readPersistedState(): RenovationCalculatorState {
       : initial.collapsed;
 
     return {
+      packageId: initial.packageId,
+      floorCount: initial.floorCount,
       livingArea,
       rows,
       collapsed,
@@ -108,6 +101,9 @@ function renovationReducer(
   action: RenovationCalculatorAction,
 ): RenovationCalculatorState {
   switch (action.type) {
+    case 'switchPackage': {
+      return readPersistedState(action.packageId);
+    }
     case 'setArea': {
       const livingArea = Math.max(0, action.value);
       return {
@@ -115,7 +111,7 @@ function renovationReducer(
         livingArea,
         rows: state.rows.map((row) => ({
           ...row,
-          quantity: scaleQuantity(row, livingArea),
+          quantity: computeQuantity(row, { livingArea, floorCount: state.floorCount }),
         })),
       };
     }
@@ -209,20 +205,26 @@ function renovationReducer(
       };
 
     case 'reset':
-      return createInitialState();
+      return createInitialState(state.packageId);
 
     default:
       return state;
   }
 }
 
-export function useRenovationCalculator() {
-  const [state, dispatch] = useReducer(renovationReducer, undefined, readPersistedState);
+export function useRenovationCalculator(packageId: string = '1e') {
+  const [state, dispatch] = useReducer(renovationReducer, undefined, () => readPersistedState(packageId));
+
+  useEffect(() => {
+    if (state.packageId !== packageId) {
+      dispatch({ type: 'switchPackage', packageId });
+    }
+  }, [packageId, state.packageId]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
     try {
-      window.localStorage?.setItem(STORAGE_KEY, JSON.stringify(state));
+      window.localStorage?.setItem(getStorageKey(state.packageId), JSON.stringify(state));
     } catch {
       // The calculator still works when storage is unavailable.
     }
@@ -246,8 +248,9 @@ export function useRenovationCalculator() {
     };
   }, [state.livingArea, state.rows]);
 
-  const rowsByCategory = useMemo(() => (
-    RENOVATION_CATEGORIES.map((category) => ({
+  const rowsByCategory = useMemo(() => {
+    const pkg = getRenovationPackage(state.packageId) || RENOVATION_PACKAGES[0];
+    return pkg.categories.map((category) => ({
       ...category,
       subsections: category.subsections.map((subsection) => ({
         ...subsection,
@@ -255,8 +258,8 @@ export function useRenovationCalculator() {
           row.category === category.id && row.subcategory === subsection.id
         )),
       })),
-    }))
-  ), [state.rows]);
+    }));
+  }, [state.rows, state.packageId]);
 
   return {
     state,

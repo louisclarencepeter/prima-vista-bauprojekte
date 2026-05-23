@@ -192,6 +192,7 @@
   /* Layout */
   --pv-container:        1280px;
   --pv-container-narrow:  960px;
+  --pv-header-height:      88px;
   --pv-gutter:           48px;
 }
 

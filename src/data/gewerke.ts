@@ -1,7 +1,7 @@
 export type TradeKey =
   | 'bad' | 'kueche' | 'fassade' | 'dach' | 'elektro' | 'boden'
   | 'treppen' | 'heizung' | 'abdichtung' | 'maler' | 'trockenbau' | 'sanitaer' | 'rohbau' | 'tueren' | 'zaun'
-  | 'garten' | 'barrierefreiheit' | 'fenster';
+  | 'garten' | 'barrierefreiheit' | 'fenster' | 'thermen';
 
 export type TradeRow = {
   num: string;
@@ -41,27 +41,29 @@ export const PREVIEW_IMAGES: Record<TradeKey, string> = {
   garten: '/assets/img/proj-moroccan-corner.jpg',
   barrierefreiheit: '/assets/img/proj-bath-stone.jpg',
   fenster: '/assets/img/proj-lobby-tree-wide.jpg',
+  thermen: '/assets/img/proj-floor-oak.jpg',
 };
 
 export const TRADES: TradeRow[] = [
-  { num: '01', name: 'Bäder & Sanitär', lead: 'Wanne, Dusche, WC', key: 'bad', detailTo: '/badsanierung' },
-  { num: '02', name: 'Küchen & Möbelbau', lead: 'Schreinerei', key: 'kueche', detailTo: '/kuechen-moebelbau' },
-  { num: '03', name: 'Böden & Beläge', lead: 'Parkett, Stein, Vinyl', key: 'boden', detailTo: '/boeden-belaege' },
-  { num: '04', name: 'Elektroinstallation', lead: 'Strom, Licht, KNX', key: 'elektro', detailTo: '/elektroinstallation' },
-  { num: '05', name: 'Sanitärinstallation', lead: 'Wasser, Abwasser', key: 'sanitaer', detailTo: '/sanitaerinstallation' },
-  { num: '06', name: 'Heizungsbau', lead: 'Wärmepumpe, FBH', key: 'heizung', detailTo: '/heizmethoden' },
-  { num: '07', name: 'Trockenbau', lead: 'Wände, Decken', key: 'trockenbau', detailTo: '/trockenbau' },
-  { num: '08', name: 'Maler & Lackierer', lead: 'Farben, Tapeten', key: 'maler', detailTo: '/maler-lackierer' },
-  { num: '09', name: 'Fassadensanierung', lead: 'Putz, WDVS', key: 'fassade', detailTo: '/fassadensanierung' },
-  { num: '10', name: 'Dachsanierung', lead: 'Eindeckung, Dämmung', key: 'dach', detailTo: '/dachsanierung' },
-  { num: '11', name: 'Abdichtung & Keller', lead: 'Feuchtigkeit', key: 'abdichtung', detailTo: '/abdichtung-keller' },
-  { num: '12', name: 'Treppen & Geländer', lead: 'Holz, Beton, Stahl', key: 'treppen', detailTo: '/treppen-gelaender' },
-  { num: '13', name: 'Garten & Außenanlagen', lead: 'Terrasse, Wege', key: 'garten', detailTo: '/garten-aussenanlagen' },
-  { num: '14', name: 'Barrierefreiheit', lead: 'Bad, Dusche, WC', key: 'barrierefreiheit', detailTo: '/barrierefreiheit' },
-  { num: '15', name: 'Fenstertechnik', lead: 'Fenster, Türen, Sonnenschutz', key: 'fenster', detailTo: '/fenstertechnik' },
-  { num: '16', name: 'Rohbau & Abbruch', lead: 'Fundament, Mauerwerk, Decken', key: 'rohbau', detailTo: '/rohbau-abbruch' },
-  { num: '17', name: 'Türen & Zargen', lead: 'Innen, Haus, Schiebe', key: 'tueren', detailTo: '/tueren-zargen' },
-  { num: '18', name: 'Zäune & Tore', lead: 'Doppelstab, Holz, Sichtschutz', key: 'zaun', detailTo: '/zaeune' },
+  { num: '01', name: 'Abdichtungen', lead: 'Feuchtigkeit', key: 'abdichtung', detailTo: '/abdichtung-keller' },
+  { num: '02', name: 'Badsanierung & Gäste WC', lead: 'Wanne, Dusche, WC', key: 'bad', detailTo: '/badsanierung' },
+  { num: '03', name: 'Barrierefreies Bad', lead: 'Bad, Dusche, WC', key: 'barrierefreiheit', detailTo: '/barrierefreiheit' },
+  { num: '04', name: 'Boden & Estrich', lead: 'Parkett, Stein, Vinyl', key: 'boden', detailTo: '/boeden-belaege' },
+  { num: '05', name: 'Dachsanierungen', lead: 'Eindeckung, Dämmung', key: 'dach', detailTo: '/dachsanierung' },
+  { num: '06', name: 'Elektroinstallationen', lead: 'Strom, Licht, KNX', key: 'elektro', detailTo: '/elektroinstallation' },
+  { num: '07', name: 'Fassaden & Dämmung', lead: 'Putz, WDVS', key: 'fassade', detailTo: '/fassadensanierung' },
+  { num: '08', name: 'Fenster & Balkontüren', lead: 'Fenster, Türen, Sonnenschutz', key: 'fenster', detailTo: '/fenstertechnik' },
+  { num: '09', name: 'Garten & Terassen', lead: 'Terrasse, Wege', key: 'garten', detailTo: '/garten-aussenanlagen' },
+  { num: '10', name: 'Heizung & Heizstränge', lead: 'Wärmepumpe, FBH', key: 'heizung', detailTo: '/heizmethoden' },
+  { num: '11', name: 'Küchen & Möbelbau', lead: 'Schreinerei', key: 'kueche', detailTo: '/kuechen-moebelbau' },
+  { num: '12', name: 'Maler & Lackierungen', lead: 'Farben, Tapeten', key: 'maler', detailTo: '/maler-lackierer' },
+  { num: '13', name: 'Rohbau Leistungen', lead: 'Fundament, Mauerwerk, Decken', key: 'rohbau', detailTo: '/rohbau-abbruch' },
+  { num: '14', name: 'Thermen & Heiztechnik', lead: 'Gas, Öl, Wärmepumpen', key: 'thermen', detailTo: '/heizmethoden' },
+  { num: '15', name: 'Treppen & Geländer', lead: 'Holz, Beton, Stahl', key: 'treppen', detailTo: '/treppen-gelaender' },
+  { num: '16', name: 'Türen & Tore', lead: 'Innen, Haus, Schiebe', key: 'tueren', detailTo: '/tueren-zargen' },
+  { num: '17', name: 'Trockenbau', lead: 'Wände, Decken', key: 'trockenbau', detailTo: '/trockenbau' },
+  { num: '18', name: 'Wasserinstallationen', lead: 'Wasser, Abwasser', key: 'sanitaer', detailTo: '/sanitaerinstallation' },
+  { num: '19', name: 'Zaunbau', lead: 'Doppelstab, Holz, Sichtschutz', key: 'zaun', detailTo: '/zaeune' },
 ];
 
 export const FEATURED_TRADES: FeaturedTrade[] = [

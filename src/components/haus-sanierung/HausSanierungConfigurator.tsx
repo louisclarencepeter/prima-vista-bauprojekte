@@ -8,7 +8,7 @@ import {
   type HouseType,
 } from '../../data/hausSanierung';
 
-const DETAILED_CALCULATOR_TYPE: HouseType = '1e';
+const DETAILED_CALCULATOR_TYPES: HouseType[] = ['1e', '2e', '1e-d', '2e-d'];
 
 const DEFAULT_PICKED = [
   'bad',
@@ -26,12 +26,12 @@ type Props = {
 };
 
 export default function HausSanierungConfigurator({ embedded }: Props) {
-  const [houseType, setHouseType] = useState<HouseType>(DETAILED_CALCULATOR_TYPE);
+  const [houseType, setHouseType] = useState<HouseType>(DETAILED_CALCULATOR_TYPES[0]);
   const [area, setArea] = useState<number>(100);
   const [picked, setPicked] = useState<string[]>(DEFAULT_PICKED);
 
   const selectedType = HOUSE_TYPES.find((type) => type.value === houseType);
-  const showsDetailedCalculator = houseType === DETAILED_CALCULATOR_TYPE;
+  const showsDetailedCalculator = DETAILED_CALCULATOR_TYPES.includes(houseType);
 
   function changeHouseType(value: HouseType) {
     const nextType = HOUSE_TYPES.find((type) => type.value === value);
@@ -75,6 +75,7 @@ export default function HausSanierungConfigurator({ embedded }: Props) {
 
       {showsDetailedCalculator ? (
         <RenovationCalculator
+          packageId={houseType}
           embedded
           livingArea={area}
           onLivingAreaChange={setArea}

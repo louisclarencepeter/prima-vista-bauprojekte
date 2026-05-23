@@ -8,12 +8,14 @@ import {
   SwapIcon,
   TrashIcon,
 } from '../icons';
-import { formatEuro, type RenovationProduct, type RenovationProductAlternative } from '../../data/renovationCalculator';
+import { formatEuro } from '../../data/calculator/engine';
+import type { RenovationProduct, RenovationProductAlternative } from '../../data/calculator/types';
 import type { KalkulatorHandoff } from '../../data/blitzAngebot';
 import { useRenovationCalculator } from '../../hooks/useRenovationCalculator';
 import '../../styles/pages/renovation-calculator.css';
 
 type Props = {
+  packageId?: string;
   embedded?: boolean;
   livingArea?: number;
   onLivingAreaChange?: (value: number) => void;
@@ -52,12 +54,13 @@ function typeLabel(type: RenovationProduct['type']): string {
 }
 
 export default function RenovationCalculator({
+  packageId = '1e',
   embedded,
   livingArea,
   onLivingAreaChange,
   kindLabel = '1 Etage ohne Dach',
 }: Props = {}) {
-  const { state, rowsByCategory, totals, minArea, dispatch } = useRenovationCalculator();
+  const { state, rowsByCategory, totals, minArea, dispatch } = useRenovationCalculator(packageId);
   const [replaceRowId, setReplaceRowId] = useState<string | null>(null);
 
   useEffect(() => {

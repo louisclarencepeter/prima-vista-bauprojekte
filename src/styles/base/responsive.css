@@ -28,6 +28,7 @@
   }
 }
 @media (max-width: 600px) {
+  :root { --pv-header-height: 72px; }
   .pv-header__inner { padding: 0 20px; height: 72px; }
   .pv-mobile-menu { top: 72px; }
   .pv-logo img { height: 36px; }

@@ -1,11 +1,12 @@
 import PageIntro from '../components/common/PageIntro';
 import EndCtaLocal from '../components/common/EndCtaLocal';
-import AbdichtungCalculator from '../components/gewerke/AbdichtungCalculator';
+import PackageDetailSection from '../components/komplett-pakete/PackageDetailSection';
+import { ABDICHTUNG_PACKAGES } from '../data/abdichtungPakete';
 import { usePageTitle } from '../hooks/usePageTitle';
-import '../styles/pages/heizkoerper.css';
+import '../styles/pages/komplett-pakete.css';
 
 export default function AbdichtungKeller() {
-  usePageTitle('Abdichtung & Keller Kostenrechner');
+  usePageTitle('Abdichtung & Keller | Prima Vista');
 
   return (
     <>
@@ -16,14 +17,16 @@ export default function AbdichtungKeller() {
         title={<>Abdichtung<br /><em>kalkulieren.</em></>}
         lede="Horizontalabdichtung, Perimeterabdichtung oder Kellerabdichtung: Wählen Sie die passende Abdichtungstechnik und erhalten Sie eine erste Vorab-Schätzung."
         meta={[
-          { label: 'Varianten', value: '4 Rechner' },
+          { label: 'Varianten', value: '4 Systeme' },
           { label: 'Gewerke', value: 'Haus & Keller' },
           { label: 'Aufmaß', value: 'Vor Ort' },
           { label: 'Angebot', value: 'Festpreisfähig' },
         ]}
       />
 
-      <AbdichtungCalculator />
+      {ABDICHTUNG_PACKAGES.map((pkg) => (
+        <PackageDetailSection key={pkg.num} pkg={pkg} />
+      ))}
 
       <EndCtaLocal
         eyebrow="Feuchtigkeit stoppen?"
