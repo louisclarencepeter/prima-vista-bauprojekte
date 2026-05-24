@@ -14,6 +14,68 @@ import {
   packageAbdichtungKeller,
   packageAbdichtungAlles
 } from './abdichtung';
+import {
+  packageBadGaeste,
+  packageBadKomplett,
+  packageBadWanne,
+  packageBadDusche,
+  packageBadWhirlpool,
+  packageBadWhirlpoolDusche,
+  packageBadBarrierefrei
+} from './badsanierung';
+import {
+  packageBarrierefreiDusche,
+  packageBarrierefreiWc,
+  packageBarrierefreiSenioren,
+  packageBarrierefreiRollstuhl
+} from './barrierefrei';
+import {
+  packageBoedenParkettVerlegung,
+  packageBoedenLaminatVerlegung,
+  packageBoedenFliesenVerlegung,
+  packageBoedenSockelleisten,
+  packageBoedenParkettAufbereiten,
+  packageBoedenKorkboden,
+  packageBoedenVinyl,
+  packageBoedenEstrichplatten,
+  packageBoedenSichtestrich,
+  packageBoedenTeppich,
+  packageBoedenAlles
+} from './boeden';
+import {
+  packageDachAlles,
+  packageDachDachNeubedachung as packageDachNeubedachung,
+  packageDachDachDachstuhl as packageDachDachstuhl,
+  packageDachDachInnenausbau as packageDachInnenausbau,
+  packageDachDachDaemmung as packageDachDaemmung,
+  packageDachDachGauben as packageDachGauben,
+  packageDachDachFenster as packageDachFenster,
+  packageDachDachanhebung as packageDachanhebung,
+  packageFlachdach,
+  packageDachbodenDaemmung
+} from './dach';
+import {
+  packageElektroAlles,
+  packageElektroNeuinstallation,
+  packageElektroSicherungskasten,
+  packageElektroNetzwerk,
+  packageElektroEinzelinstallation,
+  packageElektroLichttechnik,
+  packageElektroFreeHome,
+  packageElektroRolladen,
+  packageElektroSprechanlagen
+} from './elektro';
+import * as kuechePackages from './kueche';
+import * as wasserPackages from './wasser';
+import * as trockenbauPackages from './trockenbau';
+import * as malerPackages from './maler';
+import * as fassadePackages from './fassade';
+import * as fensterPackages from './fenster';
+import * as gartenPackages from './garten';
+import * as rohbauPackages from './rohbau';
+import * as treppenPackages from './treppen';
+import * as tuerenPackages from './tueren';
+import * as zaeunePackages from './zaeune';
 import type { RenovationPackage } from '../types';
 
 export const RENOVATION_PACKAGES: RenovationPackage[] = [
@@ -29,6 +91,58 @@ export const RENOVATION_PACKAGES: RenovationPackage[] = [
   packageAbdichtungPerimeter,
   packageAbdichtungKeller,
   packageAbdichtungAlles,
+  packageBadGaeste,
+  packageBadKomplett,
+  packageBadWanne,
+  packageBadDusche,
+  packageBadWhirlpool,
+  packageBadWhirlpoolDusche,
+  packageBadBarrierefrei,
+  packageBarrierefreiDusche,
+  packageBarrierefreiWc,
+  packageBarrierefreiSenioren,
+  packageBarrierefreiRollstuhl,
+  packageBoedenParkettVerlegung,
+  packageBoedenLaminatVerlegung,
+  packageBoedenFliesenVerlegung,
+  packageBoedenSockelleisten,
+  packageBoedenParkettAufbereiten,
+  packageBoedenKorkboden,
+  packageBoedenVinyl,
+  packageBoedenEstrichplatten,
+  packageBoedenSichtestrich,
+  packageBoedenTeppich,
+  packageBoedenAlles,
+  packageDachAlles,
+  packageDachNeubedachung,
+  packageDachDachstuhl,
+  packageDachInnenausbau,
+  packageDachDaemmung,
+  packageDachGauben,
+  packageDachFenster,
+  packageDachanhebung,
+  packageFlachdach,
+  packageDachbodenDaemmung,
+  packageElektroAlles,
+  packageElektroNeuinstallation,
+  packageElektroSicherungskasten,
+  packageElektroNetzwerk,
+  packageElektroEinzelinstallation,
+  packageElektroLichttechnik,
+  packageElektroFreeHome,
+  packageElektroRolladen,
+  packageElektroSprechanlagen,
+  ...Object.values(kuechePackages),
+  ...Object.values(wasserPackages),
+  ...Object.values(trockenbauPackages),
+  ...Object.values(malerPackages),
+  ...Object.values(fassadePackages),
+  ...Object.values(fensterPackages),
+  ...Object.values(gartenPackages),
+  ...Object.values(rohbauPackages),
+  ...Object.values(treppenPackages),
+  ...Object.values(tuerenPackages),
+  ...Object.values(zaeunePackages),
 ];
 
 // Helper to get a package by ID

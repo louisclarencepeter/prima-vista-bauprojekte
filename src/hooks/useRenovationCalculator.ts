@@ -28,12 +28,13 @@ type RenovationCalculatorAction =
 
 type PersistedState = Partial<Pick<RenovationCalculatorState, 'livingArea' | 'rows' | 'collapsed'>>;
 
-const getStorageKey = (packageId: string) => `prima-vista-renovation-calculator-modular-${packageId}`;
+const STORAGE_VERSION = 'v3';
+const getStorageKey = (packageId: string) => `prima-vista-renovation-calculator-modular-${STORAGE_VERSION}-${packageId}`;
 
 function createInitialState(packageId: string): RenovationCalculatorState {
   const pkg = getRenovationPackage(packageId) || RENOVATION_PACKAGES[0];
-  const collapsed = pkg.categories.reduce<Record<string, boolean>>((acc, category) => {
-    acc[category.id] = Boolean(category.collapsedByDefault);
+  const collapsed = pkg.categories.reduce<Record<string, boolean>>((acc, category, index) => {
+    acc[category.id] = category.collapsedByDefault ?? index > 0;
     category.subsections.forEach((subsection) => {
       if (subsection.collapsedByDefault) acc[`${category.id}:${subsection.id}`] = true;
     });

@@ -5,10 +5,12 @@
   .pv-nav__list { gap: 18px; }
   .pv-nav__list a { font-size: 10.5px; letter-spacing: 0.18em; }
 }
-@media (max-width: 880px) {
+@media (max-width: 1280px) {
   .pv-nav__list { display: none; }
   .pv-header__cta { display: none; }
   .pv-burger { display: block; }
+}
+@media (max-width: 880px) {
   .pv-social-rail { display: none; }
   .pv-footer { padding: 64px 0 28px; }
   .pv-footer__inner { padding: 0 24px; }

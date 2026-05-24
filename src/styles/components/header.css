@@ -72,6 +72,7 @@
   transition: color 140ms var(--pv-ease-out);
   position: relative;
   padding: 4px 0;
+  white-space: nowrap;
 }
 .pv-nav__list a:hover { color: var(--pv-copper); }
 .pv-nav__list a.is-active::after {
@@ -117,7 +118,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 45;
+  z-index: 120;
   background: var(--pv-cream);
   color: var(--pv-ink);
   display: none;
