@@ -554,10 +554,6 @@
     grid-template-columns: 1fr;
   }
 
-  .renocalc-live {
-    order: -1;
-  }
-
   .renocalc-live__sticky {
     position: static;
   }
