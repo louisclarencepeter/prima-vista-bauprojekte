@@ -3,20 +3,21 @@
    Renovation & refurbishment, premium warm-bronze aesthetic.
    ============================================================ */
 
-/* ────────────── BRAND FONTS (local @font-face) ────────────── */
+/* ────────────── BRAND FONTS (local @font-face)
+   Subsetted to Latin + Latin Extended-A and shipped as WOFF2 only —
+   4.1 MB of raw TTFs compressed down to ~630 kB.
+   ────────────── */
 
 @font-face {
   font-family: 'Inter';
-  src: url('/assets/fonts/Inter-VariableFont_opsz_wght.ttf') format('truetype-variations'),
-       url('/assets/fonts/Inter-VariableFont_opsz_wght.ttf') format('truetype');
+  src: url('/assets/fonts/Inter-VariableFont_opsz_wght.woff2') format('woff2');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Inter';
-  src: url('/assets/fonts/Inter-Italic-VariableFont_opsz_wght.ttf') format('truetype-variations'),
-       url('/assets/fonts/Inter-Italic-VariableFont_opsz_wght.ttf') format('truetype');
+  src: url('/assets/fonts/Inter-Italic-VariableFont_opsz_wght.woff2') format('woff2');
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -24,16 +25,14 @@
 
 @font-face {
   font-family: 'Playfair Display';
-  src: url('/assets/fonts/PlayfairDisplay-VariableFont_wght.ttf') format('truetype-variations'),
-       url('/assets/fonts/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+  src: url('/assets/fonts/PlayfairDisplay-VariableFont_wght.woff2') format('woff2');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Playfair Display';
-  src: url('/assets/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype-variations'),
-       url('/assets/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
+  src: url('/assets/fonts/PlayfairDisplay-Italic-VariableFont_wght.woff2') format('woff2');
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -41,16 +40,14 @@
 
 @font-face {
   font-family: 'Cormorant Garamond';
-  src: url('/assets/fonts/CormorantGaramond-VariableFont_wght.ttf') format('truetype-variations'),
-       url('/assets/fonts/CormorantGaramond-VariableFont_wght.ttf') format('truetype');
+  src: url('/assets/fonts/CormorantGaramond-VariableFont_wght.woff2') format('woff2');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Cormorant Garamond';
-  src: url('/assets/fonts/CormorantGaramond-Italic-VariableFont_wght.ttf') format('truetype-variations'),
-       url('/assets/fonts/CormorantGaramond-Italic-VariableFont_wght.ttf') format('truetype');
+  src: url('/assets/fonts/CormorantGaramond-Italic-VariableFont_wght.woff2') format('woff2');
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -58,8 +55,7 @@
 
 @font-face {
   font-family: 'Manrope';
-  src: url('/assets/fonts/Manrope-VariableFont_wght.ttf') format('truetype-variations'),
-       url('/assets/fonts/Manrope-VariableFont_wght.ttf') format('truetype');
+  src: url('/assets/fonts/Manrope-VariableFont_wght.woff2') format('woff2');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;

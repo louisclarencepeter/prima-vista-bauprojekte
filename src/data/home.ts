@@ -2,9 +2,9 @@ import type { LightboxItem } from '../components/Lightbox';
 import type { TradeKey } from './gewerke';
 
 export const HERO_IMAGES = [
-  '/assets/img/proj-moroccan-dining-wide.jpg',
-  '/assets/img/proj-sushi-wide.jpg',
-  '/assets/img/proj-lobby-tree-wide.jpg',
+  '/assets/img/proj-moroccan-dining-wide.webp',
+  '/assets/img/proj-sushi-wide.webp',
+  '/assets/img/proj-lobby-tree-wide.webp',
 ];
 
 export const HOME_TRADES = [
@@ -25,14 +25,14 @@ export const TRADES_PREVIEW: Array<{ num: string; name: string; lead: string; ke
 
 export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { gridClass: string; year: string; alt: string; revealDelay?: number }> = [
   {
-    src: '/assets/img/proj-moroccan-dining.jpg',
+    src: '/assets/img/proj-moroccan-dining.webp',
     title: 'Riad — Gastronomie · Frankfurt · 2025',
     year: '2025',
     alt: 'Riad Restaurant Frankfurt',
     gridClass: 'proj--a',
   },
   {
-    src: '/assets/img/proj-concrete-sofa-tall.jpg',
+    src: '/assets/img/proj-concrete-sofa-tall.webp',
     title: 'Villa Sichtbeton — Wohnsitz · Luzern · 2024',
     year: '2024',
     alt: 'Villa Sichtbeton Luzern',
@@ -40,14 +40,14 @@ export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { gridClass: string; y
     revealDelay: 1,
   },
   {
-    src: '/assets/img/proj-kitchen-oak.jpg',
+    src: '/assets/img/proj-kitchen-oak.webp',
     title: 'Küche Eichenholz — Wohnsitz · Frankfurt · 2025',
     year: '2025',
     alt: 'Küche Eichenholz Frankfurt',
     gridClass: 'proj--c',
   },
   {
-    src: '/assets/img/proj-spa-bath.jpg',
+    src: '/assets/img/proj-spa-bath.webp',
     title: 'Spa-Bad — Hotel · Emmenbrücke · 2025',
     year: '2025',
     alt: 'Spa-Bad Hotel',
@@ -55,7 +55,7 @@ export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { gridClass: string; y
     revealDelay: 1,
   },
   {
-    src: '/assets/img/proj-lobby-tree.jpg',
+    src: '/assets/img/proj-lobby-tree.webp',
     title: 'Lobby — Office · Frankfurt · 2026',
     year: '2026',
     alt: 'Lobby Office Frankfurt',
