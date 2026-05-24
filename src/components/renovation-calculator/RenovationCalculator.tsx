@@ -71,11 +71,13 @@ export default function RenovationCalculator({
   const { state, rowsByCategory, totals, minArea, dispatch } = useRenovationCalculator(packageId);
   const [replaceRowId, setReplaceRowId] = useState<string | null>(null);
 
+  const livingAreaForEffect = state.status === 'ready' ? state.livingArea : null;
   useEffect(() => {
-    if (typeof livingArea === 'number' && Number.isFinite(livingArea) && livingArea !== state.livingArea) {
+    if (livingAreaForEffect == null) return;
+    if (typeof livingArea === 'number' && Number.isFinite(livingArea) && livingArea !== livingAreaForEffect) {
       dispatch({ type: 'setArea', value: livingArea });
     }
-  }, [dispatch, livingArea, state.livingArea]);
+  }, [dispatch, livingArea, livingAreaForEffect]);
 
   const categoryBreakdown = useMemo(() => (
     rowsByCategory
@@ -96,11 +98,12 @@ export default function RenovationCalculator({
       .filter((category) => category.subtotal > 0)
   ), [rowsByCategory]);
 
+  const handoffArea = state.status === 'ready' ? state.livingArea : 0;
   const handoff = useMemo<KalkulatorHandoff>(() => {
     return {
       kind: 'haus',
       kindLabel,
-      area: state.livingArea,
+      area: handoffArea,
       picks: categoryBreakdown.map((category) => ({
         key: category.key,
         label: category.label,
@@ -111,9 +114,10 @@ export default function RenovationCalculator({
       totalMid: totals.net,
       perM2: totals.perM2,
     };
-  }, [categoryBreakdown, kindLabel, state.livingArea, totals.net, totals.perM2]);
+  }, [categoryBreakdown, kindLabel, handoffArea, totals.net, totals.perM2]);
 
   function replaceRow(rowId: string, alternativeId: string) {
+    if (state.status !== 'ready') return;
     const row = state.rows.find((item) => item.id === rowId);
     const alternative = row?.alternatives.find((item) => item.id === alternativeId);
     if (!alternative) return;
@@ -129,10 +133,23 @@ export default function RenovationCalculator({
   }
 
   function onAreaBlur() {
+    if (state.status !== 'ready') return;
     if (state.livingArea < minArea) {
       dispatch({ type: 'setArea', value: minArea });
       onLivingAreaChange?.(minArea);
     }
+  }
+
+  if (state.status !== 'ready') {
+    return (
+      <section
+        className={`renocalc renocalc--loading${embedded ? ' renocalc--embedded' : ''}`}
+        aria-label="Renovierung Konfigurator"
+        aria-busy="true"
+      >
+        <div className="renocalc__loading">Konfigurator wird geladen …</div>
+      </section>
+    );
   }
 
   function stepRowQuantity(row: RenovationProduct, direction: -1 | 1) {
