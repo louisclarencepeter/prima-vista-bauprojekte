@@ -76,6 +76,7 @@ import * as rohbauPackages from './rohbau';
 import * as treppenPackages from './treppen';
 import * as tuerenPackages from './tueren';
 import * as zaeunePackages from './zaeune';
+import * as heizmethodenPackages from './heizmethoden';
 import type { RenovationPackage } from '../types';
 
 export const RENOVATION_PACKAGES: RenovationPackage[] = [
@@ -143,6 +144,7 @@ export const RENOVATION_PACKAGES: RenovationPackage[] = [
   ...Object.values(treppenPackages),
   ...Object.values(tuerenPackages),
   ...Object.values(zaeunePackages),
+  ...Object.values(heizmethodenPackages),
 ];
 
 // Helper to get a package by ID
