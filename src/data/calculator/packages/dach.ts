@@ -76,7 +76,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
     {
       id: 'dachNeubedachung-cat',
       title: 'Neubedachung (Details)',
-      lead: 'Ausgewählte Leistungen und Materialien von Bossmann.',
+      lead: 'Ausgewählte Leistungen und Materialien.',
       subsections: [
         {
           id: 'sanierung',
@@ -131,7 +131,7 @@ export const packageDachDachDachstuhl: RenovationPackage = {
     {
       id: 'dachDachstuhl-cat',
       title: 'Dachstuhl (Details)',
-      lead: 'Ausgewählte Leistungen und Materialien von Bossmann.',
+      lead: 'Ausgewählte Leistungen und Materialien.',
       subsections: [
         {
           id: 'sanierung',
@@ -159,7 +159,7 @@ export const packageDachDachDaemmung: RenovationPackage = {
     {
       id: 'dachDaemmung-cat',
       title: 'Dachdämmung (Details)',
-      lead: 'Ausgewählte Leistungen und Materialien von Bossmann.',
+      lead: 'Ausgewählte Leistungen und Materialien.',
       subsections: [
         {
           id: 'sanierung',
@@ -194,7 +194,7 @@ export const packageDachDachGauben: RenovationPackage = {
     {
       id: 'dachGauben-cat',
       title: 'Gauben (Details)',
-      lead: 'Ausgewählte Leistungen und Materialien von Bossmann.',
+      lead: 'Ausgewählte Leistungen und Materialien.',
       subsections: [
         {
           id: 'sanierung',
@@ -220,7 +220,7 @@ export const packageDachDachFenster: RenovationPackage = {
     {
       id: 'dachFenster-cat',
       title: 'Dachfenster (Details)',
-      lead: 'Ausgewählte Leistungen und Materialien von Bossmann.',
+      lead: 'Ausgewählte Leistungen und Materialien.',
       subsections: [
         {
           id: 'sanierung',
@@ -248,7 +248,7 @@ export const packageDachDachanhebung: RenovationPackage = {
     {
       id: 'dachanhebung-cat',
       title: 'Dachanhebung (Details)',
-      lead: 'Ausgewählte Leistungen und Materialien von Bossmann.',
+      lead: 'Ausgewählte Leistungen und Materialien.',
       subsections: [
         {
           id: 'sanierung',
@@ -274,7 +274,7 @@ export const packageDachDachInnenausbau: RenovationPackage = {
     {
       id: 'dachInnenausbau-cat',
       title: 'Dach-Innenausbau (Details)',
-      lead: 'Ausgewählte Leistungen und Materialien von Bossmann.',
+      lead: 'Ausgewählte Leistungen und Materialien.',
       subsections: [
         {
           id: 'sanierung',

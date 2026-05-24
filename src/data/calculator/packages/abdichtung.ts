@@ -76,7 +76,7 @@ export const packageAbdichtungHorizontal: RenovationPackage = {
     {
       id: 'abdichtungHorizontal-cat',
       title: 'Horizontal-Abdichtung (Details)',
-      lead: 'Ausgewählte Leistungen und Materialien von Bossmann.',
+      lead: 'Ausgewählte Leistungen und Materialien.',
       subsections: [
         {
           id: 'abdichtung',
@@ -102,7 +102,7 @@ export const packageAbdichtungPerimeter: RenovationPackage = {
     {
       id: 'abdichtungPerimeter-cat',
       title: 'Perimeter-Abdichtung (Details)',
-      lead: 'Ausgewählte Leistungen und Materialien von Bossmann.',
+      lead: 'Ausgewählte Leistungen und Materialien.',
       subsections: [
         {
           id: 'abdichtung',
@@ -129,7 +129,7 @@ export const packageAbdichtungKeller: RenovationPackage = {
     {
       id: 'abdichtungKeller-cat',
       title: 'Keller-Abdichtung (Innen) (Details)',
-      lead: 'Ausgewählte Leistungen und Materialien von Bossmann.',
+      lead: 'Ausgewählte Leistungen und Materialien.',
       subsections: [
         {
           id: 'abdichtung',

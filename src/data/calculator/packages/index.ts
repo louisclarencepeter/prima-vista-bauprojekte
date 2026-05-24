@@ -54,6 +54,28 @@ import {
   packageFlachdach,
   packageDachbodenDaemmung
 } from './dach';
+import {
+  packageElektroAlles,
+  packageElektroNeuinstallation,
+  packageElektroSicherungskasten,
+  packageElektroNetzwerk,
+  packageElektroEinzelinstallation,
+  packageElektroLichttechnik,
+  packageElektroFreeHome,
+  packageElektroRolladen,
+  packageElektroSprechanlagen
+} from './elektro';
+import * as kuechePackages from './kueche';
+import * as wasserPackages from './wasser';
+import * as trockenbauPackages from './trockenbau';
+import * as malerPackages from './maler';
+import * as fassadePackages from './fassade';
+import * as fensterPackages from './fenster';
+import * as gartenPackages from './garten';
+import * as rohbauPackages from './rohbau';
+import * as treppenPackages from './treppen';
+import * as tuerenPackages from './tueren';
+import * as zaeunePackages from './zaeune';
 import type { RenovationPackage } from '../types';
 
 export const RENOVATION_PACKAGES: RenovationPackage[] = [
@@ -101,6 +123,26 @@ export const RENOVATION_PACKAGES: RenovationPackage[] = [
   packageDachanhebung,
   packageFlachdach,
   packageDachbodenDaemmung,
+  packageElektroAlles,
+  packageElektroNeuinstallation,
+  packageElektroSicherungskasten,
+  packageElektroNetzwerk,
+  packageElektroEinzelinstallation,
+  packageElektroLichttechnik,
+  packageElektroFreeHome,
+  packageElektroRolladen,
+  packageElektroSprechanlagen,
+  ...Object.values(kuechePackages),
+  ...Object.values(wasserPackages),
+  ...Object.values(trockenbauPackages),
+  ...Object.values(malerPackages),
+  ...Object.values(fassadePackages),
+  ...Object.values(fensterPackages),
+  ...Object.values(gartenPackages),
+  ...Object.values(rohbauPackages),
+  ...Object.values(treppenPackages),
+  ...Object.values(tuerenPackages),
+  ...Object.values(zaeunePackages),
 ];
 
 // Helper to get a package by ID

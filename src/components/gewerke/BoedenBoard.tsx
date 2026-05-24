@@ -1,3 +1,5 @@
+import { scrollToCalculatorResult } from '../../utils/scrollToCalculatorResult';
+
 export type BoedenGridType = 
   | 'boedenParkettVerlegung'
   | 'boedenLaminatVerlegung'
@@ -41,6 +43,11 @@ export default function BoedenBoard({
   activeType,
   onTypeChange,
 }: Props) {
+  function chooseType(value: BoedenGridType) {
+    onTypeChange(value);
+    scrollToCalculatorResult();
+  }
+
   return (
     <div className="kalk-board">
       <div className="kalk-board__field reveal">
@@ -55,7 +62,7 @@ export default function BoedenBoard({
               key={t.num}
               type="button"
               className={`haus-types__opt${t.value === activeType ? ' is-on' : ''}`}
-              onClick={() => onTypeChange(t.value)}
+              onClick={() => chooseType(t.value)}
               aria-pressed={t.value === activeType}
               style={{ flex: '1 1 calc(33.333% - 12px)', minWidth: '180px' }}
             >
