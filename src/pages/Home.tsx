@@ -64,7 +64,7 @@ export default function Home() {
         </div>
         <div className="packages__grid">
           <Link className="pkg-card reveal" data-delay="1" to="/haus-sanierung">
-            <img src="/assets/img/photo-haus-exterior.webp" alt="Haus-Sanierung" loading="lazy" />
+            <img src="/assets/img/photo-haus-exterior-thumb.webp" alt="Haus-Sanierung" loading="lazy" />
             <div className="pkg-card__body">
               <span className="pkg-card__num">№ 01 — Komplett</span>
               <h3 className="pkg-card__title">Haus-<br />Sanierung</h3>
@@ -73,7 +73,7 @@ export default function Home() {
             </div>
           </Link>
           <Link className="pkg-card reveal" data-delay="2" to="/wohnung-sanierung">
-            <img src="/assets/img/photo-parkett-altbau.webp" alt="Wohnung-Sanierung" loading="lazy" />
+            <img src="/assets/img/photo-parkett-altbau-thumb.webp" alt="Wohnung-Sanierung" loading="lazy" />
             <div className="pkg-card__body">
               <span className="pkg-card__num">№ 02 — Modular</span>
               <h3 className="pkg-card__title">Wohnung-<br />Sanierung</h3>
@@ -82,7 +82,7 @@ export default function Home() {
             </div>
           </Link>
           <Link className="pkg-card reveal" data-delay="3" to="/komplett-pakete">
-            <img src="/assets/img/proj-moroccan-corner.webp" alt="Gastronomie-Ausbau" loading="lazy" />
+            <img src="/assets/img/proj-moroccan-corner-thumb.webp" alt="Gastronomie-Ausbau" loading="lazy" />
             <div className="pkg-card__body">
               <span className="pkg-card__num">№ 03 — Konzept</span>
               <h3 className="pkg-card__title">Gastronomie-<br />Ausbau</h3>
