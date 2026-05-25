@@ -54,7 +54,7 @@ export const packageHeizmethodenAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('heiz-100-basis', 'bodenheizung-basis-haus', 'bodenheizung-basis-haus-sub', `BODENHEIZUNG | 🛠 Montage-Leistungspaket`, 'HEIZ-100-BASIS', 89, 'qm', `🛠 Montage-Leistungspaket`, true, false, 1, 'service')
+            createProduct('heiz-100-basis', 'bodenheizung-basis-haus', 'bodenheizung-basis-haus-sub', `BODENHEIZUNG | 🛠 Montage-Leistungspaket`, 'HEIZ-100-BASIS', 89, 'qm', `🛠 Montage-Leistungspaket`, false, false, 1, 'service')
           ]
         }
       ]
@@ -69,8 +69,8 @@ export const packageHeizmethodenAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'extra',
           products: [
-            createProduct('rohb-501-mat', 'extra-positionen', 'extra-positionen-sub', `ESTRICH | Trocken-Platten`, 'ROHB-501-MAT', 48.46, 'qm', `Trocken-Platten`, true, false, 1, 'extra'),
-            createProduct('rohb-501-1-op', 'extra-positionen', 'extra-positionen-sub', `ALT-ESTRICH |🛠 Demontage & Entsorgung`, 'ROHB-501-1-OP', 45.89, 'qm', `🛠 Demontage & Entsorgung`, true, false, 1, 'extra')
+            createProduct('rohb-501-mat', 'extra-positionen', 'extra-positionen-sub', `ESTRICH | Trocken-Platten`, 'ROHB-501-MAT', 48.46, 'qm', `Trocken-Platten`, false, false, 1, 'extra'),
+            createProduct('rohb-501-1-op', 'extra-positionen', 'extra-positionen-sub', `ALT-ESTRICH |🛠 Demontage & Entsorgung`, 'ROHB-501-1-OP', 45.89, 'qm', `🛠 Demontage & Entsorgung`, false, false, 1, 'extra')
           ]
         }
       ]
@@ -85,8 +85,8 @@ export const packageHeizmethodenAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('mon-10158', 'flaechenheizsystem', 'flaechenheizsystem-sub', `FLÄCHENHEIZSYSTEME | 🛠 Montage`, 'MON-10158', 69, 'qm', `🛠 Montage`, true, false, 3, 'service'),
-            createProduct('uv722-00108', 'flaechenheizsystem', 'flaechenheizsystem-sub', `Warmup Aluminiumfolien-Heizsystem, für Holz-, Vinyl- und Laminatböden, 80 Watt`, 'uv722-00108', 219.93, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'material')
+            createProduct('mon-10158', 'flaechenheizsystem', 'flaechenheizsystem-sub', `FLÄCHENHEIZSYSTEME | 🛠 Montage`, 'MON-10158', 69, 'qm', `🛠 Montage`, false, false, 3, 'service'),
+            createProduct('uv722-00108', 'flaechenheizsystem', 'flaechenheizsystem-sub', `Warmup Aluminiumfolien-Heizsystem, für Holz-, Vinyl- und Laminatböden, 80 Watt`, 'uv722-00108', 219.93, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'material')
           ]
         }
       ]
@@ -101,8 +101,8 @@ export const packageHeizmethodenAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('heiz-101-mon', 'heizkoerper', 'heizkoerper-sub', `HEIZKÖRPER | 🛠 Montage`, 'HEIZ-101-MON', 149, 'Stk', `🛠 Montage`, true, false, 1, 'service'),
-            createProduct('mon-10158-2', 'heizkoerper', 'heizkoerper-sub', `FLÄCHENHEIZSYSTEME | 🛠 Montage`, 'MON-10158', 69, 'qm', `🛠 Montage`, true, false, 1, 'service')
+            createProduct('heiz-101-mon', 'heizkoerper', 'heizkoerper-sub', `HEIZKÖRPER | 🛠 Montage`, 'HEIZ-101-MON', 149, 'Stk', `🛠 Montage`, false, false, 1, 'service'),
+            createProduct('mon-10158-2', 'heizkoerper', 'heizkoerper-sub', `FLÄCHENHEIZSYSTEME | 🛠 Montage`, 'MON-10158', 69, 'qm', `🛠 Montage`, false, false, 1, 'service')
           ]
         }
       ]
@@ -117,8 +117,8 @@ export const packageHeizmethodenAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'material',
           products: [
-            createProduct('pt6333080', 'material', 'material-sub', `Plan-Flachheizkörper Cosmo T6 Typ 33 - 300 x 800 cm - (W) 1012`, 'PT6333080', 749, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'material'),
-            createProduct('uv835-1083-2', 'material', 'material-sub', `Ximax Elektro Raumheizkörper Fortuna Horizontal - weiß`, 'uv835-1083', 471.41, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'material')
+            createProduct('pt6333080', 'material', 'material-sub', `Plan-Flachheizkörper Cosmo T6 Typ 33 - 300 x 800 cm - (W) 1012`, 'PT6333080', 749, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'material'),
+            createProduct('uv835-1083-2', 'material', 'material-sub', `Ximax Elektro Raumheizkörper Fortuna Horizontal - weiß`, 'uv835-1083', 471.41, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'material')
           ]
         }
       ]
@@ -584,14 +584,14 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'material',
           products: [
-            createProduct('heiz-401-3-mat', 'thermen-waermepumpen-basis-haus', 'thermen-waermepumpen-basis-haus-sub', `Gas-Brennwert-Kessel 20 Kw (für Haus)`, 'HEIZ-401.3-MAT', 10588.99, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'material'),
-            createProduct('heiz-403-13-mat', 'thermen-waermepumpen-basis-haus', 'thermen-waermepumpen-basis-haus-sub', `Gas-Kombitherme 20-24 Kw (für Wohnung)`, 'HEIZ-403.13-MAT', 3955.9, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'material'),
-            createProduct('heiz-402-2-mat', 'thermen-waermepumpen-basis-haus', 'thermen-waermepumpen-basis-haus-sub', `Öl-Brennwert-Kessel 24 Kw (für Haus)`, 'HEIZ-402.2-MAT', 12370.99, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'material'),
-            createProduct('heiz-400-basis', 'thermen-waermepumpen-basis-haus', 'thermen-waermepumpen-basis-haus-sub', `WÄRMEPUMPEN | 🛠 Montage-Leistungspaket`, 'HEIZ-400-BASIS', 4500, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('heiz-411-4-mat', 'thermen-waermepumpen-basis-haus', 'thermen-waermepumpen-basis-haus-sub', `12 KW - LG WÄRMEPUMPEN im Paket - TM187/123`, 'HEIZ-411.4-MAT', 10542.42, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'material'),
-            createProduct('heiz-411-zu', 'thermen-waermepumpen-basis-haus', 'thermen-waermepumpen-basis-haus-sub', `LG-ZUBEHÖR-SET - für LG Wärmepumpen`, 'HEIZ-411-ZU', 1500, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'material'),
-            createProduct('heiz-405-2-mat', 'thermen-waermepumpen-basis-haus', 'thermen-waermepumpen-basis-haus-sub', `Pellet Silo Geobox 21 Inkl. Befüllstutzen`, 'HEIZ-405.2-MAT', 5143.05, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'material'),
-            createProduct('mat-anfrage', 'thermen-waermepumpen-basis-haus', 'thermen-waermepumpen-basis-haus-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 'MAT-Anfrage', 0, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'material')
+            createProduct('heiz-401-3-mat', 'thermen-waermepumpen-basis-haus', 'thermen-waermepumpen-basis-haus-sub', `Gas-Brennwert-Kessel 20 Kw (für Haus)`, 'HEIZ-401.3-MAT', 10588.99, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'material'),
+            createProduct('heiz-403-13-mat', 'thermen-waermepumpen-basis-haus', 'thermen-waermepumpen-basis-haus-sub', `Gas-Kombitherme 20-24 Kw (für Wohnung)`, 'HEIZ-403.13-MAT', 3955.9, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'material'),
+            createProduct('heiz-402-2-mat', 'thermen-waermepumpen-basis-haus', 'thermen-waermepumpen-basis-haus-sub', `Öl-Brennwert-Kessel 24 Kw (für Haus)`, 'HEIZ-402.2-MAT', 12370.99, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'material'),
+            createProduct('heiz-400-basis', 'thermen-waermepumpen-basis-haus', 'thermen-waermepumpen-basis-haus-sub', `WÄRMEPUMPEN | 🛠 Montage-Leistungspaket`, 'HEIZ-400-BASIS', 4500, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('heiz-411-4-mat', 'thermen-waermepumpen-basis-haus', 'thermen-waermepumpen-basis-haus-sub', `12 KW - LG WÄRMEPUMPEN im Paket - TM187/123`, 'HEIZ-411.4-MAT', 10542.42, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'material'),
+            createProduct('heiz-411-zu', 'thermen-waermepumpen-basis-haus', 'thermen-waermepumpen-basis-haus-sub', `LG-ZUBEHÖR-SET - für LG Wärmepumpen`, 'HEIZ-411-ZU', 1500, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'material'),
+            createProduct('heiz-405-2-mat', 'thermen-waermepumpen-basis-haus', 'thermen-waermepumpen-basis-haus-sub', `Pellet Silo Geobox 21 Inkl. Befüllstutzen`, 'HEIZ-405.2-MAT', 5143.05, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'material'),
+            createProduct('mat-anfrage', 'thermen-waermepumpen-basis-haus', 'thermen-waermepumpen-basis-haus-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 'MAT-Anfrage', 0, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'material')
           ]
         }
       ]
@@ -623,10 +623,10 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('mon-10158', 'flaechenheizsystem', 'flaechenheizsystem-sub', `FLÄCHENHEIZSYSTEME | 🛠 Montage`, 'MON-10158', 69, 'qm', `🛠 Montage`, true, false, 1, 'service'),
-            createProduct('uv835-1083', 'flaechenheizsystem', 'flaechenheizsystem-sub', `Ximax Elektro Raumheizkörper Fortuna Horizontal - weiß`, 'uv835-1083', 471.41, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'material'),
-            createProduct('mon-10158-2', 'flaechenheizsystem', 'flaechenheizsystem-sub', `FLÄCHENHEIZSYSTEME | 🛠 Montage`, 'MON-10158', 69, 'qm', `🛠 Montage`, true, false, 3, 'service'),
-            createProduct('uv722-00108', 'flaechenheizsystem', 'flaechenheizsystem-sub', `Warmup Aluminiumfolien-Heizsystem, für Holz-, Vinyl- und Laminatböden, 80 Watt`, 'uv722-00108', 219.93, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'material')
+            createProduct('mon-10158', 'flaechenheizsystem', 'flaechenheizsystem-sub', `FLÄCHENHEIZSYSTEME | 🛠 Montage`, 'MON-10158', 69, 'qm', `🛠 Montage`, false, false, 1, 'service'),
+            createProduct('uv835-1083', 'flaechenheizsystem', 'flaechenheizsystem-sub', `Ximax Elektro Raumheizkörper Fortuna Horizontal - weiß`, 'uv835-1083', 471.41, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'material'),
+            createProduct('mon-10158-2', 'flaechenheizsystem', 'flaechenheizsystem-sub', `FLÄCHENHEIZSYSTEME | 🛠 Montage`, 'MON-10158', 69, 'qm', `🛠 Montage`, false, false, 3, 'service'),
+            createProduct('uv722-00108', 'flaechenheizsystem', 'flaechenheizsystem-sub', `Warmup Aluminiumfolien-Heizsystem, für Holz-, Vinyl- und Laminatböden, 80 Watt`, 'uv722-00108', 219.93, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'material')
           ]
         }
       ]
@@ -641,7 +641,7 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'material',
           products: [
-            createProduct('uv835-981', 'heizkoerper', 'heizkoerper-sub', `Ximax Handtuchwärmer C3 Typ 1 - Chrom`, 'uv835-981', 489.81, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'material')
+            createProduct('uv835-981', 'heizkoerper', 'heizkoerper-sub', `Ximax Handtuchwärmer C3 Typ 1 - Chrom`, 'uv835-981', 489.81, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'material')
           ]
         }
       ]
@@ -656,10 +656,10 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'extra',
           products: [
-            createProduct('743-1204', 'extra-positionen', 'extra-positionen-sub', `Wienerberger LAS 1216 LW Kamtec Kaminsystem 1 stgm, HAN.: 34765146`, '743-1204', 545.6, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'extra'),
-            createProduct('743-10076', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec Abströmkopf ASK 120, HAN.: 30056461`, '743-10076', 190.3, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'extra'),
-            createProduct('743-10042', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec Krag und Abdeckplatte KP/AP-U 20 W für Untermauerung einzügig, HAN.: 34765655`, '743-10042', 457.6, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'extra'),
-            createProduct('743-10068', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec ISSr Fugenkleber, HAN.: 30054461`, '743-10068', 68.75, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'extra')
+            createProduct('743-1204', 'extra-positionen', 'extra-positionen-sub', `Wienerberger LAS 1216 LW Kamtec Kaminsystem 1 stgm, HAN.: 34765146`, '743-1204', 545.6, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'extra'),
+            createProduct('743-10076', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec Abströmkopf ASK 120, HAN.: 30056461`, '743-10076', 190.3, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'extra'),
+            createProduct('743-10042', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec Krag und Abdeckplatte KP/AP-U 20 W für Untermauerung einzügig, HAN.: 34765655`, '743-10042', 457.6, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'extra'),
+            createProduct('743-10068', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec ISSr Fugenkleber, HAN.: 30054461`, '743-10068', 68.75, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'extra')
           ]
         }
       ]

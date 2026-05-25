@@ -54,9 +54,9 @@ export const packageMalerAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('male-100-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `MALER (pro Etage) | 🛠 Montage-Leistungspaket`, 'MALE-100-BASIS', 355.5, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('male-101-mat', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `GLÄTTUNG MIT FEINSPACHTEL | 🛠 Montage-Leistungspaket`, 'MALE-101-MAT', 17.9, 'qm', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('male-201-mat', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ANSTRICH | 🛠 Montage-Leistungspaket`, 'MALE-201-MAT', 9.85, 'qm', `🛠 Montage-Leistungspaket`, true, false, 1, 'service')
+            createProduct('male-100-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `MALER (pro Etage) | 🛠 Montage-Leistungspaket`, 'MALE-100-BASIS', 355.5, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('male-101-mat', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `GLÄTTUNG MIT FEINSPACHTEL | 🛠 Montage-Leistungspaket`, 'MALE-101-MAT', 17.9, 'qm', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('male-201-mat', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ANSTRICH | 🛠 Montage-Leistungspaket`, 'MALE-201-MAT', 9.85, 'qm', `🛠 Montage-Leistungspaket`, false, false, 1, 'service')
           ]
         }
       ]
@@ -71,8 +71,8 @@ export const packageMalerAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'extra',
           products: [
-            createProduct('male-101-1-zu', 'extra-positionen', 'extra-positionen-sub', `GRUNDIERUNG - DER FLÄCHEN | 🛠 Zusatz-Montage`, 'MALE-101-1-ZU', 3.91, 'qm', `🛠 Zusatz-Montage`, true, false, 1, 'extra'),
-            createProduct('male-101-2-zu', 'extra-positionen', 'extra-positionen-sub', `ALT-TAPETEN |🛠 Demontage & Entsorgung`, 'MALE-101-2-ZU', 7.87, 'qm', `🛠 Demontage & Entsorgung`, true, false, 1, 'extra')
+            createProduct('male-101-1-zu', 'extra-positionen', 'extra-positionen-sub', `GRUNDIERUNG - DER FLÄCHEN | 🛠 Zusatz-Montage`, 'MALE-101-1-ZU', 3.91, 'qm', `🛠 Zusatz-Montage`, false, false, 1, 'extra'),
+            createProduct('male-101-2-zu', 'extra-positionen', 'extra-positionen-sub', `ALT-TAPETEN |🛠 Demontage & Entsorgung`, 'MALE-101-2-ZU', 7.87, 'qm', `🛠 Demontage & Entsorgung`, false, false, 1, 'extra')
           ]
         }
       ]

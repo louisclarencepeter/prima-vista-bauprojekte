@@ -54,7 +54,7 @@ export const packageBoedenAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('bode-100-basis', 'holz-boden', 'holz-boden-sub', `VERLEGUNG-Boden | 🛠 Montage-Leistungspaket`, 'BODE-100-BASIS', 19.9, 'qm', `🛠 Montage-Leistungspaket`, true, false, 1, 'service')
+            createProduct('bode-100-basis', 'holz-boden', 'holz-boden-sub', `VERLEGUNG-Boden | 🛠 Montage-Leistungspaket`, 'BODE-100-BASIS', 19.9, 'qm', `🛠 Montage-Leistungspaket`, false, false, 1, 'service')
           ]
         }
       ]
@@ -69,7 +69,7 @@ export const packageBoedenAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'extra',
           products: [
-            createProduct('bode-100-1-op', 'extra-positionen', 'extra-positionen-sub', `ALT-BODEN |🛠 Demontage & Entsorgung`, 'BODE-100-1-OP', 15.79, 'qm', `🛠 Demontage & Entsorgung`, true, false, 1, 'extra')
+            createProduct('bode-100-1-op', 'extra-positionen', 'extra-positionen-sub', `ALT-BODEN |🛠 Demontage & Entsorgung`, 'BODE-100-1-OP', 15.79, 'qm', `🛠 Demontage & Entsorgung`, false, false, 1, 'extra')
           ]
         }
       ]
@@ -84,10 +84,10 @@ export const packageBoedenAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'optional',
           products: [
-            createProduct('rohb-501-2-op', 'optionale-positionen', 'optionale-positionen-sub', `Ausgleichsschüttung Herstellen (bis 3 cm)`, 'ROHB-501-2-OP', 11.68, 'qm', `Ausgleichsschüttung Herstellen (bis 3 cm)`, true, true, 1, 'optional'),
-            createProduct('bode-100-2-op', 'optionale-positionen', 'optionale-positionen-sub', `AUSGLEICH-Boden | max. 1 cm der Bodenfläche`, 'BODE-100-2-OP', 39.9, 'qm', `max. 1 cm der Bodenfläche`, true, true, 1, 'optional'),
-            createProduct('bode-100-op', 'optionale-positionen', 'optionale-positionen-sub', `AUFBEREITEN | Parkett schleifen & lackieren`, 'BODE-100-OP', 33.75, 'qm', `Parkett schleifen & lackieren`, true, true, 1, 'optional'),
-            createProduct('rohb-501-2-op-2', 'optionale-positionen', 'optionale-positionen-sub', `Ausgleichsschüttung Herstellen (bis 3 cm)`, 'ROHB-501-2-OP', 11.68, 'qm', `Ausgleichsschüttung Herstellen (bis 3 cm)`, true, true, 1, 'optional')
+            createProduct('rohb-501-2-op', 'optionale-positionen', 'optionale-positionen-sub', `Ausgleichsschüttung Herstellen (bis 3 cm)`, 'ROHB-501-2-OP', 11.68, 'qm', `Ausgleichsschüttung Herstellen (bis 3 cm)`, false, true, 1, 'optional'),
+            createProduct('bode-100-2-op', 'optionale-positionen', 'optionale-positionen-sub', `AUSGLEICH-Boden | max. 1 cm der Bodenfläche`, 'BODE-100-2-OP', 39.9, 'qm', `max. 1 cm der Bodenfläche`, false, true, 1, 'optional'),
+            createProduct('bode-100-op', 'optionale-positionen', 'optionale-positionen-sub', `AUFBEREITEN | Parkett schleifen & lackieren`, 'BODE-100-OP', 33.75, 'qm', `Parkett schleifen & lackieren`, false, true, 1, 'optional'),
+            createProduct('rohb-501-2-op-2', 'optionale-positionen', 'optionale-positionen-sub', `Ausgleichsschüttung Herstellen (bis 3 cm)`, 'ROHB-501-2-OP', 11.68, 'qm', `Ausgleichsschüttung Herstellen (bis 3 cm)`, false, true, 1, 'optional')
           ]
         }
       ]
@@ -102,15 +102,15 @@ export const packageBoedenAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'material',
           products: [
-            createProduct('680700', 'material', 'material-sub', `Egger Laminat Classic 31 Garrison Eiche natur EHL022 1292x192x7mm`, '680700', 14.35, 'qm', `Egger Laminat Classic 31 Garrison Eiche natur EHL022 1292x192x7mm`, true, false, 1, 'material'),
-            createProduct('763-00785', 'material', 'material-sub', `Ziro Kork Korkboden natur KF | Harmony roh 5 mm | Kurzdiele`, '763-00785', 41.91, 'Stk', `Harmony roh 5 mm | Kurzdiele`, true, false, 1, 'material'),
-            createProduct('680767', 'material', 'material-sub', `Egger Sockelleiste 2400x 17x 60mm !Z Leiste zu EHL022 L150`, '680767', 7.5, 'lfm', `Egger Sockelleiste 2400x 17x 60mm !Z Leiste zu EHL022 L150`, true, false, 1, 'material'),
-            createProduct('287221', 'material', 'material-sub', `Geficell PE Basic Schaumdaemmbahn 5/1000 mm, 50 m/Ro = 50,00 qm, blau`, '287221', 2.14, 'qm', `Geficell PE Basic Schaumdaemmbahn 5/1000 mm, 50 m/Ro = 50,00 qm, blau`, true, false, 1, 'material'),
-            createProduct('1098740', 'material', 'material-sub', `Prinz Alu-Uebergangsprofil - gel !Z 38 mm 100 cm lang Silber`, '1098740', 6.69, 'Stk', `Prinz Alu-Uebergangsprofil - gel !Z 38 mm 100 cm lang Silber`, true, false, 1, 'material'),
-            createProduct('1209835', 'material', 'material-sub', `*V&B 80x 80x 0,9 2835BZ1001 Pure Base !Z creme matt ugl. FS R10/B rekt. #1209834`, '1209835', 46.2, 'qm', `*V&B 80x 80x 0,9 2835BZ1001 Pure Base !Z creme matt ugl. FS R10/B rekt. #1209834`, true, false, 1, 'material'),
-            createProduct('662445', 'material', 'material-sub', `V&B 7,5x 60 2872RU200 My Earth Sockel beige multicolor ugl. FS`, '662445', 14.53, 'qm', `V&B 7,5x 60 2872RU200 My Earth Sockel beige multicolor ugl. FS`, true, false, 1, 'material'),
-            createProduct('uv867-00298', 'material', 'material-sub', `Ottoseal S 110 Premium Neutral Silicon`, 'uv867-00298', 8.79, 'Stk', `Ottoseal S 110 Premium Neutral Silicon`, true, false, 1, 'material'),
-            createProduct('tepnafjtp2-310', 'material', 'material-sub', `JOKAVLIES TITAN PLUS 200cm Atelier 2020`, 'TEPNAFJTP2_310', 14.89, 'qm', `JOKAVLIES TITAN PLUS 200cm Atelier 2020`, true, false, 1, 'material')
+            createProduct('680700', 'material', 'material-sub', `Egger Laminat Classic 31 Garrison Eiche natur EHL022 1292x192x7mm`, '680700', 14.35, 'qm', `Egger Laminat Classic 31 Garrison Eiche natur EHL022 1292x192x7mm`, false, false, 1, 'material'),
+            createProduct('763-00785', 'material', 'material-sub', `Ziro Kork Korkboden natur KF | Harmony roh 5 mm | Kurzdiele`, '763-00785', 41.91, 'Stk', `Harmony roh 5 mm | Kurzdiele`, false, false, 1, 'material'),
+            createProduct('680767', 'material', 'material-sub', `Egger Sockelleiste 2400x 17x 60mm !Z Leiste zu EHL022 L150`, '680767', 7.5, 'lfm', `Egger Sockelleiste 2400x 17x 60mm !Z Leiste zu EHL022 L150`, false, false, 1, 'material'),
+            createProduct('287221', 'material', 'material-sub', `Geficell PE Basic Schaumdaemmbahn 5/1000 mm, 50 m/Ro = 50,00 qm, blau`, '287221', 2.14, 'qm', `Geficell PE Basic Schaumdaemmbahn 5/1000 mm, 50 m/Ro = 50,00 qm, blau`, false, false, 1, 'material'),
+            createProduct('1098740', 'material', 'material-sub', `Prinz Alu-Uebergangsprofil - gel !Z 38 mm 100 cm lang Silber`, '1098740', 6.69, 'Stk', `Prinz Alu-Uebergangsprofil - gel !Z 38 mm 100 cm lang Silber`, false, false, 1, 'material'),
+            createProduct('1209835', 'material', 'material-sub', `*V&B 80x 80x 0,9 2835BZ1001 Pure Base !Z creme matt ugl. FS R10/B rekt. #1209834`, '1209835', 46.2, 'qm', `*V&B 80x 80x 0,9 2835BZ1001 Pure Base !Z creme matt ugl. FS R10/B rekt. #1209834`, false, false, 1, 'material'),
+            createProduct('662445', 'material', 'material-sub', `V&B 7,5x 60 2872RU200 My Earth Sockel beige multicolor ugl. FS`, '662445', 14.53, 'qm', `V&B 7,5x 60 2872RU200 My Earth Sockel beige multicolor ugl. FS`, false, false, 1, 'material'),
+            createProduct('uv867-00298', 'material', 'material-sub', `Ottoseal S 110 Premium Neutral Silicon`, 'uv867-00298', 8.79, 'Stk', `Ottoseal S 110 Premium Neutral Silicon`, false, false, 1, 'material'),
+            createProduct('tepnafjtp2-310', 'material', 'material-sub', `JOKAVLIES TITAN PLUS 200cm Atelier 2020`, 'TEPNAFJTP2_310', 14.89, 'qm', `JOKAVLIES TITAN PLUS 200cm Atelier 2020`, false, false, 1, 'material')
           ]
         }
       ]
@@ -125,7 +125,7 @@ export const packageBoedenAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('bode-400-basis', 'fliesen-boden', 'fliesen-boden-sub', `BODENFLIESEN | 🛠 Montage-Leistungspaket`, 'BODE-400-BASIS', 59.9, 'qm', `🛠 Montage-Leistungspaket`, true, false, 1, 'service')
+            createProduct('bode-400-basis', 'fliesen-boden', 'fliesen-boden-sub', `BODENFLIESEN | 🛠 Montage-Leistungspaket`, 'BODE-400-BASIS', 59.9, 'qm', `🛠 Montage-Leistungspaket`, false, false, 1, 'service')
           ]
         }
       ]
@@ -140,7 +140,7 @@ export const packageBoedenAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('bode-10001-basis', 'teppich-boden', 'teppich-boden-sub', `VERLEGUNG TEPPICH | 🛠 Montage-Leistungspaket`, 'BODE-10001-Basis', 17.9, 'qm', `🛠 Montage-Leistungspaket`, true, false, 1, 'service')
+            createProduct('bode-10001-basis', 'teppich-boden', 'teppich-boden-sub', `VERLEGUNG TEPPICH | 🛠 Montage-Leistungspaket`, 'BODE-10001-Basis', 17.9, 'qm', `🛠 Montage-Leistungspaket`, false, false, 1, 'service')
           ]
         }
       ]
@@ -155,8 +155,8 @@ export const packageBoedenAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'optional',
           products: [
-            createProduct('rohb-501-mat', 'estrich-boden', 'estrich-boden-sub', `ESTRICH | Trocken-Platten |**Varianten**`, 'ROHB-501-MAT', 48.46, 'qm', `Trocken-Platten |**Varianten**`, true, true, 1, 'optional'),
-            createProduct('rohb-10004-basis', 'estrich-boden', 'estrich-boden-sub', `SICHTBETON-ESTRICH-BODEN | 🛠 Montage-Leistungspaket`, 'ROHB-10004-Basis', 139, 'qm', `🛠 Montage-Leistungspaket`, true, false, 1, 'service')
+            createProduct('rohb-501-mat', 'estrich-boden', 'estrich-boden-sub', `ESTRICH | Trocken-Platten |**Varianten**`, 'ROHB-501-MAT', 48.46, 'qm', `Trocken-Platten |**Varianten**`, false, true, 1, 'optional'),
+            createProduct('rohb-10004-basis', 'estrich-boden', 'estrich-boden-sub', `SICHTBETON-ESTRICH-BODEN | 🛠 Montage-Leistungspaket`, 'ROHB-10004-Basis', 139, 'qm', `🛠 Montage-Leistungspaket`, false, false, 1, 'service')
           ]
         }
       ]

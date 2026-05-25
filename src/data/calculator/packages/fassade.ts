@@ -54,7 +54,7 @@ export const packageFassadeAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('fass-100-basis', 'daemmung-fassade', 'daemmung-fassade-sub', `FASSADEN Dämmung WDVS | 🛠 Montage-Leistungspaket`, 'FASS-100-BASIS', 59, 'qm', `🛠 Montage-Leistungspaket`, true, false, 1, 'service')
+            createProduct('fass-100-basis', 'daemmung-fassade', 'daemmung-fassade-sub', `FASSADEN Dämmung WDVS | 🛠 Montage-Leistungspaket`, 'FASS-100-BASIS', 59, 'qm', `🛠 Montage-Leistungspaket`, false, false, 1, 'service')
           ]
         }
       ]
@@ -69,18 +69,18 @@ export const packageFassadeAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'material',
           products: [
-            createProduct('uv868-00626', 'material', 'material-sub', `weber.therm MW 035 Fassade Mineralwoll-Dämmplatte - 140 mm`, 'uv868-00626', 30.48, 'Stk', `weber.therm MW 035 Fassade Mineralwoll-Dämmplatte - 140 mm`, true, false, 1, 'material'),
+            createProduct('uv868-00626', 'material', 'material-sub', `weber.therm MW 035 Fassade Mineralwoll-Dämmplatte - 140 mm`, 'uv868-00626', 30.48, 'Stk', `weber.therm MW 035 Fassade Mineralwoll-Dämmplatte - 140 mm`, false, false, 1, 'material'),
             createProduct('fass-401-mat', 'material', 'material-sub', `VERKLEIDUNG | Fassade aus Lärchen-Holz |**Varianten**`, 'FASS-401-MAT', 97.96, 'qm', `Fassade aus Lärchen-Holz |**Varianten**`, false, true, 1, 'optional'),
-            createProduct('744-10030', 'material', 'material-sub', `Terca Klinker KMz 28-2,4-DF voll KK1 rotbunt glatt`, '744-10030', 2.42, 'Stk', `Terca Klinker KMz 28-2,4-DF voll KK1 rotbunt glatt`, true, false, 1, 'material'),
-            createProduct('uv633-00009', 'material', 'material-sub', `Stebah Fugenmörtel - 25 Kg - Hellgrau`, 'uv633-00009', 23.3, 'Sack', `Stebah Fugenmörtel - 25 Kg - Hellgrau`, true, false, 1, 'material'),
-            createProduct('466-20089', 'material', 'material-sub', `Metten Naturstein Mauersystem ARTIC GRANIT Hellgrau gestockt 40x20x15 cm`, '466-20089', 18.92, 'Stk', `Metten Naturstein Mauersystem ARTIC GRANIT Hellgrau gestockt 40x20x15 cm`, true, false, 1, 'material'),
-            createProduct('737-00359', 'material', 'material-sub', `De Ryck Steinriemchen Granulit G52 | 21x1,5x6 cm`, '737-00359', 59.62, 'Stk', `21x1,5x6 cm`, true, false, 1, 'material'),
-            createProduct('uv737-00378', 'material', 'material-sub', `De Ryck Imprägnierung Kanister`, 'uv737-00378', 24.01, 'Stk', `De Ryck Imprägnierung Kanister`, true, false, 1, 'material'),
-            createProduct('031-00032', 'material', 'material-sub', `1A BAUCHEMIE Wand- und Bodenspachtel 50S - 25 Kg Spachtelmasse für innen & außen`, '031-00032', 38.39, 'Stk', `1A BAUCHEMIE Wand- und Bodenspachtel 50S - 25 Kg Spachtelmasse für innen & außen`, true, false, 1, 'material'),
-            createProduct('uv31-00018-3', 'material', 'material-sub', `1A BAUCHEMIE T-FLEX TE C2 Flex Klebemörtel für keramische Wand- und Bodenbeläge im Innen- und Außenbereich grau`, 'uv31-00018', 19.73, 'Sack', `1A BAUCHEMIE T-FLEX TE C2 Flex Klebemörtel für keramische Wand- und Bodenbeläge im Innen- und Außenbereich grau`, true, false, 1, 'material'),
-            createProduct('uv31-00012', 'material', 'material-sub', `1A BAUCHEMIE universal Fertig Grundierung für saugende Untergründe innen & außen Boden & Wand`, 'uv31-00012', 39.58, 'Geb', `1A BAUCHEMIE universal Fertig Grundierung für saugende Untergründe innen & außen Boden & Wand`, true, false, 1, 'material'),
-            createProduct('mat-anfrage', 'material', 'material-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 'MAT-Anfrage', 0, 'Stk', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, true, false, 1, 'material'),
-            createProduct('mat-anfrage-2', 'material', 'material-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 'MAT-Anfrage', 0, 'Stk', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, true, false, 1, 'material')
+            createProduct('744-10030', 'material', 'material-sub', `Terca Klinker KMz 28-2,4-DF voll KK1 rotbunt glatt`, '744-10030', 2.42, 'Stk', `Terca Klinker KMz 28-2,4-DF voll KK1 rotbunt glatt`, false, false, 1, 'material'),
+            createProduct('uv633-00009', 'material', 'material-sub', `Stebah Fugenmörtel - 25 Kg - Hellgrau`, 'uv633-00009', 23.3, 'Sack', `Stebah Fugenmörtel - 25 Kg - Hellgrau`, false, false, 1, 'material'),
+            createProduct('466-20089', 'material', 'material-sub', `Metten Naturstein Mauersystem ARTIC GRANIT Hellgrau gestockt 40x20x15 cm`, '466-20089', 18.92, 'Stk', `Metten Naturstein Mauersystem ARTIC GRANIT Hellgrau gestockt 40x20x15 cm`, false, false, 1, 'material'),
+            createProduct('737-00359', 'material', 'material-sub', `De Ryck Steinriemchen Granulit G52 | 21x1,5x6 cm`, '737-00359', 59.62, 'Stk', `21x1,5x6 cm`, false, false, 1, 'material'),
+            createProduct('uv737-00378', 'material', 'material-sub', `De Ryck Imprägnierung Kanister`, 'uv737-00378', 24.01, 'Stk', `De Ryck Imprägnierung Kanister`, false, false, 1, 'material'),
+            createProduct('031-00032', 'material', 'material-sub', `1A BAUCHEMIE Wand- und Bodenspachtel 50S - 25 Kg Spachtelmasse für innen & außen`, '031-00032', 38.39, 'Stk', `1A BAUCHEMIE Wand- und Bodenspachtel 50S - 25 Kg Spachtelmasse für innen & außen`, false, false, 1, 'material'),
+            createProduct('uv31-00018-3', 'material', 'material-sub', `1A BAUCHEMIE T-FLEX TE C2 Flex Klebemörtel für keramische Wand- und Bodenbeläge im Innen- und Außenbereich grau`, 'uv31-00018', 19.73, 'Sack', `1A BAUCHEMIE T-FLEX TE C2 Flex Klebemörtel für keramische Wand- und Bodenbeläge im Innen- und Außenbereich grau`, false, false, 1, 'material'),
+            createProduct('uv31-00012', 'material', 'material-sub', `1A BAUCHEMIE universal Fertig Grundierung für saugende Untergründe innen & außen Boden & Wand`, 'uv31-00012', 39.58, 'Geb', `1A BAUCHEMIE universal Fertig Grundierung für saugende Untergründe innen & außen Boden & Wand`, false, false, 1, 'material'),
+            createProduct('mat-anfrage', 'material', 'material-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 'MAT-Anfrage', 0, 'Stk', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, false, false, 1, 'material'),
+            createProduct('mat-anfrage-2', 'material', 'material-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 'MAT-Anfrage', 0, 'Stk', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, false, false, 1, 'material')
           ]
         }
       ]
@@ -95,15 +95,15 @@ export const packageFassadeAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'extra',
           products: [
-            createProduct('868-00365', 'extra-positionen', 'extra-positionen-sub', `weber.therm 302 Klebe- und Armierungsmötel leicht naturweiss, 25 Kg`, '868-00365', 23.1, 'Stk', `weber.therm 302 Klebe- und Armierungsmötel leicht naturweiss, 25 Kg`, true, false, 1, 'extra'),
-            createProduct('uv868-00877', 'extra-positionen', 'extra-positionen-sub', `weber.top 203 AquaBalance Edelkratzputz fein mit Glimmer 25 Kg`, 'uv868-00877', 19.73, 'Stk', `weber.top 203 AquaBalance Edelkratzputz fein mit Glimmer 25 Kg`, true, false, 1, 'extra'),
-            createProduct('868-00188', 'extra-positionen', 'extra-positionen-sub', `weber.therm 310 Armierungsgewebe 8x8mm - 1,1x50 m`, '868-00188', 91.52, 'Stk', `weber.therm 310 Armierungsgewebe 8x8mm - 1,1x50 m`, true, false, 1, 'extra'),
-            createProduct('868-00413', 'extra-positionen', 'extra-positionen-sub', `weber.therm Dübelteller DT 140`, '868-00413', 53.79, 'Stk', `weber.therm Dübelteller DT 140`, true, false, 1, 'extra'),
-            createProduct('uv868-00282', 'extra-positionen', 'extra-positionen-sub', `Weber Gewebe-Abschlussprofil`, 'uv868-00282', 27.28, 'Stk', `Weber Gewebe-Abschlussprofil`, true, false, 1, 'extra'),
-            createProduct('uv868-00722', 'extra-positionen', 'extra-positionen-sub', `weber.therm Sockelabschlussprofil W61-1 KU`, 'uv868-00722', 13.7, 'Stk', `weber.therm Sockelabschlussprofil W61-1 KU`, true, false, 1, 'extra'),
-            createProduct('uv31-00018', 'extra-positionen', 'extra-positionen-sub', `1A BAUCHEMIE T-FLEX TE C2 Flex Klebemörtel für keramische Wand- und Bodenbeläge im Innen- und Außenbereich grau`, 'uv31-00018', 19.73, 'Sack', `1A BAUCHEMIE T-FLEX TE C2 Flex Klebemörtel für keramische Wand- und Bodenbeläge im Innen- und Außenbereich grau`, true, false, 1, 'extra'),
-            createProduct('uv633-00009-2', 'extra-positionen', 'extra-positionen-sub', `Stebah Fugenmörtel - 25 Kg - Hellgrau`, 'uv633-00009', 23.3, 'Sack', `Stebah Fugenmörtel - 25 Kg - Hellgrau`, true, false, 1, 'extra'),
-            createProduct('uv31-00018-2', 'extra-positionen', 'extra-positionen-sub', `1A BAUCHEMIE T-FLEX TE C2 Flex Klebemörtel für keramische Wand- und Bodenbeläge im Innen- und Außenbereich grau`, 'uv31-00018', 19.73, 'Sack', `1A BAUCHEMIE T-FLEX TE C2 Flex Klebemörtel für keramische Wand- und Bodenbeläge im Innen- und Außenbereich grau`, true, false, 1, 'extra')
+            createProduct('868-00365', 'extra-positionen', 'extra-positionen-sub', `weber.therm 302 Klebe- und Armierungsmötel leicht naturweiss, 25 Kg`, '868-00365', 23.1, 'Stk', `weber.therm 302 Klebe- und Armierungsmötel leicht naturweiss, 25 Kg`, false, false, 1, 'extra'),
+            createProduct('uv868-00877', 'extra-positionen', 'extra-positionen-sub', `weber.top 203 AquaBalance Edelkratzputz fein mit Glimmer 25 Kg`, 'uv868-00877', 19.73, 'Stk', `weber.top 203 AquaBalance Edelkratzputz fein mit Glimmer 25 Kg`, false, false, 1, 'extra'),
+            createProduct('868-00188', 'extra-positionen', 'extra-positionen-sub', `weber.therm 310 Armierungsgewebe 8x8mm - 1,1x50 m`, '868-00188', 91.52, 'Stk', `weber.therm 310 Armierungsgewebe 8x8mm - 1,1x50 m`, false, false, 1, 'extra'),
+            createProduct('868-00413', 'extra-positionen', 'extra-positionen-sub', `weber.therm Dübelteller DT 140`, '868-00413', 53.79, 'Stk', `weber.therm Dübelteller DT 140`, false, false, 1, 'extra'),
+            createProduct('uv868-00282', 'extra-positionen', 'extra-positionen-sub', `Weber Gewebe-Abschlussprofil`, 'uv868-00282', 27.28, 'Stk', `Weber Gewebe-Abschlussprofil`, false, false, 1, 'extra'),
+            createProduct('uv868-00722', 'extra-positionen', 'extra-positionen-sub', `weber.therm Sockelabschlussprofil W61-1 KU`, 'uv868-00722', 13.7, 'Stk', `weber.therm Sockelabschlussprofil W61-1 KU`, false, false, 1, 'extra'),
+            createProduct('uv31-00018', 'extra-positionen', 'extra-positionen-sub', `1A BAUCHEMIE T-FLEX TE C2 Flex Klebemörtel für keramische Wand- und Bodenbeläge im Innen- und Außenbereich grau`, 'uv31-00018', 19.73, 'Sack', `1A BAUCHEMIE T-FLEX TE C2 Flex Klebemörtel für keramische Wand- und Bodenbeläge im Innen- und Außenbereich grau`, false, false, 1, 'extra'),
+            createProduct('uv633-00009-2', 'extra-positionen', 'extra-positionen-sub', `Stebah Fugenmörtel - 25 Kg - Hellgrau`, 'uv633-00009', 23.3, 'Sack', `Stebah Fugenmörtel - 25 Kg - Hellgrau`, false, false, 1, 'extra'),
+            createProduct('uv31-00018-2', 'extra-positionen', 'extra-positionen-sub', `1A BAUCHEMIE T-FLEX TE C2 Flex Klebemörtel für keramische Wand- und Bodenbeläge im Innen- und Außenbereich grau`, 'uv31-00018', 19.73, 'Sack', `1A BAUCHEMIE T-FLEX TE C2 Flex Klebemörtel für keramische Wand- und Bodenbeläge im Innen- und Außenbereich grau`, false, false, 1, 'extra')
           ]
         }
       ]
@@ -138,7 +138,7 @@ export const packageFassadeAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('fass-300-basis', 'holz-fassaden-verkleidung', 'holz-fassaden-verkleidung-sub', `FASSADEN Verkleidung | 🛠 Montage-Leistungspaket`, 'FASS-300-BASIS', 49, 'qm', `🛠 Montage-Leistungspaket`, true, false, 1, 'service')
+            createProduct('fass-300-basis', 'holz-fassaden-verkleidung', 'holz-fassaden-verkleidung-sub', `FASSADEN Verkleidung | 🛠 Montage-Leistungspaket`, 'FASS-300-BASIS', 49, 'qm', `🛠 Montage-Leistungspaket`, false, false, 1, 'service')
           ]
         }
       ]
@@ -153,7 +153,7 @@ export const packageFassadeAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('fass-10012', 'verblendmauerwerk-fassaden-verkleidung', 'verblendmauerwerk-fassaden-verkleidung-sub', `VERBLENDMAUERWERK | 🛠 Montage`, 'FASS-10012', 149, 'qm', `🛠 Montage`, true, false, 1, 'service')
+            createProduct('fass-10012', 'verblendmauerwerk-fassaden-verkleidung', 'verblendmauerwerk-fassaden-verkleidung-sub', `VERBLENDMAUERWERK | 🛠 Montage`, 'FASS-10012', 149, 'qm', `🛠 Montage`, false, false, 1, 'service')
           ]
         }
       ]
@@ -168,7 +168,7 @@ export const packageFassadeAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('fass-10007', 'naturstein-fassaden-verkleidung', 'naturstein-fassaden-verkleidung-sub', `NATURSTEIN | 🛠 Montage`, 'FASS-10007', 69, 'qm', `🛠 Montage`, true, false, 1, 'service')
+            createProduct('fass-10007', 'naturstein-fassaden-verkleidung', 'naturstein-fassaden-verkleidung-sub', `NATURSTEIN | 🛠 Montage`, 'FASS-10007', 69, 'qm', `🛠 Montage`, false, false, 1, 'service')
           ]
         }
       ]
@@ -183,7 +183,7 @@ export const packageFassadeAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('fass-10001', 'klinkerriemchen-fassaden-verkleidung', 'klinkerriemchen-fassaden-verkleidung-sub', `KLINKERRIEMCHEN | 🛠 Montage`, 'FASS-10001', 49, 'qm', `🛠 Montage`, true, false, 1, 'service')
+            createProduct('fass-10001', 'klinkerriemchen-fassaden-verkleidung', 'klinkerriemchen-fassaden-verkleidung-sub', `KLINKERRIEMCHEN | 🛠 Montage`, 'FASS-10001', 49, 'qm', `🛠 Montage`, false, false, 1, 'service')
           ]
         }
       ]
@@ -198,7 +198,7 @@ export const packageFassadeAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('fass-10009', 'vorhangfassade', 'vorhangfassade-sub', `VORHANGFASSADE | 🛠 Montage`, 'FASS-10009', 159, 'qm', `🛠 Montage`, true, false, 1, 'service')
+            createProduct('fass-10009', 'vorhangfassade', 'vorhangfassade-sub', `VORHANGFASSADE | 🛠 Montage`, 'FASS-10009', 159, 'qm', `🛠 Montage`, false, false, 1, 'service')
           ]
         }
       ]
@@ -213,7 +213,7 @@ export const packageFassadeAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('fass-10010', 'plattenverkleidung', 'plattenverkleidung-sub', `FASSADENVERKLEIDUNG MIT GLASPLATTEN | 🛠 Montage`, 'FASS-10010', 69, 'qm', `🛠 Montage`, true, false, 1, 'service')
+            createProduct('fass-10010', 'plattenverkleidung', 'plattenverkleidung-sub', `FASSADENVERKLEIDUNG MIT GLASPLATTEN | 🛠 Montage`, 'FASS-10010', 69, 'qm', `🛠 Montage`, false, false, 1, 'service')
           ]
         }
       ]

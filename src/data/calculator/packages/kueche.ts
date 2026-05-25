@@ -54,10 +54,10 @@ export const packageKuecheAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('kuec-10001-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `KÜCHENMONTAGEpauschal | 🛠 Montage-Leistungspaket`, 'KUEC-10001-Basis', 290, 'lfm', `🛠 Montage-Leistungspaket`, true, false, 7, 'service'),
-            createProduct('wass-300-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `WASSERINSTALLATION KÜCHE | 🛠 Montage-Leistungspaket`, 'WASS-300-BASIS', 995.9, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('elek-301-1-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `E-ZULEITUNG - ALS EINZELINSTALLATION (PRO 5 M) | 🛠 Zusatz-Montage`, 'ELEK-301-1-ZU', 159.9, 'Stk', `🛠 Zusatz-Montage`, true, false, 1, 'extra'),
-            createProduct('elek-201-2-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `HERDANSCHLUSS ZULEITUNG + DOSE | 🛠 Zusatz-Montage`, 'ELEK-201-2-ZU', 391.9, 'Stk', `🛠 Zusatz-Montage`, true, false, 1, 'extra')
+            createProduct('kuec-10001-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `KÜCHENMONTAGEpauschal | 🛠 Montage-Leistungspaket`, 'KUEC-10001-Basis', 290, 'lfm', `🛠 Montage-Leistungspaket`, false, false, 7, 'service'),
+            createProduct('wass-300-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `WASSERINSTALLATION KÜCHE | 🛠 Montage-Leistungspaket`, 'WASS-300-BASIS', 995.9, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('elek-301-1-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `E-ZULEITUNG - ALS EINZELINSTALLATION (PRO 5 M) | 🛠 Zusatz-Montage`, 'ELEK-301-1-ZU', 159.9, 'Stk', `🛠 Zusatz-Montage`, false, false, 1, 'extra'),
+            createProduct('elek-201-2-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `HERDANSCHLUSS ZULEITUNG + DOSE | 🛠 Zusatz-Montage`, 'ELEK-201-2-ZU', 391.9, 'Stk', `🛠 Zusatz-Montage`, false, false, 1, 'extra')
           ]
         }
       ]
@@ -72,10 +72,10 @@ export const packageKuecheAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'material',
           products: [
-            createProduct('neu-000053', 'material', 'material-sub', `nobilia Einbauküche L-Küche Berlin 540 cm in Weiß komplett konfigurierbar - online kaufen`, 'neu-000053', 5424.02, 'Stk', `nobilia Einbauküche L-Küche Berlin 540 cm in Weiß komplett konfigurierbar - online kaufen`, true, false, 1, 'material'),
+            createProduct('neu-000053', 'material', 'material-sub', `nobilia Einbauküche L-Küche Berlin 540 cm in Weiß komplett konfigurierbar - online kaufen`, 'neu-000053', 5424.02, 'Stk', `nobilia Einbauküche L-Küche Berlin 540 cm in Weiß komplett konfigurierbar - online kaufen`, false, false, 1, 'material'),
             createProduct('elek-302-mat', 'material', 'material-sub', `STECKDOSE | Gira S 55 weiß |**Varianten**`, 'ELEK-302-MAT', 49.9, 'Stk', `Gira S 55 weiß |**Varianten**`, false, true, 1, 'optional'),
             createProduct('elek-301-mat', 'material', 'material-sub', `LICHTSCHALTER | Gira S 55 weiß |**Varianten**`, 'ELEK-301-MAT', 65.39, 'Stk', `Gira S 55 weiß |**Varianten**`, false, true, 1, 'optional'),
-            createProduct('elek-201-2-zu-2', 'material', 'material-sub', `HERDANSCHLUSS ZULEITUNG + DOSE | 🛠 Zusatz-Montage`, 'ELEK-201-2-ZU', 391.9, 'Stk', `🛠 Zusatz-Montage`, true, false, 1, 'extra')
+            createProduct('elek-201-2-zu-2', 'material', 'material-sub', `HERDANSCHLUSS ZULEITUNG + DOSE | 🛠 Zusatz-Montage`, 'ELEK-201-2-ZU', 391.9, 'Stk', `🛠 Zusatz-Montage`, false, false, 1, 'extra')
           ]
         }
       ]
@@ -111,8 +111,8 @@ export const packageKuecheAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'extra',
           products: [
-            createProduct('670036573313', 'extra-positionen', 'extra-positionen-sub', `Hailo Einbau-Abfallsammler Separato ASSB 40 Mülleimer für Badezimmer-Auszugschränke 22cm hoch`, '670036573313', 109.48, 'Stk', `Hailo Einbau-Abfallsammler Separato ASSB 40 Mülleimer für Badezimmer-Auszugschränke 22cm hoch`, true, false, 1, 'extra'),
-            createProduct('3372-953-044', 'extra-positionen', 'extra-positionen-sub', `nobilia Handtuchhalter 2-armig HTHA2`, '3372-953_-044', 141.61, 'Stk', `nobilia Handtuchhalter 2-armig HTHA2`, true, false, 1, 'extra')
+            createProduct('670036573313', 'extra-positionen', 'extra-positionen-sub', `Hailo Einbau-Abfallsammler Separato ASSB 40 Mülleimer für Badezimmer-Auszugschränke 22cm hoch`, '670036573313', 109.48, 'Stk', `Hailo Einbau-Abfallsammler Separato ASSB 40 Mülleimer für Badezimmer-Auszugschränke 22cm hoch`, false, false, 1, 'extra'),
+            createProduct('3372-953-044', 'extra-positionen', 'extra-positionen-sub', `nobilia Handtuchhalter 2-armig HTHA2`, '3372-953_-044', 141.61, 'Stk', `nobilia Handtuchhalter 2-armig HTHA2`, false, false, 1, 'extra')
           ]
         }
       ]

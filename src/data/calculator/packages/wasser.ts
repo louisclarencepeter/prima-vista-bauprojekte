@@ -54,11 +54,11 @@ export const packageWasserAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('wass-100-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `WASSERINSTALLATION BADEZIMMER | 🛠 Montage-Leistungspaket`, 'WASS-100-BASIS', 1995.9, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('wass-200-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `WASSERINSTALLATION GÄSTE-WC | 🛠 Montage-Leistungspaket`, 'WASS-200-BASIS', 1195.9, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('wass-300-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `WASSERINSTALLATION KÜCHE | 🛠 Montage-Leistungspaket`, 'WASS-300-BASIS', 995.9, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('wass-400-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `WASSERINSTALLLATION KELLER | 🛠 Montage-Leistungspaket`, 'WASS-400-BASIS', 1239.9, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('wass-501-mat', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `HAUPTSTRANG (Trink- & Abwasser & Zirkul.) | 🛠 Montage-Leistungspaket`, 'WASS-501-MAT', 2767.9, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service')
+            createProduct('wass-100-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `WASSERINSTALLATION BADEZIMMER | 🛠 Montage-Leistungspaket`, 'WASS-100-BASIS', 1995.9, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('wass-200-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `WASSERINSTALLATION GÄSTE-WC | 🛠 Montage-Leistungspaket`, 'WASS-200-BASIS', 1195.9, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('wass-300-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `WASSERINSTALLATION KÜCHE | 🛠 Montage-Leistungspaket`, 'WASS-300-BASIS', 995.9, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('wass-400-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `WASSERINSTALLLATION KELLER | 🛠 Montage-Leistungspaket`, 'WASS-400-BASIS', 1239.9, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('wass-501-mat', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `HAUPTSTRANG (Trink- & Abwasser & Zirkul.) | 🛠 Montage-Leistungspaket`, 'WASS-501-MAT', 2767.9, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'service')
           ]
         }
       ]
@@ -73,8 +73,8 @@ export const packageWasserAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'extra',
           products: [
-            createProduct('wass-105-zu', 'extra-positionen', 'extra-positionen-sub', `WASCHMASCHINEN ANSCHLUSS | 🛠 Zusatz-Montage`, 'WASS-105-ZU', 355.36, 'Stk', `🛠 Zusatz-Montage`, true, false, 1, 'extra'),
-            createProduct('wass-101-mon', 'extra-positionen', 'extra-positionen-sub', `VORSATZ-ELEMENT | 🛠 Montage`, 'WASS-101-MON', 279, 'Stk', `🛠 Montage`, true, false, 1, 'extra')
+            createProduct('wass-105-zu', 'extra-positionen', 'extra-positionen-sub', `WASCHMASCHINEN ANSCHLUSS | 🛠 Zusatz-Montage`, 'WASS-105-ZU', 355.36, 'Stk', `🛠 Zusatz-Montage`, false, false, 1, 'extra'),
+            createProduct('wass-101-mon', 'extra-positionen', 'extra-positionen-sub', `VORSATZ-ELEMENT | 🛠 Montage`, 'WASS-101-MON', 279, 'Stk', `🛠 Montage`, false, false, 1, 'extra')
           ]
         }
       ]
@@ -89,9 +89,9 @@ export const packageWasserAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('cvis3wt112', 'material', 'material-sub', `VIS Waschtisch-Montageelement | CONEL VIS Waschtisch-Montage`, 'CVIS3WT112', 203.94, 'Stk', `CONEL VIS Waschtisch-Montage`, true, false, 1, 'service'),
-            createProduct('dfix320wc112', 'material', 'material-sub', `Montageelement für Wand-WC, mit UP-Spülkasten Sigma 12 cm |`, 'DFIX320WC112', 390.06, 'Stk', ``, true, false, 1, 'service'),
-            createProduct('sigma30wech', 'material', 'material-sub', `Abdeckplatte Sigma30 weiß/hgl.verchr. f.2-Mengen-Spülung, für UP-Spülkästen GE`, 'SIGMA30WECH', 101.5, 'Stk', `Abdeckplatte Sigma30 weiß/hgl.verchr. f.2-Mengen-Spülung, für UP-Spülkästen GE`, true, false, 1, 'material')
+            createProduct('cvis3wt112', 'material', 'material-sub', `VIS Waschtisch-Montageelement | CONEL VIS Waschtisch-Montage`, 'CVIS3WT112', 203.94, 'Stk', `CONEL VIS Waschtisch-Montage`, false, false, 1, 'service'),
+            createProduct('dfix320wc112', 'material', 'material-sub', `Montageelement für Wand-WC, mit UP-Spülkasten Sigma 12 cm |`, 'DFIX320WC112', 390.06, 'Stk', ``, false, false, 1, 'service'),
+            createProduct('sigma30wech', 'material', 'material-sub', `Abdeckplatte Sigma30 weiß/hgl.verchr. f.2-Mengen-Spülung, für UP-Spülkästen GE`, 'SIGMA30WECH', 101.5, 'Stk', `Abdeckplatte Sigma30 weiß/hgl.verchr. f.2-Mengen-Spülung, für UP-Spülkästen GE`, false, false, 1, 'material')
           ]
         }
       ]

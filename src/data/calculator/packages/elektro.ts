@@ -54,7 +54,7 @@ export const packageElektroAlles: RenovationPackage = {
           title: 'Basis',
           type: 'service',
           products: [
-            createProduct('elek-100-basis', 'basis', 'basis-sub', `ELEKTRO-NEUINSTALLATION (pro Etage)`, 1995.9, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'ELEK-100-BASIS', 'service')
+            createProduct('elek-100-basis', 'basis', 'basis-sub', `ELEKTRO-NEUINSTALLATION (pro Etage)`, 1995.9, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'ELEK-100-BASIS', 'service')
           ]
         }
       ]
@@ -69,13 +69,13 @@ export const packageElektroAlles: RenovationPackage = {
           title: 'Extra Positionen',
           type: 'extra',
           products: [
-            createProduct('elek-201-1-zu', 'extra-positionen', 'extra-positionen-sub', `ZULEITUNGEN SET`, 3495.9, 'Stk', `8X SCHALTER/ 25X STECKDOSEN (PRO ETAGE) | 🛠 Zusatz-Montage`, true, false, 1, 'ELEK-201-1-ZU', 'extra'),
-            createProduct('elek-101-2-mat', 'extra-positionen', 'extra-positionen-sub', `SICHERUNGSKASTEN`, 1678.5, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'ELEK-101.2-MAT', 'extra'),
-            createProduct('elek-201-2-zu', 'extra-positionen', 'extra-positionen-sub', `HERDANSCHLUSS ZULEITUNG + DOSE`, 391.9, 'Stk', `🛠 Zusatz-Montage`, true, false, 1, 'ELEK-201-2-ZU', 'extra'),
-            createProduct('elek-201-3-zu', 'extra-positionen', 'extra-positionen-sub', `MAUERSCHLITZE BETON`, 69.25, 'Stk', `HERSTELLEN PRO ELEKTROELEMENT | 🛠 Zusatz-Montage`, true, false, 1, 'ELEK-201-3-ZU', 'extra'),
-            createProduct('elek-310-mat', 'extra-positionen', 'extra-positionen-sub', `ELEKTRO_CHECK (pro Etage)`, 295.9, 'Stk', `ELEKTRO_CHECK (pro Etage)`, true, false, 1, 'ELEK-310-MAT', 'extra'),
-            createProduct('elek-201-3-zu-2', 'extra-positionen', 'extra-positionen-sub', `MAUERSCHLITZE BETON`, 69.25, 'Stk', `HERSTELLEN PRO ELEKTROELEMENT | 🛠 Zusatz-Montage`, true, false, 1, 'ELEK-201-3-ZU', 'extra'),
-            createProduct('elek-310-mat-2', 'extra-positionen', 'extra-positionen-sub', `ELEKTRO_CHECK (pro Etage)`, 295.9, 'Stk', `ELEKTRO_CHECK (pro Etage)`, true, false, 1, 'ELEK-310-MAT', 'extra')
+            createProduct('elek-201-1-zu', 'extra-positionen', 'extra-positionen-sub', `ZULEITUNGEN SET`, 3495.9, 'Stk', `8X SCHALTER/ 25X STECKDOSEN (PRO ETAGE) | 🛠 Zusatz-Montage`, false, false, 1, 'ELEK-201-1-ZU', 'extra'),
+            createProduct('elek-101-2-mat', 'extra-positionen', 'extra-positionen-sub', `SICHERUNGSKASTEN`, 1678.5, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'ELEK-101.2-MAT', 'extra'),
+            createProduct('elek-201-2-zu', 'extra-positionen', 'extra-positionen-sub', `HERDANSCHLUSS ZULEITUNG + DOSE`, 391.9, 'Stk', `🛠 Zusatz-Montage`, false, false, 1, 'ELEK-201-2-ZU', 'extra'),
+            createProduct('elek-201-3-zu', 'extra-positionen', 'extra-positionen-sub', `MAUERSCHLITZE BETON`, 69.25, 'Stk', `HERSTELLEN PRO ELEKTROELEMENT | 🛠 Zusatz-Montage`, false, false, 1, 'ELEK-201-3-ZU', 'extra'),
+            createProduct('elek-310-mat', 'extra-positionen', 'extra-positionen-sub', `ELEKTRO_CHECK (pro Etage)`, 295.9, 'Stk', `ELEKTRO_CHECK (pro Etage)`, false, false, 1, 'ELEK-310-MAT', 'extra'),
+            createProduct('elek-201-3-zu-2', 'extra-positionen', 'extra-positionen-sub', `MAUERSCHLITZE BETON`, 69.25, 'Stk', `HERSTELLEN PRO ELEKTROELEMENT | 🛠 Zusatz-Montage`, false, false, 1, 'ELEK-201-3-ZU', 'extra'),
+            createProduct('elek-310-mat-2', 'extra-positionen', 'extra-positionen-sub', `ELEKTRO_CHECK (pro Etage)`, 295.9, 'Stk', `ELEKTRO_CHECK (pro Etage)`, false, false, 1, 'ELEK-310-MAT', 'extra')
           ]
         }
       ]
@@ -93,8 +93,8 @@ export const packageElektroAlles: RenovationPackage = {
             createProduct('elek-201-mat', 'material', 'material-sub', `SCHALTER/STECKD. SET 25/8`, 1495.9, 'Stk', `Gira S 55 weiß | **Varianten**`, false, true, 1, 'ELEK-201-MAT', 'optional'),
             createProduct('elek-302-mat', 'material', 'material-sub', `STECKDOSE`, 49.9, 'Stk', `Gira S 55 weiß | **Varianten**`, false, true, 1, 'ELEK-302-MAT', 'optional'),
             createProduct('elek-301-mat', 'material', 'material-sub', `LICHTSCHALTER`, 65.39, 'Stk', `Gira S 55 weiß | **Varianten**`, false, true, 1, 'ELEK-301-MAT', 'optional'),
-            createProduct('elek-201-2-zu-2', 'material', 'material-sub', `HERDANSCHLUSS ZULEITUNG + DOSE`, 391.9, 'Stk', `🛠 Zusatz-Montage`, true, false, 1, 'ELEK-201-2-ZU', 'extra'),
-            createProduct('elek-101-2-mat-2', 'material', 'material-sub', `SICHERUNGSKASTEN`, 1678.5, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'ELEK-101.2-MAT', 'service')
+            createProduct('elek-201-2-zu-2', 'material', 'material-sub', `HERDANSCHLUSS ZULEITUNG + DOSE`, 391.9, 'Stk', `🛠 Zusatz-Montage`, false, false, 1, 'ELEK-201-2-ZU', 'extra'),
+            createProduct('elek-101-2-mat-2', 'material', 'material-sub', `SICHERUNGSKASTEN`, 1678.5, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'ELEK-101.2-MAT', 'service')
           ]
         }
       ]
@@ -127,7 +127,7 @@ export const packageElektroAlles: RenovationPackage = {
           title: 'IT-NETZWERK | Basis-Haus',
           type: 'extra',
           products: [
-            createProduct('elek-301-zu-2', 'it-netzwerk-basis-haus', 'it-netzwerk-basis-haus-sub', `IT NETZWERKINSTALLATION`, 1978.96, 'Stk', `SET BIS 50 QM | 🛠 Zusatz-Montage`, true, false, 1, 'ELEK-301-ZU', 'extra')
+            createProduct('elek-301-zu-2', 'it-netzwerk-basis-haus', 'it-netzwerk-basis-haus-sub', `IT NETZWERKINSTALLATION`, 1978.96, 'Stk', `SET BIS 50 QM | 🛠 Zusatz-Montage`, false, false, 1, 'ELEK-301-ZU', 'extra')
           ]
         }
       ]
@@ -142,7 +142,7 @@ export const packageElektroAlles: RenovationPackage = {
           title: 'LAMPEN & LEUCHTMITTEL | Basis-Haus',
           type: 'service',
           products: [
-            createProduct('elek-401-1-mat-2', 'lampen-leuchtmittel-basis-haus', 'lampen-leuchtmittel-basis-haus-sub', `LED-EINBAUSTPOST (3 Stück)`, 395.01, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'ELEK-401.1-MAT', 'service')
+            createProduct('elek-401-1-mat-2', 'lampen-leuchtmittel-basis-haus', 'lampen-leuchtmittel-basis-haus-sub', `LED-EINBAUSTPOST (3 Stück)`, 395.01, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'ELEK-401.1-MAT', 'service')
           ]
         }
       ]
