@@ -54,11 +54,7 @@
   white-space: nowrap;
 }
 .pv-nav {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-left: 64px;
+  display: contents;
 }
 .pv-nav__list {
   display: flex;

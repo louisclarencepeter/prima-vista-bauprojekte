@@ -16,9 +16,7 @@
     font-size: 7.5px;
     letter-spacing: 0.26em;
   }
-  .pv-nav {
-    margin-left: 32px;
-  }
+
   .pv-nav__list {
     display: flex;
     gap: 20px;
@@ -56,9 +54,7 @@
     font-size: 7px;
     letter-spacing: 0.22em;
   }
-  .pv-nav {
-    margin-left: 16px;
-  }
+
   .pv-nav__list {
     gap: 12px;
   }
@@ -74,6 +70,9 @@
 }
 @media (max-width: 980px) {
   .pv-nav {
+    display: flex;
+    flex: 1;
+    align-items: center;
     justify-content: flex-end;
     margin-left: 0;
   }
