@@ -54,29 +54,29 @@ export const packageTreppenAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('mon-10255', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `HOLZTREPPEN | 🛠 Montage`, 'MON-10255', 1790, 'Stk', `🛠 Montage`, true, false, 1, 'service'),
-            createProduct('tr-uv-11504', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Holztreppe Lindos (Eiche) gerade`, 'TR-uv-11504', 3207.76, 'Stk', `Holztreppe Lindos (Eiche) gerade`, true, false, 1, 'material'),
-            createProduct('trep-10030', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `BETONTREPPE pro Stufe | 🛠 Montage`, 'TREP-10030', 149, 'pro Stufe', `🛠 Montage`, true, false, 1, 'service'),
-            createProduct('trep-10031', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `BETON-PODEST für Treppe | 🛠 Montage`, 'TREP-10031', 245, 'qm', `🛠 Montage`, true, false, 1, 'service'),
-            createProduct('mon-10077', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `STUFEN | FLIESEN | 🛠 Montage`, 'MON-10077', 79, 'Stk', `FLIESEN | 🛠 Montage`, true, false, 1, 'service'),
-            createProduct('144-12646', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Agrob Buchtal Stufenplatte 25x35x1,4/4,2cm Goldline goldocker R11/A 851-9330`, '144-12646', 19.47, 'Stk', `Agrob Buchtal Stufenplatte 25x35x1,4/4,2cm Goldline goldocker R11/A 851-9330`, true, false, 1, 'material'),
-            createProduct('trep-10001-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `AUßENTREPPE | 🛠 Montage-Leistungspaket`, 'TREP-10001-Basis', 1490, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('tr-uv-11845', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Außenstahlwangentreppe Kreta gerade`, 'TR-uv-11845', 1901.12, 'Stk', `Außenstahlwangentreppe Kreta gerade`, true, false, 1, 'material'),
-            createProduct('trep-10002-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `SPINDELTREPPE | 🛠 Montage-Leistungspaket`, 'TREP-10002-Basis', 1490, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('152-43', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Dolle Spindeltreppe Oslo Buche Leimholz, lackiert - Ø 120 cm Art.Nr.: 760213`, '152-43', 1582.9, 'Stk', `Dolle Spindeltreppe Oslo Buche Leimholz, lackiert - Ø 120 cm Art.Nr.: 760213`, true, false, 1, 'material'),
-            createProduct('trep-10004-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `RAUMSPAR-TREPPE | 🛠 Montage-Leistungspaket`, 'TREP-10004-Basis', 1490, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('tr-uv-11639', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Raumspartreppe Fichte 2000 mit Holzgeländer`, 'TR-uv-11639', 520.03, 'Stk', `Raumspartreppe Fichte 2000 mit Holzgeländer`, true, false, 1, 'material'),
-            createProduct('male-301-5-mat', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `TREPPENSTUFEN LACKIERUNG | 🛠 Montage-Leistungspaket`, 'MALE-301.5-MAT', 99, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('trep-201-3-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `AUFBEREITEN PODEST | JE PODEST (SCHLEIFEN & LACKIEREN) | 🛠 Zusatz-Montage`, 'TREP-201.3-ZU', 198, 'Stk', `JE PODEST (SCHLEIFEN & LACKIEREN) | 🛠 Zusatz-Montage`, true, false, 1, 'extra'),
-            createProduct('male-301-6-mat', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `TREPPENGELÄNDER LACKIERUNG | 🛠 Montage-Leistungspaket`, 'MALE-301.6-MAT', 589.9, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('trep-202-1-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `VERKLEIDUNG STUFE | JE TREPPENSTUFE (MIT MASSIVHOLZ) | 🛠 Zusatz-Montage`, 'TREP-202.1-ZU', 149, 'Stk', `JE TREPPENSTUFE (MIT MASSIVHOLZ) | 🛠 Zusatz-Montage`, true, false, 1, 'extra'),
-            createProduct('trep-203-1-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `VERKLEIDUNG PODEST | JE PODEST (MIT MASSIVHOLZ) | 🛠 Zusatz-Montage`, 'TREP-203.1-ZU', 595, 'Stk', `JE PODEST (MIT MASSIVHOLZ) | 🛠 Zusatz-Montage`, true, false, 1, 'extra'),
-            createProduct('tr-uv-11824', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Treppenstufe Modell Samos`, 'TR-uv-11824', 57.48, 'Stk', `Treppenstufe Modell Samos`, true, false, 1, 'material'),
-            createProduct('tr-uv-11819', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Setzstufen aus Massivholz`, 'TR-uv-11819', 57.48, 'Stk', `Setzstufen aus Massivholz`, true, false, 1, 'material'),
-            createProduct('mon-10259', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `TREPPENGELÄNDER| 🛠 Montage`, 'MON-10259', 195, 'lfm', `🛠 Montage`, true, false, 1, 'service'),
-            createProduct('tr-uv-11773', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Treppengeländer Modell Kos gerade`, 'TR-uv-11773', 758, 'Stk', `Treppengeländer Modell Kos gerade`, true, false, 1, 'material'),
-            createProduct('tr-uv-11798', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Brüstungsgeländer Modell Kos`, 'TR-uv-11798', 526.87, 'Stk', `Brüstungsgeländer Modell Kos`, true, false, 1, 'material'),
-            createProduct('mon-10255-2', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `HOLZTREPPEN | 🛠 Montage`, 'MON-10255', 1790, 'Stk', `🛠 Montage`, true, false, 1, 'service')
+            createProduct('mon-10255', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `HOLZTREPPEN | 🛠 Montage`, 'MON-10255', 1790, 'Stk', `🛠 Montage`, false, false, 1, 'service'),
+            createProduct('tr-uv-11504', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Holztreppe Lindos (Eiche) gerade`, 'TR-uv-11504', 3207.76, 'Stk', `Holztreppe Lindos (Eiche) gerade`, false, false, 1, 'material'),
+            createProduct('trep-10030', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `BETONTREPPE pro Stufe | 🛠 Montage`, 'TREP-10030', 149, 'pro Stufe', `🛠 Montage`, false, false, 1, 'service'),
+            createProduct('trep-10031', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `BETON-PODEST für Treppe | 🛠 Montage`, 'TREP-10031', 245, 'qm', `🛠 Montage`, false, false, 1, 'service'),
+            createProduct('mon-10077', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `STUFEN | FLIESEN | 🛠 Montage`, 'MON-10077', 79, 'Stk', `FLIESEN | 🛠 Montage`, false, false, 1, 'service'),
+            createProduct('144-12646', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Agrob Buchtal Stufenplatte 25x35x1,4/4,2cm Goldline goldocker R11/A 851-9330`, '144-12646', 19.47, 'Stk', `Agrob Buchtal Stufenplatte 25x35x1,4/4,2cm Goldline goldocker R11/A 851-9330`, false, false, 1, 'material'),
+            createProduct('trep-10001-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `AUßENTREPPE | 🛠 Montage-Leistungspaket`, 'TREP-10001-Basis', 1490, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('tr-uv-11845', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Außenstahlwangentreppe Kreta gerade`, 'TR-uv-11845', 1901.12, 'Stk', `Außenstahlwangentreppe Kreta gerade`, false, false, 1, 'material'),
+            createProduct('trep-10002-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `SPINDELTREPPE | 🛠 Montage-Leistungspaket`, 'TREP-10002-Basis', 1490, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('152-43', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Dolle Spindeltreppe Oslo Buche Leimholz, lackiert - Ø 120 cm Art.Nr.: 760213`, '152-43', 1582.9, 'Stk', `Dolle Spindeltreppe Oslo Buche Leimholz, lackiert - Ø 120 cm Art.Nr.: 760213`, false, false, 1, 'material'),
+            createProduct('trep-10004-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `RAUMSPAR-TREPPE | 🛠 Montage-Leistungspaket`, 'TREP-10004-Basis', 1490, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('tr-uv-11639', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Raumspartreppe Fichte 2000 mit Holzgeländer`, 'TR-uv-11639', 520.03, 'Stk', `Raumspartreppe Fichte 2000 mit Holzgeländer`, false, false, 1, 'material'),
+            createProduct('male-301-5-mat', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `TREPPENSTUFEN LACKIERUNG | 🛠 Montage-Leistungspaket`, 'MALE-301.5-MAT', 99, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('trep-201-3-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `AUFBEREITEN PODEST | JE PODEST (SCHLEIFEN & LACKIEREN) | 🛠 Zusatz-Montage`, 'TREP-201.3-ZU', 198, 'Stk', `JE PODEST (SCHLEIFEN & LACKIEREN) | 🛠 Zusatz-Montage`, false, false, 1, 'extra'),
+            createProduct('male-301-6-mat', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `TREPPENGELÄNDER LACKIERUNG | 🛠 Montage-Leistungspaket`, 'MALE-301.6-MAT', 589.9, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('trep-202-1-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `VERKLEIDUNG STUFE | JE TREPPENSTUFE (MIT MASSIVHOLZ) | 🛠 Zusatz-Montage`, 'TREP-202.1-ZU', 149, 'Stk', `JE TREPPENSTUFE (MIT MASSIVHOLZ) | 🛠 Zusatz-Montage`, false, false, 1, 'extra'),
+            createProduct('trep-203-1-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `VERKLEIDUNG PODEST | JE PODEST (MIT MASSIVHOLZ) | 🛠 Zusatz-Montage`, 'TREP-203.1-ZU', 595, 'Stk', `JE PODEST (MIT MASSIVHOLZ) | 🛠 Zusatz-Montage`, false, false, 1, 'extra'),
+            createProduct('tr-uv-11824', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Treppenstufe Modell Samos`, 'TR-uv-11824', 57.48, 'Stk', `Treppenstufe Modell Samos`, false, false, 1, 'material'),
+            createProduct('tr-uv-11819', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Setzstufen aus Massivholz`, 'TR-uv-11819', 57.48, 'Stk', `Setzstufen aus Massivholz`, false, false, 1, 'material'),
+            createProduct('mon-10259', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `TREPPENGELÄNDER| 🛠 Montage`, 'MON-10259', 195, 'lfm', `🛠 Montage`, false, false, 1, 'service'),
+            createProduct('tr-uv-11773', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Treppengeländer Modell Kos gerade`, 'TR-uv-11773', 758, 'Stk', `Treppengeländer Modell Kos gerade`, false, false, 1, 'material'),
+            createProduct('tr-uv-11798', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Brüstungsgeländer Modell Kos`, 'TR-uv-11798', 526.87, 'Stk', `Brüstungsgeländer Modell Kos`, false, false, 1, 'material'),
+            createProduct('mon-10255-2', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `HOLZTREPPEN | 🛠 Montage`, 'MON-10255', 1790, 'Stk', `🛠 Montage`, false, false, 1, 'service')
           ]
         }
       ]
@@ -112,7 +112,7 @@ export const packageTreppenAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'material',
           products: [
-            createProduct('uv729-20050', 'material', 'material-sub', `Wellhöfer Bodentreppe StahlBlau mit WärmeSchutz WS3D`, 'uv729-20050', 666.46, 'Stk', `Wellhöfer Bodentreppe StahlBlau mit WärmeSchutz WS3D`, true, false, 1, 'material')
+            createProduct('uv729-20050', 'material', 'material-sub', `Wellhöfer Bodentreppe StahlBlau mit WärmeSchutz WS3D`, 'uv729-20050', 666.46, 'Stk', `Wellhöfer Bodentreppe StahlBlau mit WärmeSchutz WS3D`, false, false, 1, 'material')
           ]
         }
       ]
@@ -289,7 +289,7 @@ export const packageTreppenGelaender: RenovationPackage = {
           type: 'material',
           products: [
             createProduct('tr-uv-11773', 'material', 'material-sub', `Treppengeländer Modell Kos gerade`, 'TR-uv-11773', 758, 'Stk', `Treppengeländer Modell Kos gerade`, true, false, 1, 'material'),
-            createProduct('tr-uv-11798', 'material', 'material-sub', `Brüstungsgeländer Modell Kos`, 'TR-uv-11798', 526.87, 'Stk', `Brüstungsgeländer Modell Kos`, true, false, 1, 'material')
+            createProduct('tr-uv-11798', 'material', 'material-sub', `Brüstungsgeländer Modell Kos`, 'TR-uv-11798', 526.87, 'Stk', `Brüstungsgeländer Modell Kos`, false, false, 1, 'material')
           ]
         }
       ]

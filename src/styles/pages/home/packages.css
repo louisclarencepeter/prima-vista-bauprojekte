@@ -104,10 +104,8 @@
   align-items: center;
   gap: 10px;
   padding: 10px 0;
-  border-bottom: 1px solid var(--pv-bone);
-  transition: color 200ms, border-color 200ms;
+  transition: color 200ms;
 }
 .pkg-card:hover .pkg-card__more {
   color: var(--pv-copper-bright);
-  border-color: var(--pv-copper-bright);
 }

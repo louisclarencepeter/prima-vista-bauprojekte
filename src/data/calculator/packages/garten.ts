@@ -54,37 +54,37 @@ export const packageGartenAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('gart-10001-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `BELEUCHTUNG IM GARTEN | 🛠 Montage-Leistungspaket`, 'GART-10001-Basis', 129, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('lht-94741', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `LED Pollerleuchte Bako 50cm IP44 Anthrazit`, 'LHT-94741', 54.54, 'Stk', `LED Pollerleuchte Bako 50cm IP44 Anthrazit`, true, false, 1, 'material'),
-            createProduct('gart-10002-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `BLOCKSTUFEN | 🛠 Montage-Leistungspaket`, 'GART-10002-Basis', 195, 'lfm', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('uv628-04021', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Seltra Blockstufe BIASCA satiniert 15x35 cm Silbergrau-liniert Gneis`, 'uv628-04021', 184.94, 'Stk', `Seltra Blockstufe BIASCA satiniert 15x35 cm Silbergrau-liniert Gneis`, true, false, 1, 'material'),
-            createProduct('gart-10004-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `HOCHBEET | 🛠 Montage-Leistungspaket`, 'GART-10004-Basis', 95, 'qm', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('uv66-20633', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Biohort HochBeet`, 'uv66-20633', 390.5, 'Stk', `Biohort HochBeet`, true, false, 1, 'material'),
-            createProduct('carp-10002-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `CARPORTBAU AN BESTEHENDEM GEBÄUDE | Montage-Leistungspaket`, 'CARP-10002-Basis', 695, 'Stk', `Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('uv595-30018', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Skan Holz Carport Eifel mit Bogen mit Doppelstegplatten`, 'uv595-30018', 2848.95, 'Stk', `Skan Holz Carport Eifel mit Bogen mit Doppelstegplatten`, true, false, 1, 'material'),
-            createProduct('carp-10002-basis-2', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `CARPORTBAU AN BESTEHENDEM GEBÄUDE | Montage-Leistungspaket`, 'CARP-10002-Basis', 695, 'Stk', `Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('uv595-30018-2', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Skan Holz Carport Eifel mit Bogen mit Doppelstegplatten`, 'uv595-30018', 2848.95, 'Stk', `Skan Holz Carport Eifel mit Bogen mit Doppelstegplatten`, true, false, 1, 'material'),
-            createProduct('gart-10005-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `GARTENHAUS | 🛠 Montage-Leistungspaket`, 'GART-10005-Basis', 149, 'qm', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('uv595-10098', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Skan Holz Gartenhaus Porto Natur mit Vordach 40 cm`, 'uv595-10098', 2001.95, 'Stk', `Skan Holz Gartenhaus Porto Natur mit Vordach 40 cm`, true, false, 1, 'material'),
-            createProduct('gart-10006-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `GERÄTEHAUS | 🛠 Montage-Leistungspaket`, 'GART-10006-Basis', 149, 'qm', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('uv66-20086', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Biohort Europa Gerätehaus - Gerätehütte`, 'uv66-20086', 789.79, 'Stk', `Biohort Europa Gerätehaus - Gerätehütte`, true, false, 1, 'material'),
-            createProduct('gart-10007-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `PAVILLON | 🛠 Montage-Leistungspaket`, 'GART-10007-Basis', 129, 'qm', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('uv595-40073', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Skan Holz 6-Eck Pavillon Versailles`, 'uv595-40073', 3904.93, 'Stk', `Skan Holz 6-Eck Pavillon Versailles`, true, false, 1, 'material'),
-            createProduct('gart-10007-basis-2', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `PAVILLON | 🛠 Montage-Leistungspaket`, 'GART-10007-Basis', 129, 'qm', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('uv595-40073-2', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Skan Holz 6-Eck Pavillon Versailles`, 'uv595-40073', 3904.93, 'Stk', `Skan Holz 6-Eck Pavillon Versailles`, true, false, 1, 'material'),
-            createProduct('gart-10008-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `PFLASTERN MIT STEINE | 🛠 Montage-Leistungspaket`, 'GART-10008-Basis', 19, 'qm', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('uv881-01020', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Diephaus Pflasterstein Lineo Quarzit PE2`, 'uv881-01020', 47.54, 'Stk', `Diephaus Pflasterstein Lineo Quarzit PE2`, true, false, 1, 'material'),
-            createProduct('gart-10009-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `TERRASSEN AUS HOLZ | 🛠 Montage-Leistungspaket`, 'GART-10009-Basis', 149, 'qm', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('uv399-00135', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Kovalex WPC-Terrassendiele mit Struktur Walnussfarben mattiert - 145x20 mm Massiv | Längen-Zuschnitt`, 'uv399-00135', 13.3, 'lfm', `Längen-Zuschnitt`, true, false, 1, 'material'),
-            createProduct('399-00283', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Kovalex WPC-Universal-Unterkonstruktion Schwarz 300 cm`, '399-00283', 26.07, 'Stk', `Kovalex WPC-Universal-Unterkonstruktion Schwarz 300 cm`, true, false, 1, 'material'),
-            createProduct('gart-10010-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `TERRASSEN AUS STEIN | 🛠 Montage-Leistungspaket`, 'GART-10010-Basis', 129, 'qm', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('769-116', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Mirage Evo_2/E Tribeca Harrison TB 02 - 60 x 60 x 2 cm - Feinsteinzeug Terrassenplatten`, '769-116', 63.69, 'Stk', `Mirage Evo_2/E Tribeca Harrison TB 02 - 60 x 60 x 2 cm - Feinsteinzeug Terrassenplatten`, true, false, 1, 'material'),
-            createProduct('gart-10011-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ÜBERDACHUNG | 🛠 Montage-Leistungspaket`, 'GART-10011-Basis', 195, 'qm', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('uv232-525', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Gardendreams Terrassenüberdachung Alu anthrazit Glanz`, 'uv232-525', 1978.68, 'Stk', `Gardendreams Terrassenüberdachung Alu anthrazit Glanz`, true, false, 1, 'material'),
-            createProduct('gart-10012-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `WINTERGÄRTEN | 🛠 Montage-Leistungspaket`, 'GART-10012-Basis', 249, 'qm', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('uv232-325', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Gardendreams Terrassenüberdachung Legend Alu cremeweiß`, 'uv232-325', 1978.68, 'Stk', `Gardendreams Terrassenüberdachung Legend Alu cremeweiß`, true, false, 1, 'material'),
-            createProduct('mon-100-stk', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `MONTAGE | 🛠 Montage 100`, 'MON-100-stk', 999.9, 'Stk', `🛠 Montage 100`, true, false, 1, 'service'),
-            createProduct('uv563-01018', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Rewatec NEO Gartenanlage Basic`, 'uv563-01018', 1946.93, 'Stk', `Rewatec NEO Gartenanlage Basic`, true, false, 1, 'material')
+            createProduct('gart-10001-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `BELEUCHTUNG IM GARTEN | 🛠 Montage-Leistungspaket`, 'GART-10001-Basis', 129, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('lht-94741', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `LED Pollerleuchte Bako 50cm IP44 Anthrazit`, 'LHT-94741', 54.54, 'Stk', `LED Pollerleuchte Bako 50cm IP44 Anthrazit`, false, false, 1, 'material'),
+            createProduct('gart-10002-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `BLOCKSTUFEN | 🛠 Montage-Leistungspaket`, 'GART-10002-Basis', 195, 'lfm', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('uv628-04021', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Seltra Blockstufe BIASCA satiniert 15x35 cm Silbergrau-liniert Gneis`, 'uv628-04021', 184.94, 'Stk', `Seltra Blockstufe BIASCA satiniert 15x35 cm Silbergrau-liniert Gneis`, false, false, 1, 'material'),
+            createProduct('gart-10004-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `HOCHBEET | 🛠 Montage-Leistungspaket`, 'GART-10004-Basis', 95, 'qm', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('uv66-20633', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Biohort HochBeet`, 'uv66-20633', 390.5, 'Stk', `Biohort HochBeet`, false, false, 1, 'material'),
+            createProduct('carp-10002-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `CARPORTBAU AN BESTEHENDEM GEBÄUDE | Montage-Leistungspaket`, 'CARP-10002-Basis', 695, 'Stk', `Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('uv595-30018', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Skan Holz Carport Eifel mit Bogen mit Doppelstegplatten`, 'uv595-30018', 2848.95, 'Stk', `Skan Holz Carport Eifel mit Bogen mit Doppelstegplatten`, false, false, 1, 'material'),
+            createProduct('carp-10002-basis-2', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `CARPORTBAU AN BESTEHENDEM GEBÄUDE | Montage-Leistungspaket`, 'CARP-10002-Basis', 695, 'Stk', `Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('uv595-30018-2', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Skan Holz Carport Eifel mit Bogen mit Doppelstegplatten`, 'uv595-30018', 2848.95, 'Stk', `Skan Holz Carport Eifel mit Bogen mit Doppelstegplatten`, false, false, 1, 'material'),
+            createProduct('gart-10005-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `GARTENHAUS | 🛠 Montage-Leistungspaket`, 'GART-10005-Basis', 149, 'qm', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('uv595-10098', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Skan Holz Gartenhaus Porto Natur mit Vordach 40 cm`, 'uv595-10098', 2001.95, 'Stk', `Skan Holz Gartenhaus Porto Natur mit Vordach 40 cm`, false, false, 1, 'material'),
+            createProduct('gart-10006-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `GERÄTEHAUS | 🛠 Montage-Leistungspaket`, 'GART-10006-Basis', 149, 'qm', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('uv66-20086', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Biohort Europa Gerätehaus - Gerätehütte`, 'uv66-20086', 789.79, 'Stk', `Biohort Europa Gerätehaus - Gerätehütte`, false, false, 1, 'material'),
+            createProduct('gart-10007-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `PAVILLON | 🛠 Montage-Leistungspaket`, 'GART-10007-Basis', 129, 'qm', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('uv595-40073', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Skan Holz 6-Eck Pavillon Versailles`, 'uv595-40073', 3904.93, 'Stk', `Skan Holz 6-Eck Pavillon Versailles`, false, false, 1, 'material'),
+            createProduct('gart-10007-basis-2', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `PAVILLON | 🛠 Montage-Leistungspaket`, 'GART-10007-Basis', 129, 'qm', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('uv595-40073-2', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Skan Holz 6-Eck Pavillon Versailles`, 'uv595-40073', 3904.93, 'Stk', `Skan Holz 6-Eck Pavillon Versailles`, false, false, 1, 'material'),
+            createProduct('gart-10008-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `PFLASTERN MIT STEINE | 🛠 Montage-Leistungspaket`, 'GART-10008-Basis', 19, 'qm', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('uv881-01020', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Diephaus Pflasterstein Lineo Quarzit PE2`, 'uv881-01020', 47.54, 'Stk', `Diephaus Pflasterstein Lineo Quarzit PE2`, false, false, 1, 'material'),
+            createProduct('gart-10009-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `TERRASSEN AUS HOLZ | 🛠 Montage-Leistungspaket`, 'GART-10009-Basis', 149, 'qm', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('uv399-00135', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Kovalex WPC-Terrassendiele mit Struktur Walnussfarben mattiert - 145x20 mm Massiv | Längen-Zuschnitt`, 'uv399-00135', 13.3, 'lfm', `Längen-Zuschnitt`, false, false, 1, 'material'),
+            createProduct('399-00283', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Kovalex WPC-Universal-Unterkonstruktion Schwarz 300 cm`, '399-00283', 26.07, 'Stk', `Kovalex WPC-Universal-Unterkonstruktion Schwarz 300 cm`, false, false, 1, 'material'),
+            createProduct('gart-10010-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `TERRASSEN AUS STEIN | 🛠 Montage-Leistungspaket`, 'GART-10010-Basis', 129, 'qm', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('769-116', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Mirage Evo_2/E Tribeca Harrison TB 02 - 60 x 60 x 2 cm - Feinsteinzeug Terrassenplatten`, '769-116', 63.69, 'Stk', `Mirage Evo_2/E Tribeca Harrison TB 02 - 60 x 60 x 2 cm - Feinsteinzeug Terrassenplatten`, false, false, 1, 'material'),
+            createProduct('gart-10011-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ÜBERDACHUNG | 🛠 Montage-Leistungspaket`, 'GART-10011-Basis', 195, 'qm', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('uv232-525', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Gardendreams Terrassenüberdachung Alu anthrazit Glanz`, 'uv232-525', 1978.68, 'Stk', `Gardendreams Terrassenüberdachung Alu anthrazit Glanz`, false, false, 1, 'material'),
+            createProduct('gart-10012-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `WINTERGÄRTEN | 🛠 Montage-Leistungspaket`, 'GART-10012-Basis', 249, 'qm', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('uv232-325', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Gardendreams Terrassenüberdachung Legend Alu cremeweiß`, 'uv232-325', 1978.68, 'Stk', `Gardendreams Terrassenüberdachung Legend Alu cremeweiß`, false, false, 1, 'material'),
+            createProduct('mon-100-stk', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `MONTAGE | 🛠 Montage 100`, 'MON-100-stk', 999.9, 'Stk', `🛠 Montage 100`, false, false, 1, 'service'),
+            createProduct('uv563-01018', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Rewatec NEO Gartenanlage Basic`, 'uv563-01018', 1946.93, 'Stk', `Rewatec NEO Gartenanlage Basic`, false, false, 1, 'material')
           ]
         }
       ]
@@ -137,11 +137,11 @@ export const packageGartenAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'extra',
           products: [
-            createProduct('399-00312', 'extra-positionen', 'extra-positionen-sub', `Kovalex Terrassenlager 0 (Nicht höhenverstellbar)`, '399-00312', 2.96, 'Stk', `Kovalex Terrassenlager 0 (Nicht höhenverstellbar)`, true, false, 1, 'extra'),
-            createProduct('399-00300', 'extra-positionen', 'extra-positionen-sub', `Kovalex Alu-Einfassprofil für 20 mm-Diele Anthrazit 250 cm`, '399-00300', 27.17, 'Stk', `Kovalex Alu-Einfassprofil für 20 mm-Diele Anthrazit 250 cm`, true, false, 1, 'extra'),
-            createProduct('399-00310', 'extra-positionen', 'extra-positionen-sub', `Kovalex Blech-Schrauben-Set 2 (bei Alu-Unterkonstruktion)`, '399-00310', 19.8, 'Stk', `Kovalex Blech-Schrauben-Set 2 (bei Alu-Unterkonstruktion)`, true, false, 1, 'extra'),
-            createProduct('399-00305', 'extra-positionen', 'extra-positionen-sub', `Kovalex Holz- und Bautenschutzunterlage Schwarz 60 Stück 9 x 6 cm`, '399-00305', 18.26, 'Stk', `Kovalex Holz- und Bautenschutzunterlage Schwarz 60 Stück 9 x 6 cm`, true, false, 1, 'extra'),
-            createProduct('563-01344', 'extra-positionen', 'extra-positionen-sub', `Rewatec Wasserzapfsäule Premium Art.Nr.: RWZT0041`, '563-01344', 299.2, 'Stk', `Rewatec Wasserzapfsäule Premium Art.Nr.: RWZT0041`, true, false, 1, 'extra')
+            createProduct('399-00312', 'extra-positionen', 'extra-positionen-sub', `Kovalex Terrassenlager 0 (Nicht höhenverstellbar)`, '399-00312', 2.96, 'Stk', `Kovalex Terrassenlager 0 (Nicht höhenverstellbar)`, false, false, 1, 'extra'),
+            createProduct('399-00300', 'extra-positionen', 'extra-positionen-sub', `Kovalex Alu-Einfassprofil für 20 mm-Diele Anthrazit 250 cm`, '399-00300', 27.17, 'Stk', `Kovalex Alu-Einfassprofil für 20 mm-Diele Anthrazit 250 cm`, false, false, 1, 'extra'),
+            createProduct('399-00310', 'extra-positionen', 'extra-positionen-sub', `Kovalex Blech-Schrauben-Set 2 (bei Alu-Unterkonstruktion)`, '399-00310', 19.8, 'Stk', `Kovalex Blech-Schrauben-Set 2 (bei Alu-Unterkonstruktion)`, false, false, 1, 'extra'),
+            createProduct('399-00305', 'extra-positionen', 'extra-positionen-sub', `Kovalex Holz- und Bautenschutzunterlage Schwarz 60 Stück 9 x 6 cm`, '399-00305', 18.26, 'Stk', `Kovalex Holz- und Bautenschutzunterlage Schwarz 60 Stück 9 x 6 cm`, false, false, 1, 'extra'),
+            createProduct('563-01344', 'extra-positionen', 'extra-positionen-sub', `Rewatec Wasserzapfsäule Premium Art.Nr.: RWZT0041`, '563-01344', 299.2, 'Stk', `Rewatec Wasserzapfsäule Premium Art.Nr.: RWZT0041`, false, false, 1, 'extra')
           ]
         }
       ]
@@ -156,7 +156,7 @@ export const packageGartenAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'material',
           products: [
-            createProduct('wass-607-1-mat', 'alternativ', 'alternativ-sub', `GARTEN-ANSCHLUSS | inkl. frostsicheren Außenwasserhahn`, 'WASS-607.1-MAT', 346.5, 'Stk', `inkl. frostsicheren Außenwasserhahn`, true, false, 1, 'material')
+            createProduct('wass-607-1-mat', 'alternativ', 'alternativ-sub', `GARTEN-ANSCHLUSS | inkl. frostsicheren Außenwasserhahn`, 'WASS-607.1-MAT', 346.5, 'Stk', `inkl. frostsicheren Außenwasserhahn`, false, false, 1, 'material')
           ]
         }
       ]
@@ -840,19 +840,19 @@ export const packageGartenZaunanlagen: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('mon-10299', 'alternativ', 'alternativ-sub', `DOPPELSTABMATTENZAUN | 🛠 Montage`, 'MON-10299', 98, 'lfm', `🛠 Montage`, true, false, 20, 'service'),
-            createProduct('uv265-84105', 'alternativ', 'alternativ-sub', `Hadra Doppelstabmattenzaun Komplettset Anthrazit - Elemente 2,5 m breit - incl. Pfosten und Befestigungen`, 'uv265-84105', 847.69, 'Set', `Hadra Doppelstabmattenzaun Komplettset Anthrazit - Elemente 2,5 m breit - incl. Pfosten und Befestigungen`, true, false, 1, 'material'),
-            createProduct('mon-10305', 'alternativ', 'alternativ-sub', `STECKZAUN | 🛠 Montage`, 'MON-10305', 98, 'lfm', `🛠 Montage`, true, false, 20, 'service'),
-            createProduct('uv257-00567', 'alternativ', 'alternativ-sub', `GroJa Lumino Alu-Steckzaun Steckzaun quadratisch 180x180 cm, ohne Pfosten`, 'uv257-00567', 478.43, 'Stk', `GroJa Lumino Alu-Steckzaun Steckzaun quadratisch 180x180 cm, ohne Pfosten`, true, false, 24, 'material'),
-            createProduct('uv257-00946', 'alternativ', 'alternativ-sub', `GroJa WPC-Steckzaunpfosten inkl. Kappe zum Aufdübeln, 10x10 cm - Terra`, 'uv257-00946', 41.73, 'Stk', `GroJa WPC-Steckzaunpfosten inkl. Kappe zum Aufdübeln, 10x10 cm - Terra`, true, false, 48, 'material'),
-            createProduct('uv257-00746', 'alternativ', 'alternativ-sub', `GroJa Lumino Alu-Steckzaun Tor 2-flügelig 300 x 180 cm, ohne Pfosten - mit Anthrazitrahmen - anthrazitgrau`, 'uv257-00746', 2804.95, 'Stk', `GroJa Lumino Alu-Steckzaun Tor 2-flügelig 300 x 180 cm, ohne Pfosten - mit Anthrazitrahmen - anthrazitgrau`, true, false, 1, 'material'),
-            createProduct('uv257-00569', 'alternativ', 'alternativ-sub', `GroJa Lumino Alu-Steckzaun Tor 1-flügelig 100 x 180 cm, ohne Pfosten - mit Alurahmen`, 'uv257-00569', 780.95, 'Stk', `GroJa Lumino Alu-Steckzaun Tor 1-flügelig 100 x 180 cm, ohne Pfosten - mit Alurahmen`, true, false, 1, 'material'),
-            createProduct('zaun-10013', 'alternativ', 'alternativ-sub', `GLASZAUN 🛠 Montage`, 'ZAUN-10013', 149, 'lfm', `GLASZAUN 🛠 Montage`, true, false, 20, 'service'),
-            createProduct('uv257-00457', 'alternativ', 'alternativ-sub', `GroJa Ambiente Glaszaun schräg, 90 x 180/90 cm, ohne Pfosten - Klarglas`, 'uv257-00457', 174.77, 'Stk', `GroJa Ambiente Glaszaun schräg, 90 x 180/90 cm, ohne Pfosten - Klarglas`, true, false, 24, 'material'),
-            createProduct('zaun-10005', 'alternativ', 'alternativ-sub', `GABIONENZAUN | 🛠 Montage`, 'ZAUN-10005', 149, 'lfm', `🛠 Montage`, true, false, 20, 'service'),
-            createProduct('uv12-00355', 'alternativ', 'alternativ-sub', `DZT Gabione Onyx KL: 400x347 mm - feuerverzinkt`, 'uv12-00355', 295.77, 'Stk', `DZT Gabione Onyx KL: 400x347 mm - feuerverzinkt`, true, false, 48, 'material'),
-            createProduct('mon-10302', 'alternativ', 'alternativ-sub', `LATTENZAUN | 🛠 Montage`, 'MON-10302', 98, 'lfm', `🛠 Montage`, true, false, 20, 'service'),
-            createProduct('679-01308', 'alternativ', 'alternativ-sub', `LIGHTLINE Lamellenzaun 180 x 150 cm`, '679-01308', 314.6, 'Stk', `LIGHTLINE Lamellenzaun 180 x 150 cm`, true, false, 24, 'material')
+            createProduct('mon-10299', 'alternativ', 'alternativ-sub', `DOPPELSTABMATTENZAUN | 🛠 Montage`, 'MON-10299', 98, 'lfm', `🛠 Montage`, false, false, 20, 'service'),
+            createProduct('uv265-84105', 'alternativ', 'alternativ-sub', `Hadra Doppelstabmattenzaun Komplettset Anthrazit - Elemente 2,5 m breit - incl. Pfosten und Befestigungen`, 'uv265-84105', 847.69, 'Set', `Hadra Doppelstabmattenzaun Komplettset Anthrazit - Elemente 2,5 m breit - incl. Pfosten und Befestigungen`, false, false, 1, 'material'),
+            createProduct('mon-10305', 'alternativ', 'alternativ-sub', `STECKZAUN | 🛠 Montage`, 'MON-10305', 98, 'lfm', `🛠 Montage`, false, false, 20, 'service'),
+            createProduct('uv257-00567', 'alternativ', 'alternativ-sub', `GroJa Lumino Alu-Steckzaun Steckzaun quadratisch 180x180 cm, ohne Pfosten`, 'uv257-00567', 478.43, 'Stk', `GroJa Lumino Alu-Steckzaun Steckzaun quadratisch 180x180 cm, ohne Pfosten`, false, false, 24, 'material'),
+            createProduct('uv257-00946', 'alternativ', 'alternativ-sub', `GroJa WPC-Steckzaunpfosten inkl. Kappe zum Aufdübeln, 10x10 cm - Terra`, 'uv257-00946', 41.73, 'Stk', `GroJa WPC-Steckzaunpfosten inkl. Kappe zum Aufdübeln, 10x10 cm - Terra`, false, false, 48, 'material'),
+            createProduct('uv257-00746', 'alternativ', 'alternativ-sub', `GroJa Lumino Alu-Steckzaun Tor 2-flügelig 300 x 180 cm, ohne Pfosten - mit Anthrazitrahmen - anthrazitgrau`, 'uv257-00746', 2804.95, 'Stk', `GroJa Lumino Alu-Steckzaun Tor 2-flügelig 300 x 180 cm, ohne Pfosten - mit Anthrazitrahmen - anthrazitgrau`, false, false, 1, 'material'),
+            createProduct('uv257-00569', 'alternativ', 'alternativ-sub', `GroJa Lumino Alu-Steckzaun Tor 1-flügelig 100 x 180 cm, ohne Pfosten - mit Alurahmen`, 'uv257-00569', 780.95, 'Stk', `GroJa Lumino Alu-Steckzaun Tor 1-flügelig 100 x 180 cm, ohne Pfosten - mit Alurahmen`, false, false, 1, 'material'),
+            createProduct('zaun-10013', 'alternativ', 'alternativ-sub', `GLASZAUN 🛠 Montage`, 'ZAUN-10013', 149, 'lfm', `GLASZAUN 🛠 Montage`, false, false, 20, 'service'),
+            createProduct('uv257-00457', 'alternativ', 'alternativ-sub', `GroJa Ambiente Glaszaun schräg, 90 x 180/90 cm, ohne Pfosten - Klarglas`, 'uv257-00457', 174.77, 'Stk', `GroJa Ambiente Glaszaun schräg, 90 x 180/90 cm, ohne Pfosten - Klarglas`, false, false, 24, 'material'),
+            createProduct('zaun-10005', 'alternativ', 'alternativ-sub', `GABIONENZAUN | 🛠 Montage`, 'ZAUN-10005', 149, 'lfm', `🛠 Montage`, false, false, 20, 'service'),
+            createProduct('uv12-00355', 'alternativ', 'alternativ-sub', `DZT Gabione Onyx KL: 400x347 mm - feuerverzinkt`, 'uv12-00355', 295.77, 'Stk', `DZT Gabione Onyx KL: 400x347 mm - feuerverzinkt`, false, false, 48, 'material'),
+            createProduct('mon-10302', 'alternativ', 'alternativ-sub', `LATTENZAUN | 🛠 Montage`, 'MON-10302', 98, 'lfm', `🛠 Montage`, false, false, 20, 'service'),
+            createProduct('679-01308', 'alternativ', 'alternativ-sub', `LIGHTLINE Lamellenzaun 180 x 150 cm`, '679-01308', 314.6, 'Stk', `LIGHTLINE Lamellenzaun 180 x 150 cm`, false, false, 24, 'material')
           ]
         }
       ]

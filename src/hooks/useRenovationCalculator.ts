@@ -51,10 +51,35 @@ type RenovationCalculatorAction =
   | { type: 'enableSubsection'; category: string; subcategory: string }
   | { type: 'reset' };
 
-type PersistedState = Partial<Pick<ReadyState, 'livingArea' | 'rows' | 'collapsed'>>;
+type PersistedState = Partial<Pick<ReadyState, 'livingArea' | 'rows' | 'collapsed'>> & {
+  dataVersion?: string;
+  dataSignature?: string;
+};
 
 const STORAGE_VERSION = 'v3';
-const getStorageKey = (packageId: string) => `prima-vista-renovation-calculator-modular-${STORAGE_VERSION}-${packageId}`;
+const BOSSMANN_STORAGE_VERSION = 'v4';
+const BOSSMANN_DATA_VERSION = 'bossmann-v1';
+const BOSSMANN_PACKAGE_IDS = new Set([
+  '1e', '1e-d', '2e', '2e-d',           // house variants
+  'studio', '2zi', '3zi', 'maisonette', // wohnung variants
+]);
+
+const getStorageKey = (packageId: string) => {
+  const version = BOSSMANN_PACKAGE_IDS.has(packageId) ? BOSSMANN_STORAGE_VERSION : STORAGE_VERSION;
+  return `prima-vista-renovation-calculator-modular-${version}-${packageId}`;
+};
+
+const getDataVersion = (packageId: string) => (
+  BOSSMANN_PACKAGE_IDS.has(packageId) ? BOSSMANN_DATA_VERSION : STORAGE_VERSION
+);
+
+function getPackageSignature(pkg: RenovationPackage | undefined): string {
+  if (!pkg) return 'missing-package';
+  const rowIds = pkg.categories.flatMap((category) => (
+    category.subsections.flatMap((subsection) => subsection.products.map((product) => product.id))
+  ));
+  return `${pkg.id}:${rowIds.length}:${rowIds.join('|')}`;
+}
 
 function buildInitialState(pkg: RenovationPackage): ReadyState {
   const collapsed = pkg.categories.reduce<Record<string, boolean>>((acc, category, index) => {
@@ -100,6 +125,9 @@ function hydrateFromStorage(pkg: RenovationPackage): ReadyState {
     if (!raw) return initial;
 
     const saved = JSON.parse(raw) as PersistedState;
+    if (saved.dataVersion !== getDataVersion(pkg.id)) return initial;
+    if (saved.dataSignature !== getPackageSignature(pkg)) return initial;
+
     const rows = Array.isArray(saved.rows) && saved.rows.every(isValidRow)
       ? saved.rows
       : initial.rows;
@@ -283,7 +311,12 @@ export function useRenovationCalculator(packageId: string = DEFAULT_PACKAGE_ID) 
     if (typeof window === 'undefined') return;
     if (state.status !== 'ready') return;
     try {
-      window.localStorage?.setItem(getStorageKey(state.packageId), JSON.stringify(state));
+      const pkg = getCachedRenovationPackage(state.packageId);
+      window.localStorage?.setItem(getStorageKey(state.packageId), JSON.stringify({
+        ...state,
+        dataVersion: getDataVersion(state.packageId),
+        dataSignature: getPackageSignature(pkg),
+      }));
     } catch {
       // The calculator still works when storage is unavailable.
     }
@@ -325,13 +358,20 @@ export function useRenovationCalculator(packageId: string = DEFAULT_PACKAGE_ID) 
     }));
   }, [state]);
 
+  const minArea = useMemo(() => {
+    if (state.status !== 'ready') return RENOVATION_MIN_AREA;
+    const pkg = getCachedRenovationPackage(state.packageId);
+    const pkgDefault = pkg?.defaultArea ?? RENOVATION_MIN_AREA;
+    return Math.max(1, Math.min(state.livingArea, pkgDefault, RENOVATION_MIN_AREA));
+  }, [state]);
+
   return {
     state,
     isReady: state.status === 'ready',
     totals,
     rowsByCategory,
     dispatch,
-    minArea: RENOVATION_MIN_AREA,
+    minArea,
   };
 }
 

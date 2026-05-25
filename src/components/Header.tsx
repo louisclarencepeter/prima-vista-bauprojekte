@@ -110,7 +110,7 @@ export default function Header() {
         aria-label="Hauptnavigation"
         hidden={!open}
       >
-        <Link to="/projekte" className="pv-mobile-menu__feature">
+        <Link to="/projekte" className="pv-mobile-menu__feature" onClick={() => setOpen(false)}>
           <img src={FEATURED_PROJECT.src} alt="" />
           <span className="pv-mobile-menu__feature-overlay" aria-hidden="true" />
           <span className="pv-mobile-menu__feature-eyebrow">
@@ -142,8 +142,8 @@ export default function Header() {
                   onClick={() => {
                     if (pathname === item.to || (item.to === '/' && pathname === '/')) {
                       window.scrollTo({ top: 0, behavior: 'smooth' });
-                      setOpen(false);
                     }
+                    setOpen(false);
                   }}
                 >
                   <span className="pv-mobile-menu__label">{item.label}</span>
@@ -156,10 +156,10 @@ export default function Header() {
         </nav>
 
         <div className="pv-mobile-menu__foot">
-          <Link to="/blitz-angebot" className="pv-mobile-menu__cta">
+          <Link to="/blitz-angebot" className="pv-mobile-menu__cta" onClick={() => setOpen(false)}>
             Blitz-Angebot <span className="arrow">&gt;</span>
           </Link>
-          <Link to="/kontakt" className="pv-mobile-menu__cta pv-mobile-menu__cta--ghost">
+          <Link to="/kontakt" className="pv-mobile-menu__cta pv-mobile-menu__cta--ghost" onClick={() => setOpen(false)}>
             Termin vereinbaren <span className="arrow">&gt;</span>
           </Link>
           <div className="pv-mobile-menu__phone">

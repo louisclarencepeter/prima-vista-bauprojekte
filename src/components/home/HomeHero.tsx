@@ -85,7 +85,7 @@ export default function HomeHero() {
                 alt={isFirst ? slide.alt : ''}
                 aria-hidden={isFirst ? undefined : true}
                 loading={isFirst ? 'eager' : 'lazy'}
-                fetchPriority={isFirst ? 'high' : 'low'}
+                {...{ fetchpriority: isFirst ? 'high' : 'low' }}
                 decoding={isFirst ? 'sync' : 'async'}
               />
             </picture>
@@ -109,7 +109,7 @@ export default function HomeHero() {
 
         <div className="hero__meta animate-in" data-delay="2">
           <div>
-            <div className="hero__meta-num">01 — Editorial</div>
+            <div className="hero__meta-num">01 — Versprechen</div>
             <p className="hero__lede">
               <strong>Komplettsanierung aus einer Hand</strong> — vom Konzept bis zur Schlüsselübergabe. Wir verantworten jedes Gewerk: Festpreis, fester Endtermin, fünf Jahre Werksgewähr.
             </p>

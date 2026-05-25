@@ -54,11 +54,11 @@ export const packageTuerenAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('tuer-100-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `TÜREN | 🛠 Montage-Leistungspaket`, 'TUER-100-BASIS', 149.9, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('tuer-101-1-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-TÜREN |🛠 Demontage & Entsorgung`, 'TUER-101-1-ZU', 49.5, 'Stk', `🛠 Demontage & Entsorgung`, true, false, 1, 'service'),
+            createProduct('tuer-100-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `TÜREN | 🛠 Montage-Leistungspaket`, 'TUER-100-BASIS', 149.9, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('tuer-101-1-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-TÜREN |🛠 Demontage & Entsorgung`, 'TUER-101-1-ZU', 49.5, 'Stk', `🛠 Demontage & Entsorgung`, false, false, 1, 'service'),
             createProduct('tuer-100-au', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Weitere Produkte - zu TÜREN |**Varianten**`, 'TUER-100-AU', 0, 'Stk', `**Varianten**`, false, true, 1, 'optional'),
-            createProduct('tuer-10001-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `GARAGENTOR | 🛠 Montage-Leistungspaket`, 'TUER-10001-Basis', 1490, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('tuer-101-mon', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `TOR | 🛠 Montage`, 'TUER-101-MON', 690, 'Stk', `🛠 Montage`, true, false, 1, 'service')
+            createProduct('tuer-10001-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `GARAGENTOR | 🛠 Montage-Leistungspaket`, 'TUER-10001-Basis', 1490, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('tuer-101-mon', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `TOR | 🛠 Montage`, 'TUER-101-MON', 690, 'Stk', `🛠 Montage`, false, false, 1, 'service')
           ]
         }
       ]
@@ -73,13 +73,13 @@ export const packageTuerenAlles: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'material',
           products: [
-            createProduct('uv339-90130', 'material', 'material-sub', `JELD-WEN Innentürelement Optima 30 (Zarge + Türblatt) - Rundkante - DuriTop CPL Weisslack`, 'uv339-90130', 387.59, 'Stk', `JELD-WEN Innentürelement Optima 30 (Zarge + Türblatt) - Rundkante - DuriTop CPL Weisslack`, true, false, 1, 'material'),
-            createProduct('uv354-10091', 'material', 'material-sub', `Karcher Design Rosettengarnitur Rhodos PLAN-Rosetten flächenbündig 2-tlg. | Edelstahl matt`, 'uv354-10091', 57.56, 'Stk', `Edelstahl matt`, true, false, 1, 'material'),
-            createProduct('uv339-90246', 'material', 'material-sub', `JELD-WEN Innentürelement Optima 30 (Zarge + Türblatt) - Rundkante - DuriTop CPL Weisslack`, 'uv339-90246', 442.61, 'Stk', `JELD-WEN Innentürelement Optima 30 (Zarge + Türblatt) - Rundkante - DuriTop CPL Weisslack`, true, false, 1, 'material'),
-            createProduct('uv218-165', 'material', 'material-sub', `FM Nebeneingangstür NBT 56 Modell 05 Weiss`, 'uv218-165', 547.8, 'Stk', `FM Nebeneingangstür NBT 56 Modell 05 Weiss`, true, false, 1, 'material'),
-            createProduct('165466', 'material', 'material-sub', `BBE Stahl-Staenderwerkzarge Typ Bud 875x 2000x 125 mm DIN L/R`, '165466', 235.99, 'Stk', `BBE Stahl-Staenderwerkzarge Typ Bud 875x 2000x 125 mm DIN L/R`, true, false, 1, 'material'),
-            createProduct('uv501-705', 'material', 'material-sub', `Novoferm Sektionaltor iso 20 Grosssicke Woodgrain Verkehrsweiss`, 'uv501-705', 1604.44, 'Stk', `Novoferm Sektionaltor iso 20 Grosssicke Woodgrain Verkehrsweiss`, true, false, 1, 'material'),
-            createProduct('1172244', 'material', 'material-sub', `Terralis Schiebetor Rundstaebe steingrau B=300 cm H=120 cm E-Antrieb+Handsender`, '1172244', 6684.16, 'Stk', `Terralis Schiebetor Rundstaebe steingrau B=300 cm H=120 cm E-Antrieb+Handsender`, true, false, 1, 'material')
+            createProduct('uv339-90130', 'material', 'material-sub', `JELD-WEN Innentürelement Optima 30 (Zarge + Türblatt) - Rundkante - DuriTop CPL Weisslack`, 'uv339-90130', 387.59, 'Stk', `JELD-WEN Innentürelement Optima 30 (Zarge + Türblatt) - Rundkante - DuriTop CPL Weisslack`, false, false, 1, 'material'),
+            createProduct('uv354-10091', 'material', 'material-sub', `Karcher Design Rosettengarnitur Rhodos PLAN-Rosetten flächenbündig 2-tlg. | Edelstahl matt`, 'uv354-10091', 57.56, 'Stk', `Edelstahl matt`, false, false, 1, 'material'),
+            createProduct('uv339-90246', 'material', 'material-sub', `JELD-WEN Innentürelement Optima 30 (Zarge + Türblatt) - Rundkante - DuriTop CPL Weisslack`, 'uv339-90246', 442.61, 'Stk', `JELD-WEN Innentürelement Optima 30 (Zarge + Türblatt) - Rundkante - DuriTop CPL Weisslack`, false, false, 1, 'material'),
+            createProduct('uv218-165', 'material', 'material-sub', `FM Nebeneingangstür NBT 56 Modell 05 Weiss`, 'uv218-165', 547.8, 'Stk', `FM Nebeneingangstür NBT 56 Modell 05 Weiss`, false, false, 1, 'material'),
+            createProduct('165466', 'material', 'material-sub', `BBE Stahl-Staenderwerkzarge Typ Bud 875x 2000x 125 mm DIN L/R`, '165466', 235.99, 'Stk', `BBE Stahl-Staenderwerkzarge Typ Bud 875x 2000x 125 mm DIN L/R`, false, false, 1, 'material'),
+            createProduct('uv501-705', 'material', 'material-sub', `Novoferm Sektionaltor iso 20 Grosssicke Woodgrain Verkehrsweiss`, 'uv501-705', 1604.44, 'Stk', `Novoferm Sektionaltor iso 20 Grosssicke Woodgrain Verkehrsweiss`, false, false, 1, 'material'),
+            createProduct('1172244', 'material', 'material-sub', `Terralis Schiebetor Rundstaebe steingrau B=300 cm H=120 cm E-Antrieb+Handsender`, '1172244', 6684.16, 'Stk', `Terralis Schiebetor Rundstaebe steingrau B=300 cm H=120 cm E-Antrieb+Handsender`, false, false, 1, 'material')
           ]
         }
       ]
@@ -316,7 +316,7 @@ export const packageTuerenBalkonTerrassen: RenovationPackage = {
           type: 'service',
           products: [
             createProduct('mon-10238', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `HEBESCHIEBE | 🛠 Montage`, 'MON-10238', 395, 'qm', `🛠 Montage`, true, false, 1, 'service'),
-            createProduct('tuer-101-1-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-TÜREN |🛠 Demontage & Entsorgung`, 'TUER-101-1-ZU', 49.5, 'Stk', `🛠 Demontage & Entsorgung`, true, false, 1, 'service')
+            createProduct('tuer-101-1-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-TÜREN |🛠 Demontage & Entsorgung`, 'TUER-101-1-ZU', 49.5, 'Stk', `🛠 Demontage & Entsorgung`, false, false, 1, 'service')
           ]
         }
       ]
@@ -427,7 +427,7 @@ export const packageTuerenKellertueren: RenovationPackage = {
           type: 'service',
           products: [
             createProduct('tuer-100-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `TÜREN | 🛠 Montage-Leistungspaket`, 'TUER-100-BASIS', 149.9, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('tuer-101-1-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-TÜREN |🛠 Demontage & Entsorgung`, 'TUER-101-1-ZU', 49.5, 'Stk', `🛠 Demontage & Entsorgung`, true, false, 1, 'service')
+            createProduct('tuer-101-1-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-TÜREN |🛠 Demontage & Entsorgung`, 'TUER-101-1-ZU', 49.5, 'Stk', `🛠 Demontage & Entsorgung`, false, false, 1, 'service')
           ]
         }
       ]
