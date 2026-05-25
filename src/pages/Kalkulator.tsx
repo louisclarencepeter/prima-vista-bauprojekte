@@ -10,20 +10,57 @@ export default function Kalkulator() {
   usePageTitle('Kostenkalkulator für Sanierung & Bau');
   const [kategorieKey, setKategorieKey] = useState<KategorieKey | null>(null);
   const [leafKey, setLeafKey] = useState<string | null>(null);
+  const [categoryScrollTick, setCategoryScrollTick] = useState(0);
+  const [leafScrollTick, setLeafScrollTick] = useState(0);
+  const leavesRef = useRef<HTMLDivElement | null>(null);
   const embedRef = useRef<HTMLDivElement | null>(null);
 
   const category = KATEGORIEN.find((c) => c.key === kategorieKey) ?? null;
   const leaf = category?.leaves.find((l) => l.key === leafKey) ?? null;
   const LeafComponent = leaf?.Component ?? null;
 
+  function scrollToPanel(element: HTMLElement) {
+    const target = element.querySelector<HTMLElement>('.kalk-board__field, .hk-calc, .renocalc, .kalk-loading')
+      ?? (element.firstElementChild instanceof HTMLElement
+      ? element.firstElementChild
+      : element);
+    const header = document.querySelector<HTMLElement>('.pv-header');
+    const headerBottom = header?.getBoundingClientRect().bottom ?? 0;
+    const top = window.scrollY + target.getBoundingClientRect().top - headerBottom - 24;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+  }
+
   useEffect(() => {
-    if (!leafKey || !embedRef.current) return;
-    embedRef.current.scrollIntoView({ block: 'start' });
-  }, [leafKey]);
+    if (!leafKey || !leafScrollTick || !embedRef.current) return;
+    const frame = window.requestAnimationFrame(() => {
+      if (embedRef.current) scrollToPanel(embedRef.current);
+    });
+    const timers = [160, 420].map((delay) => window.setTimeout(() => {
+      if (embedRef.current) scrollToPanel(embedRef.current);
+    }, delay));
+    return () => {
+      window.cancelAnimationFrame(frame);
+      timers.forEach((timer) => window.clearTimeout(timer));
+    };
+  }, [leafKey, leafScrollTick]);
+
+  useEffect(() => {
+    if (!kategorieKey || !categoryScrollTick || !leavesRef.current) return;
+    const frame = window.requestAnimationFrame(() => {
+      leavesRef.current?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [categoryScrollTick, kategorieKey]);
 
   function selectCategory(key: KategorieKey) {
     setKategorieKey(key);
     setLeafKey(null);
+    setCategoryScrollTick((tick) => tick + 1);
+  }
+
+  function selectLeaf(key: string) {
+    setLeafKey(key);
+    setLeafScrollTick((tick) => tick + 1);
   }
 
   return (
@@ -47,11 +84,13 @@ export default function Kalkulator() {
         <div className="kalkulator__inner kalkulator__inner--stack">
           <KalkCategoryPicker selected={kategorieKey} onSelect={selectCategory} />
           {category && (
-            <KalkLeafPicker
-              category={category}
-              selected={leafKey}
-              onSelect={setLeafKey}
-            />
+            <div ref={leavesRef} className="kalk-leaves-anchor">
+              <KalkLeafPicker
+                category={category}
+                selected={leafKey}
+                onSelect={selectLeaf}
+              />
+            </div>
           )}
         </div>
       </section>

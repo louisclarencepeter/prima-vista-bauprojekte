@@ -34,10 +34,22 @@ function ScrollToTop() {
   const currentPathKey = useRef(pathKey);
 
   const readSavedScroll = (storageKey: string) => {
-    const value = window.sessionStorage.getItem(storageKey);
-    if (value === null) return null;
-    const parsed = Number(value);
-    return Number.isFinite(parsed) ? parsed : null;
+    try {
+      const value = window.sessionStorage.getItem(storageKey);
+      if (value === null) return null;
+      const parsed = Number(value);
+      return Number.isFinite(parsed) ? parsed : null;
+    } catch {
+      return null;
+    }
+  };
+
+  const writeSavedScroll = (storageKey: string, scrollY: number) => {
+    try {
+      window.sessionStorage.setItem(storageKey, String(scrollY));
+    } catch {
+      // Scroll restoration is a convenience; navigation must never depend on storage.
+    }
   };
 
   const writeScrollState = (scrollY: number) => {
@@ -64,16 +76,14 @@ function ScrollToTop() {
       lastScrollByKey.current[currentKey.current] = window.scrollY;
       lastScrollByPath.current[currentPathKey.current] = window.scrollY;
       writeScrollState(window.scrollY);
-      window.sessionStorage.setItem(`scroll:${currentKey.current}`, String(window.scrollY));
-      window.sessionStorage.setItem(`scroll:${currentPathKey.current}`, String(window.scrollY));
+      writeSavedScroll(`scroll:${currentKey.current}`, window.scrollY);
+      writeSavedScroll(`scroll:${currentPathKey.current}`, window.scrollY);
     };
 
-    document.addEventListener('click', saveCurrentScroll, true);
     window.addEventListener('pagehide', saveCurrentScroll);
 
     return () => {
       saveCurrentScroll();
-      document.removeEventListener('click', saveCurrentScroll, true);
       window.removeEventListener('pagehide', saveCurrentScroll);
       window.history.scrollRestoration = 'auto';
     };
@@ -84,8 +94,8 @@ function ScrollToTop() {
       lastScrollByKey.current[key] = window.scrollY;
       lastScrollByPath.current[pathKey] = window.scrollY;
       writeScrollState(window.scrollY);
-      window.sessionStorage.setItem(`scroll:${key}`, String(window.scrollY));
-      window.sessionStorage.setItem(`scroll:${pathKey}`, String(window.scrollY));
+      writeSavedScroll(`scroll:${key}`, window.scrollY);
+      writeSavedScroll(`scroll:${pathKey}`, window.scrollY);
     };
     if (navigationType !== 'POP') saveScroll();
     window.addEventListener('scroll', saveScroll, { passive: true });

@@ -148,6 +148,72 @@ function useChatScrollWindow(open: boolean, onLeaveWindow: () => void) {
   return { canShowLauncher, canShowPreview };
 }
 
+function useLauncherAvoidance(enabled: boolean) {
+  const { pathname } = useLocation();
+  const [shouldAvoid, setShouldAvoid] = useState(false);
+
+  useEffect(() => {
+    if (!enabled) {
+      setShouldAvoid(false);
+      return;
+    }
+
+    let raf = 0;
+    const interactiveSelector = 'a[href], button, input, select, textarea, [role="button"]';
+
+    const update = () => {
+      raf = 0;
+      const launcherButton = document.querySelector<HTMLElement>('.pv-chat-launcher .pv-chat');
+      if (!launcherButton) {
+        setShouldAvoid(false);
+        return;
+      }
+
+      const rect = launcherButton.getBoundingClientRect();
+      const previousPointerEvents = launcherButton.style.pointerEvents;
+      launcherButton.style.pointerEvents = 'none';
+
+      const inset = 6;
+      const points = [
+        [rect.left + rect.width / 2, rect.top + rect.height / 2],
+        [rect.left + inset, rect.top + rect.height / 2],
+        [rect.right - inset, rect.top + rect.height / 2],
+        [rect.left + rect.width / 2, rect.top + inset],
+        [rect.left + rect.width / 2, rect.bottom - inset],
+      ];
+
+      const hasInteractiveUnderButton = points.some(([x, y]) => {
+        const target = document.elementFromPoint(x, y);
+        const interactive = target?.closest(interactiveSelector);
+        return Boolean(interactive && !interactive.closest('.pv-chat-launcher'));
+      });
+
+      launcherButton.style.pointerEvents = previousPointerEvents;
+      setShouldAvoid(hasInteractiveUnderButton);
+    };
+
+    const schedule = () => {
+      if (raf) return;
+      raf = window.requestAnimationFrame(update);
+    };
+
+    schedule();
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+
+    const timer = window.setInterval(schedule, 1000);
+
+    return () => {
+      if (raf) window.cancelAnimationFrame(raf);
+      window.clearInterval(timer);
+      window.removeEventListener('scroll', schedule);
+      window.removeEventListener('resize', schedule);
+    };
+  }, [enabled, pathname]);
+
+  return shouldAvoid;
+}
+
 function renderAssistantText(
   text: string,
   onLinkClick: () => void,
@@ -376,6 +442,7 @@ export default function Chat() {
 
   const close = useCallback(() => setOpen(false), []);
   const { canShowLauncher, canShowPreview } = useChatScrollWindow(open, close);
+  const shouldAvoidLauncher = useLauncherAvoidance(canShowLauncher && !open);
 
   useEffect(() => {
     if (!scrollRef.current) return;
@@ -542,20 +609,18 @@ export default function Chat() {
   return (
     <>
       {!open && (
-        <div className={`pv-chat-launcher${canShowLauncher ? ' is-visible' : ''}`} aria-hidden={!canShowLauncher}>
+        <div className={`pv-chat-launcher${canShowLauncher ? ' is-visible' : ''}${shouldAvoidLauncher ? ' is-avoiding' : ''}`} aria-hidden={!canShowLauncher}>
           {canShowPreview && (
-            <button
+            <div
               className="pv-chat-preview"
-              type="button"
-              onClick={() => setOpen(true)}
-              aria-label="Bau-Concierge öffnen"
+              aria-hidden="true"
             >
               <Avatar />
               <span>
                 <strong>Bau-Concierge</strong>
                 <small>Guten Tag, erzählen Sie uns kurz von Ihrem Projekt?</small>
               </span>
-            </button>
+            </div>
           )}
           <button
             className="pv-chat"

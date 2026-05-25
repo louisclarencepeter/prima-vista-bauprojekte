@@ -24,8 +24,17 @@ body.pv-chat-open {
 
 .pv-chat-launcher.is-visible {
   opacity: 1;
-  pointer-events: auto;
+  pointer-events: none;
   transform: translateY(0);
+}
+
+.pv-chat-launcher.is-avoiding {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.pv-chat-launcher.is-avoiding .pv-chat {
+  pointer-events: none;
 }
 
 .pv-chat-preview {
@@ -41,7 +50,7 @@ body.pv-chat-open {
   border: 1px solid rgba(26, 26, 26, 0.08);
   border-radius: var(--pv-radius-md);
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
-  cursor: pointer;
+  pointer-events: none;
   animation: pv-chat-preview-in 360ms var(--pv-ease-out);
 }
 
@@ -99,10 +108,15 @@ body.pv-chat-open {
   line-height: 1;
   text-transform: uppercase;
   cursor: pointer;
+  pointer-events: none;
   transition:
     transform 200ms var(--pv-ease-out),
     background 200ms var(--pv-ease-out),
     border-color 200ms var(--pv-ease-out);
+}
+
+.pv-chat-launcher.is-visible:not(.is-avoiding) .pv-chat {
+  pointer-events: auto;
 }
 
 .pv-chat:hover {
@@ -467,8 +481,7 @@ body.pv-chat-open {
 .pv-chat-link {
   color: var(--pv-copper);
   font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  text-decoration: none;
 }
 
 .pv-chat-link:hover {

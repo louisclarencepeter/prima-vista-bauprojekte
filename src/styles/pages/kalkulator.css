@@ -104,6 +104,72 @@
   color: var(--pv-text-on-light-muted);
 }
 
+/* Shared option cards used by embedded package/configurator pickers */
+.kalk-board .haus-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.kalk-board .haus-types__opt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 18px 18px 16px;
+  background: transparent;
+  color: var(--pv-ink);
+  border: 1px solid rgba(20, 19, 18, .18);
+  border-radius: 0;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 180ms var(--pv-ease-out),
+    background 180ms var(--pv-ease-out),
+    color 180ms var(--pv-ease-out),
+    transform 180ms var(--pv-ease-out);
+}
+.kalk-board .haus-types__opt:hover {
+  border-color: var(--pv-copper);
+}
+.kalk-board .haus-types__opt.is-on {
+  background: var(--pv-ink);
+  border-color: var(--pv-ink);
+  color: var(--pv-bone);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px -10px rgba(20, 19, 18, .4);
+}
+.kalk-board .haus-types__factor {
+  font-family: var(--pv-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--pv-copper);
+}
+.kalk-board .haus-types__opt.is-on .haus-types__factor {
+  color: var(--pv-copper-bright);
+}
+.kalk-board .haus-types__label {
+  font-family: var(--pv-font-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pv-ink);
+  transition: color 180ms;
+}
+.kalk-board .haus-types__opt.is-on .haus-types__label {
+  color: var(--pv-bone);
+}
+.kalk-board .haus-types__detail {
+  font-family: var(--pv-font-body);
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--pv-text-on-light-muted);
+  transition: color 180ms;
+}
+.kalk-board .haus-types__opt.is-on .haus-types__detail {
+  color: var(--pv-text-on-dark-muted);
+}
+
 /* Chips (objektart) */
 .kalk-chips {
   display: flex;
@@ -558,6 +624,7 @@
 .kalk-embed-wrap { 
   background: var(--pv-cream-paper);
   padding: 96px 0 160px;
+  scroll-margin-top: calc(var(--pv-header-height) + 24px);
 }
 .kalk-embed-wrap .hk-calc {
   padding: 0;
@@ -567,6 +634,9 @@
   background: var(--pv-cream);
   border: 1px solid rgba(20, 19, 18, .07);
   padding: 36px 40px 40px;
+}
+.kalk-leaves-anchor {
+  scroll-margin-top: calc(var(--pv-header-height) + 24px);
 }
 .kalk-cat__head,
 .kalk-leaves__head {

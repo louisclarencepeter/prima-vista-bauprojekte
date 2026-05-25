@@ -68,9 +68,7 @@
 
 .impressum-page a {
   color: inherit;
-  text-decoration: underline;
-  text-decoration-color: rgba(151, 111, 71, .45);
-  text-underline-offset: 4px;
+  text-decoration: none;
 }
 
 .impressum-page a:hover {
