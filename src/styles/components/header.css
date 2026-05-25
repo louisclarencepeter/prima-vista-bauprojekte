@@ -66,8 +66,8 @@
 .pv-nav__list a {
   font-family: var(--pv-font-display);
   font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.15em;
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--pv-ink);
   transition: color 140ms var(--pv-ease-out);
