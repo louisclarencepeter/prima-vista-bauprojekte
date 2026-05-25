@@ -45,3 +45,7 @@ Site Files/
 
 # Local Netlify folder
 .netlify
+
+# Temporary and Scraper files
+.tmp/
+
