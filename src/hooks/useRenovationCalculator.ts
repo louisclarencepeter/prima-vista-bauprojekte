@@ -325,13 +325,20 @@ export function useRenovationCalculator(packageId: string = DEFAULT_PACKAGE_ID) 
     }));
   }, [state]);
 
+  const minArea = useMemo(() => {
+    if (state.status !== 'ready') return RENOVATION_MIN_AREA;
+    const pkg = getCachedRenovationPackage(state.packageId);
+    const pkgDefault = pkg?.defaultArea ?? RENOVATION_MIN_AREA;
+    return Math.max(1, Math.min(state.livingArea, pkgDefault, RENOVATION_MIN_AREA));
+  }, [state]);
+
   return {
     state,
     isReady: state.status === 'ready',
     totals,
     rowsByCategory,
     dispatch,
-    minArea: RENOVATION_MIN_AREA,
+    minArea,
   };
 }
 
