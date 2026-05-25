@@ -154,12 +154,20 @@
   text-align: left;
 }
 
-.renocalc-table thead th:nth-child(1) { width: 30%; }
-.renocalc-table thead th:nth-child(2) { width: 16%; }
-.renocalc-table thead th:nth-child(3) { width: 11%; }
+.renocalc-table thead th:nth-child(1) { width: 28%; }
+.renocalc-table thead th:nth-child(2) { width: 19%; }
+.renocalc-table thead th:nth-child(3) { width: 8%; }
 .renocalc-table thead th:nth-child(4) { width: 12%; }
 .renocalc-table thead th:nth-child(5) { width: 14%; }
-.renocalc-table thead th:nth-child(6) { width: 17%; }
+.renocalc-table thead th:nth-child(6) { width: 19%; }
+
+.renocalc-table thead th:nth-child(2) {
+  text-align: center;
+}
+
+.renocalc-table thead th:nth-child(3) {
+  padding-left: 24px;
+}
 
 .renocalc-table thead th:nth-child(4),
 .renocalc-table thead th:nth-child(5),
@@ -386,6 +394,7 @@
 
 .renocalc-table td[data-label="VPE"] {
   color: var(--pv-text-on-light-muted);
+  padding-left: 24px;
 }
 
 .renocalc-table td[data-label="Preis"],
