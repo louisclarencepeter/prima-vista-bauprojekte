@@ -1,512 +1,1296 @@
-import type { RenovationPackage, RenovationProduct } from '../types';
-
-function createProduct(
-  id: string,
-  category: string,
-  subcategory: string,
-  title: string,
-  sku: string,
-  basePrice: number,
-  unit: string,
-  description: string,
-  enabled = true,
-  optional = false,
-  baseQuantity = 1,
-  type: 'service' | 'material' | 'extra' | 'optional' = 'service'
-): RenovationProduct {
-  return {
-    id,
-    category,
-    subcategory,
-    title,
-    sku,
-    type,
-    unit,
-    basePrice,
-    enabled,
-    optional,
-    minQuantity: 1,
-    quantityStep: 1,
-    baseQuantity,
-    scalable: unit.toLowerCase().includes('qm') || unit.toLowerCase().includes('lfm') || unit === 'm',
-    quantity: baseQuantity,
-    canDuplicate: false,
-    canRemove: true,
-    canReplace: false,
-    description,
-    alternatives: []
-  };
-}
+import type { RenovationPackage } from '../types';
 
 export const packageZaeuneAluminium: RenovationPackage = {
-  id: 'zaeuneAluminium',
-  title: 'Aluminiumzaun',
+  id: "zaeuneAluminium",
+  title: "Aluminiumzaun",
   defaultArea: 20,
   defaultFloorCount: 1,
   categories: [
     {
-      id: 'art-der-ausfuehrung',
-      title: 'Art der Ausführung',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-01-art-der-ausfuhrung",
+      title: "Art der Ausführung",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: false,
       subsections: [
         {
-          id: 'art-der-ausfuehrung-sub',
-          title: 'Leistungen & Materialien',
-          type: 'service',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
           products: [
-            createProduct('zaun-10008', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALUMINIUMZAUN | 🛠 Montage`, 'ZAUN-10008', 149, 'lfm', `🛠 Montage`, true, false, 20, 'service'),
-            createProduct('uv257-00567', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `GroJa Lumino Alu-Steckzaun Steckzaun quadratisch 180x180 cm, ohne Pfosten`, 'uv257-00567', 478.43, 'Stk', `GroJa Lumino Alu-Steckzaun Steckzaun quadratisch 180x180 cm, ohne Pfosten`, true, false, 24, 'material'),
-            createProduct('uv257-00946', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `GroJa WPC-Steckzaunpfosten inkl. Kappe zum Aufdübeln, 10x10 cm - Terra`, 'uv257-00946', 41.73, 'Stk', `GroJa WPC-Steckzaunpfosten inkl. Kappe zum Aufdübeln, 10x10 cm - Terra`, true, false, 48, 'material'),
-            createProduct('uv257-00569', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `GroJa Lumino Alu-Steckzaun Tor 1-flügelig 100 x 180 cm, ohne Pfosten - mit Alurahmen`, 'uv257-00569', 780.95, 'Stk', `GroJa Lumino Alu-Steckzaun Tor 1-flügelig 100 x 180 cm, ohne Pfosten - mit Alurahmen`, true, false, 1, 'material')
-          ]
+            {
+              id: "bossmann-001-zaun-10008",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "ALUMINIUMZAUN | 🛠 Montage",
+              sku: "ZAUN-10008",
+              type: "service",
+              unit: "lfm",
+              basePrice: 149,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 20,
+              scalable: false,
+              quantity: 20,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            },
+            {
+              id: "bossmann-002-uv257-00567",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "GroJa Lumino Alu-Steckzaun Steckzaun quadratisch 180x180 cm, ohne Pfosten",
+              sku: "uv257-00567",
+              type: "material",
+              unit: "Stk.",
+              basePrice: 478.43,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 24,
+              scalable: false,
+              quantity: 24,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            },
+            {
+              id: "bossmann-003-uv257-00946",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "GroJa WPC-Steckzaunpfosten inkl. Kappe zum Aufdübeln, 10x10 cm - Terra",
+              sku: "uv257-00946",
+              type: "material",
+              unit: "Stk.",
+              basePrice: 41.73,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 48,
+              scalable: false,
+              quantity: 48,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            },
+            {
+              id: "bossmann-004-uv257-00569",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "GroJa Lumino Alu-Steckzaun Tor 1-flügelig 100 x 180 cm, ohne Pfosten - mit Alurahmen",
+              sku: "uv257-00569",
+              type: "material",
+              unit: "Stk.",
+              basePrice: 780.95,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 1,
+              scalable: false,
+              quantity: 1,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     },
     {
-      id: 'optionale-positionen',
-      title: 'Optionale Positionen',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-02-optionale-positionen",
+      title: "Optionale Positionen",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: true,
       subsections: [
         {
-          id: 'optionale-positionen-sub',
-          title: 'Leistungen & Materialien',
-          type: 'optional',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "optional",
           products: [
-            createProduct('uv257-00746', 'optionale-positionen', 'optionale-positionen-sub', `GroJa Lumino Alu-Steckzaun Tor 2-flügelig 300 x 180 cm, ohne Pfosten - mit Anthrazitrahmen - anthrazitgrau`, 'uv257-00746', 2804.95, 'Stk', `GroJa Lumino Alu-Steckzaun Tor 2-flügelig 300 x 180 cm, ohne Pfosten - mit Anthrazitrahmen - anthrazitgrau`, false, true, 1, 'optional')
-          ]
+            {
+              id: "bossmann-005-uv257-00746",
+              category: "section-02-optionale-positionen",
+              subcategory: "leistungen-materialien",
+              title: "GroJa Lumino Alu-Steckzaun Tor 2-flügelig 300 x 180 cm, ohne Pfosten - mit Anthrazitrahmen - anthrazitgrau",
+              sku: "uv257-00746",
+              type: "optional",
+              unit: "Stk.",
+              basePrice: 2804.95,
+              enabled: false,
+              optional: true,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 1,
+              scalable: false,
+              quantity: 1,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     }
-  ]
+  ],
 };
 
 export const packageZaeuneHolz: RenovationPackage = {
-  id: 'zaeuneHolz',
-  title: 'Holzzaun',
+  id: "zaeuneHolz",
+  title: "Holzzaun",
   defaultArea: 20,
   defaultFloorCount: 1,
   categories: [
     {
-      id: 'art-der-ausfuehrung',
-      title: 'Art der Ausführung',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-01-art-der-ausfuhrung",
+      title: "Art der Ausführung",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: false,
       subsections: [
         {
-          id: 'art-der-ausfuehrung-sub',
-          title: 'Leistungen & Materialien',
-          type: 'service',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
           products: [
-            createProduct('zaun-10003', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `HOLZZAUN | 🛠 Montage`, 'ZAUN-10003', 149, 'lfm', `🛠 Montage`, true, false, 20, 'service')
-          ]
+            {
+              id: "bossmann-001-zaun-10003",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "HOLZZAUN | 🛠 Montage",
+              sku: "ZAUN-10003",
+              type: "service",
+              unit: "lfm",
+              basePrice: 149,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 20,
+              scalable: false,
+              quantity: 20,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     },
     {
-      id: 'material',
-      title: 'Material',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-02-material",
+      title: "Material",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: true,
       subsections: [
         {
-          id: 'material-sub',
-          title: 'Leistungen & Materialien',
-          type: 'material',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
           products: [
-            createProduct('679-01308', 'material', 'material-sub', `LIGHTLINE Lamellenzaun 180 x 150 cm`, '679-01308', 314.6, 'Stk', `LIGHTLINE Lamellenzaun 180 x 150 cm`, true, false, 24, 'material')
-          ]
+            {
+              id: "bossmann-002-679-01308",
+              category: "section-02-material",
+              subcategory: "leistungen-materialien",
+              title: "LIGHTLINE Lamellenzaun 180 x 150 cm",
+              sku: "679-01308",
+              type: "material",
+              unit: "",
+              basePrice: 314.6,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 24,
+              scalable: false,
+              quantity: 24,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     },
     {
-      id: 'optionale-positionen',
-      title: 'Optionale Positionen',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-03-optionale-positionen",
+      title: "Optionale Positionen",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: true,
       subsections: [
         {
-          id: 'optionale-positionen-sub',
-          title: 'Leistungen & Materialien',
-          type: 'optional',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "optional",
           products: [
-            createProduct('679-00373', 'optionale-positionen', 'optionale-positionen-sub', `LIGHTLINE KS-Zaun Ranki 180 x 150 cm Füllung weiß / Rahmen weiß`, '679-00373', 325.6, 'Stk', `LIGHTLINE KS-Zaun Ranki 180 x 150 cm Füllung weiß / Rahmen weiß`, false, true, 1, 'optional'),
-            createProduct('679-00372', 'optionale-positionen', 'optionale-positionen-sub', `LIGHTLINE KS-Zaun Ranki Ecke 90 x 150/90 cm Füllung weiß / Rahmen weiß`, '679-00372', 325.6, 'Stk', `LIGHTLINE KS-Zaun Ranki Ecke 90 x 150/90 cm Füllung weiß / Rahmen weiß`, false, true, 1, 'optional')
-          ]
+            {
+              id: "bossmann-003-679-00373",
+              category: "section-03-optionale-positionen",
+              subcategory: "leistungen-materialien",
+              title: "LIGHTLINE KS-Zaun Ranki 180 x 150 cm Füllung weiß / Rahmen weiß",
+              sku: "679-00373",
+              type: "optional",
+              unit: "",
+              basePrice: 325.6,
+              enabled: false,
+              optional: true,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 1,
+              scalable: false,
+              quantity: 1,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            },
+            {
+              id: "bossmann-004-679-00372",
+              category: "section-03-optionale-positionen",
+              subcategory: "leistungen-materialien",
+              title: "LIGHTLINE KS-Zaun Ranki Ecke  90 x 150/90 cm Füllung weiß / Rahmen weiß",
+              sku: "679-00372",
+              type: "optional",
+              unit: "",
+              basePrice: 325.6,
+              enabled: false,
+              optional: true,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 1,
+              scalable: false,
+              quantity: 1,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     },
     {
-      id: 'alternativ',
-      title: 'Alternativ',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-04-alternativ",
+      title: "Alternativ",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: true,
       subsections: [
         {
-          id: 'alternativ-sub',
-          title: 'Leistungen & Materialien',
-          type: 'service',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "optional",
           products: [
-            createProduct('mon-10307', 'alternativ', 'alternativ-sub', `VORGARTENZAUN | 🛠 Montage`, 'MON-10307', 98, 'lfm', `🛠 Montage`, false, false, 20, 'service'),
-            createProduct('679-00661', 'alternativ', 'alternativ-sub', `LIGHTLINE Vorgarten gerade, weiß 180 x 80 cm`, '679-00661', 178.2, 'Stk', `LIGHTLINE Vorgarten gerade, weiß 180 x 80 cm`, false, false, 24, 'material'),
-            createProduct('679-01292', 'alternativ', 'alternativ-sub', `LIGHTLINE KS-Vorgartentor weiß 100 x 80 cm`, '679-01292', 609.4, 'Stk', `LIGHTLINE KS-Vorgartentor weiß 100 x 80 cm`, false, false, 1, 'material')
-          ]
+            {
+              id: "bossmann-005-mon-10307",
+              category: "section-04-alternativ",
+              subcategory: "leistungen-materialien",
+              title: "VORGARTENZAUN | 🛠 Montage",
+              sku: "MON-10307",
+              type: "optional",
+              unit: "lfm",
+              basePrice: 98,
+              enabled: false,
+              optional: true,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 20,
+              scalable: false,
+              quantity: 20,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            },
+            {
+              id: "bossmann-006-679-00661",
+              category: "section-04-alternativ",
+              subcategory: "leistungen-materialien",
+              title: "LIGHTLINE Vorgarten gerade, weiß 180 x 80 cm",
+              sku: "679-00661",
+              type: "optional",
+              unit: "",
+              basePrice: 178.2,
+              enabled: false,
+              optional: true,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 24,
+              scalable: false,
+              quantity: 24,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            },
+            {
+              id: "bossmann-007-679-01292",
+              category: "section-04-alternativ",
+              subcategory: "leistungen-materialien",
+              title: "LIGHTLINE KS-Vorgartentor weiß 100 x 80 cm",
+              sku: "679-01292",
+              type: "optional",
+              unit: "",
+              basePrice: 609.4,
+              enabled: false,
+              optional: true,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 1,
+              scalable: false,
+              quantity: 1,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     }
-  ]
+  ],
 };
 
 export const packageZaeuneGlas: RenovationPackage = {
-  id: 'zaeuneGlas',
-  title: 'Glaszaun',
+  id: "zaeuneGlas",
+  title: "Glaszaun",
   defaultArea: 20,
   defaultFloorCount: 1,
   categories: [
     {
-      id: 'art-der-ausfuehrung',
-      title: 'Art der Ausführung',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-01-art-der-ausfuhrung",
+      title: "Art der Ausführung",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: false,
       subsections: [
         {
-          id: 'art-der-ausfuehrung-sub',
-          title: 'Leistungen & Materialien',
-          type: 'service',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
           products: [
-            createProduct('zaun-10013', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `GLASZAUN 🛠 Montage`, 'ZAUN-10013', 149, 'lfm', `GLASZAUN 🛠 Montage`, true, false, 10, 'service')
-          ]
+            {
+              id: "bossmann-001-zaun-10013",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "GLASZAUN 🛠 Montage",
+              sku: "ZAUN-10013",
+              type: "service",
+              unit: "lfm",
+              basePrice: 149,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 10,
+              scalable: false,
+              quantity: 10,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     },
     {
-      id: 'material',
-      title: 'Material',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-02-material",
+      title: "Material",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: true,
       subsections: [
         {
-          id: 'material-sub',
-          title: 'Leistungen & Materialien',
-          type: 'material',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
           products: [
-            createProduct('uv257-00457', 'material', 'material-sub', `GroJa Ambiente Glaszaun schräg, 90 x 180/90 cm, ohne Pfosten - Klarglas`, 'uv257-00457', 174.77, 'Stk', `GroJa Ambiente Glaszaun schräg, 90 x 180/90 cm, ohne Pfosten - Klarglas`, true, false, 12, 'material')
-          ]
+            {
+              id: "bossmann-002-uv257-00457",
+              category: "section-02-material",
+              subcategory: "leistungen-materialien",
+              title: "GroJa Ambiente Glaszaun schräg, 90 x 180/90 cm, ohne Pfosten - Klarglas",
+              sku: "uv257-00457",
+              type: "material",
+              unit: "Stk.",
+              basePrice: 174.77,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 12,
+              scalable: false,
+              quantity: 12,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     },
     {
-      id: 'extra-positionen',
-      title: 'Extra Positionen',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-03-extra-positionen",
+      title: "Extra Positionen",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: true,
       subsections: [
         {
-          id: 'extra-positionen-sub',
-          title: 'Leistungen & Materialien',
-          type: 'extra',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
           products: [
-            createProduct('uv257-00974', 'extra-positionen', 'extra-positionen-sub', `GroJa Alu-Steckzaunpfosten inkl. Kappe zum Einbetonieren, 9 x 9 cm - anthrazit, DB 703`, 'uv257-00974', 98.95, 'Stk', `GroJa Alu-Steckzaunpfosten inkl. Kappe zum Einbetonieren, 9 x 9 cm - anthrazit, DB 703`, true, false, 14, 'extra')
-          ]
+            {
+              id: "bossmann-003-uv257-00974",
+              category: "section-03-extra-positionen",
+              subcategory: "leistungen-materialien",
+              title: "GroJa Alu-Steckzaunpfosten inkl. Kappe zum Einbetonieren, 9 x 9 cm - anthrazit, DB 703",
+              sku: "uv257-00974",
+              type: "material",
+              unit: "Stk.",
+              basePrice: 98.95,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 14,
+              scalable: false,
+              quantity: 14,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     }
-  ]
+  ],
 };
 
 export const packageZaeuneMetall: RenovationPackage = {
-  id: 'zaeuneMetall',
-  title: 'Metallzaun',
+  id: "zaeuneMetall",
+  title: "Metallzaun",
   defaultArea: 20,
   defaultFloorCount: 1,
   categories: [
     {
-      id: 'art-der-ausfuehrung',
-      title: 'Art der Ausführung',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-01-art-der-ausfuhrung",
+      title: "Art der Ausführung",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: false,
       subsections: [
         {
-          id: 'art-der-ausfuehrung-sub',
-          title: 'Leistungen & Materialien',
-          type: 'service',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
           products: [
-            createProduct('zaun-10004', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `METALLZAUN | 🛠 Montage`, 'ZAUN-10004', 149, 'lfm', `🛠 Montage`, true, false, 20, 'service')
-          ]
+            {
+              id: "bossmann-001-zaun-10004",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "METALLZAUN | 🛠 Montage",
+              sku: "ZAUN-10004",
+              type: "service",
+              unit: "lfm",
+              basePrice: 149,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 20,
+              scalable: false,
+              quantity: 20,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     },
     {
-      id: 'material',
-      title: 'Material',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-02-material",
+      title: "Material",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: true,
       subsections: [
         {
-          id: 'material-sub',
-          title: 'Leistungen & Materialien',
-          type: 'material',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
           products: [
-            createProduct('uv12-00202', 'material', 'material-sub', `DZT Metallzaun-Komplett-Set VALENCIA anthrazitgrau (RAL7016) - Elemente 2,0 m breit (Schmuckzaun)`, 'uv12-00202', 1875.14, 'Set', `DZT Metallzaun-Komplett-Set VALENCIA anthrazitgrau (RAL7016) - Elemente 2,0 m breit (Schmuckzaun)`, true, false, 1, 'material')
-          ]
+            {
+              id: "bossmann-002-uv12-00202",
+              category: "section-02-material",
+              subcategory: "leistungen-materialien",
+              title: "DZT Metallzaun-Komplett-Set VALENCIA anthrazitgrau (RAL7016) - Elemente 2,0 m breit (Schmuckzaun)",
+              sku: "uv12-00202",
+              type: "material",
+              unit: "Set",
+              basePrice: 1875.14,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 1,
+              scalable: false,
+              quantity: 1,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     }
-  ]
+  ],
 };
 
 export const packageZaeuneDoppelstab: RenovationPackage = {
-  id: 'zaeuneDoppelstab',
-  title: 'Doppelstabmatten',
+  id: "zaeuneDoppelstab",
+  title: "Doppelstabmatten",
   defaultArea: 20,
   defaultFloorCount: 1,
   categories: [
     {
-      id: 'art-der-ausfuehrung',
-      title: 'Art der Ausführung',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-01-art-der-ausfuhrung",
+      title: "Art der Ausführung",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: false,
       subsections: [
         {
-          id: 'art-der-ausfuehrung-sub',
-          title: 'Leistungen & Materialien',
-          type: 'service',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
           products: [
-            createProduct('zaun-10002', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `DOPPELSTABMATTENZAUN | 🛠 Montage`, 'ZAUN-10002', 148, 'lfm', `🛠 Montage`, true, false, 20, 'service'),
-            createProduct('uv265-84105', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Hadra Doppelstabmattenzaun Komplettset Anthrazit - Elemente 2,5 m breit - incl. Pfosten und Befestigungen`, 'uv265-84105', 847.69, 'Set', `Hadra Doppelstabmattenzaun Komplettset Anthrazit - Elemente 2,5 m breit - incl. Pfosten und Befestigungen`, true, false, 8, 'material'),
-            createProduct('265-00045', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Hadra Drehflügeltor für Doppelstabmatten SMALL, 1-flügelig, Anthrazit für Zaunhöhe: 123 cm`, '265-00045', 364.1, 'Stk', `Hadra Drehflügeltor für Doppelstabmatten SMALL, 1-flügelig, Anthrazit für Zaunhöhe: 123 cm`, true, false, 1, 'material')
-          ]
+            {
+              id: "bossmann-001-zaun-10002",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "DOPPELSTABMATTENZAUN | 🛠 Montage",
+              sku: "ZAUN-10002",
+              type: "service",
+              unit: "lfm",
+              basePrice: 148,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 20,
+              scalable: false,
+              quantity: 20,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            },
+            {
+              id: "bossmann-002-uv265-84105",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "Hadra Doppelstabmattenzaun Komplettset Anthrazit - Elemente 2,5 m breit - incl. Pfosten und Befestigungen",
+              sku: "uv265-84105",
+              type: "material",
+              unit: "Set",
+              basePrice: 847.69,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 8,
+              scalable: false,
+              quantity: 8,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            },
+            {
+              id: "bossmann-003-265-00045",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "Hadra Drehflügeltor für Doppelstabmatten SMALL, 1-flügelig, Anthrazit für Zaunhöhe: 123 cm",
+              sku: "265-00045",
+              type: "material",
+              unit: "",
+              basePrice: 364.1,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 1,
+              scalable: false,
+              quantity: 1,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     }
-  ]
+  ],
 };
 
 export const packageZaeuneGabionen: RenovationPackage = {
-  id: 'zaeuneGabionen',
-  title: 'Gabionenzaun',
+  id: "zaeuneGabionen",
+  title: "Gabionenzaun",
   defaultArea: 20,
   defaultFloorCount: 1,
   categories: [
     {
-      id: 'art-der-ausfuehrung',
-      title: 'Art der Ausführung',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-01-art-der-ausfuhrung",
+      title: "Art der Ausführung",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: false,
       subsections: [
         {
-          id: 'art-der-ausfuehrung-sub',
-          title: 'Leistungen & Materialien',
-          type: 'service',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
           products: [
-            createProduct('zaun-10015', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `GABIONENZAUN | 🛠 Montage`, 'ZAUN-10015', 149, 'lfm', `🛠 Montage`, true, false, 10, 'service')
-          ]
+            {
+              id: "bossmann-001-zaun-10015",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "GABIONENZAUN | 🛠 Montage",
+              sku: "ZAUN-10015",
+              type: "service",
+              unit: "lfm",
+              basePrice: 149,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 10,
+              scalable: false,
+              quantity: 10,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     },
     {
-      id: 'material',
-      title: 'Material',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-02-material",
+      title: "Material",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: true,
       subsections: [
         {
-          id: 'material-sub',
-          title: 'Leistungen & Materialien',
-          type: 'material',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
           products: [
-            createProduct('uv12-00355', 'material', 'material-sub', `DZT Gabione Onyx KL: 400x347 mm - feuerverzinkt`, 'uv12-00355', 295.77, 'Stk', `DZT Gabione Onyx KL: 400x347 mm - feuerverzinkt`, true, false, 24, 'material')
-          ]
+            {
+              id: "bossmann-002-uv12-00355",
+              category: "section-02-material",
+              subcategory: "leistungen-materialien",
+              title: "DZT Gabione Onyx KL: 400x347 mm - feuerverzinkt",
+              sku: "uv12-00355",
+              type: "material",
+              unit: "Stk.",
+              basePrice: 295.77,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 24,
+              scalable: false,
+              quantity: 24,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     }
-  ]
+  ],
 };
 
 export const packageZaeuneSichtschutz: RenovationPackage = {
-  id: 'zaeuneSichtschutz',
-  title: 'Sichtschutzzaun',
+  id: "zaeuneSichtschutz",
+  title: "Sichtschutzzaun",
   defaultArea: 20,
   defaultFloorCount: 1,
   categories: [
     {
-      id: 'art-der-ausfuehrung',
-      title: 'Art der Ausführung',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-01-art-der-ausfuhrung",
+      title: "Art der Ausführung",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: false,
       subsections: [
         {
-          id: 'art-der-ausfuehrung-sub',
-          title: 'Leistungen & Materialien',
-          type: 'service',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
           products: [
-            createProduct('zaun-10006', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `SICHTSCHUTZZAUN | 🛠 Montage`, 'ZAUN-10006', 149, 'lfm', `🛠 Montage`, true, false, 20, 'service')
-          ]
+            {
+              id: "bossmann-001-zaun-10006",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "SICHTSCHUTZZAUN | 🛠 Montage",
+              sku: "ZAUN-10006",
+              type: "service",
+              unit: "lfm",
+              basePrice: 149,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 20,
+              scalable: false,
+              quantity: 20,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     },
     {
-      id: 'material',
-      title: 'Material',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-02-material",
+      title: "Material",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: true,
       subsections: [
         {
-          id: 'material-sub',
-          title: 'Leistungen & Materialien',
-          type: 'material',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
           products: [
-            createProduct('679-01171', 'material', 'material-sub', `Sichtschutzzaun SUNLINE Ranki 180 x 180 cm`, '679-01171', 199.1, 'Stk', `Sichtschutzzaun SUNLINE Ranki 180 x 180 cm`, true, false, 12, 'material')
-          ]
+            {
+              id: "bossmann-002-679-01171",
+              category: "section-02-material",
+              subcategory: "leistungen-materialien",
+              title: "Sichtschutzzaun SUNLINE Ranki 180 x 180 cm",
+              sku: "679-01171",
+              type: "material",
+              unit: "",
+              basePrice: 199.1,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 12,
+              scalable: false,
+              quantity: 12,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     },
     {
-      id: 'optionale-positionen',
-      title: 'Optionale Positionen',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-03-optionale-positionen",
+      title: "Optionale Positionen",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: true,
       subsections: [
         {
-          id: 'optionale-positionen-sub',
-          title: 'Leistungen & Materialien',
-          type: 'optional',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "optional",
           products: [
-            createProduct('679-01172', 'optionale-positionen', 'optionale-positionen-sub', `Sichtschutzzaun SUNLINE Ranki ECKE 90 x 180/90 cm`, '679-01172', 199.1, 'Stk', `Sichtschutzzaun SUNLINE Ranki ECKE 90 x 180/90 cm`, false, true, 1, 'optional')
-          ]
+            {
+              id: "bossmann-003-679-01172",
+              category: "section-03-optionale-positionen",
+              subcategory: "leistungen-materialien",
+              title: "Sichtschutzzaun SUNLINE Ranki ECKE 90 x 180/90 cm",
+              sku: "679-01172",
+              type: "optional",
+              unit: "",
+              basePrice: 199.1,
+              enabled: false,
+              optional: true,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 1,
+              scalable: false,
+              quantity: 1,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     }
-  ]
+  ],
 };
 
 export const packageZaeuneMaschendraht: RenovationPackage = {
-  id: 'zaeuneMaschendraht',
-  title: 'Maschendrahtzaun',
+  id: "zaeuneMaschendraht",
+  title: "Maschendrahtzaun",
   defaultArea: 20,
   defaultFloorCount: 1,
   categories: [
     {
-      id: 'art-der-ausfuehrung',
-      title: 'Art der Ausführung',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-01-art-der-ausfuhrung",
+      title: "Art der Ausführung",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: false,
       subsections: [
         {
-          id: 'art-der-ausfuehrung-sub',
-          title: 'Leistungen & Materialien',
-          type: 'service',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
           products: [
-            createProduct('zaun-10001', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `MASCHENDRAHTZAUN | 🛠 Montage`, 'ZAUN-10001', 98, 'lfm', `🛠 Montage`, true, false, 20, 'service')
-          ]
+            {
+              id: "bossmann-001-zaun-10001",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "MASCHENDRAHTZAUN | 🛠 Montage",
+              sku: "ZAUN-10001",
+              type: "service",
+              unit: "lfm",
+              basePrice: 98,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 20,
+              scalable: false,
+              quantity: 20,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     },
     {
-      id: 'material',
-      title: 'Material',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-02-material",
+      title: "Material",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: true,
       subsections: [
         {
-          id: 'material-sub',
-          title: 'Leistungen & Materialien',
-          type: 'material',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
           products: [
-            createProduct('uv804-50054', 'material', 'material-sub', `Alberts Maschendraht-Zaun-Set - Pfosten zum Einbetonieren - Anthrazit-Metallic - incl. Pfosten und Befestigungen`, 'uv804-50054', 268.35, 'Stk', `Alberts Maschendraht-Zaun-Set - Pfosten zum Einbetonieren - Anthrazit-Metallic - incl. Pfosten und Befestigungen`, true, false, 1, 'material'),
-            createProduct('265-00040', 'material', 'material-sub', `Hadra Drehflügeltor für Doppelstabmatten SMALL, 1-flügelig, Grün für Zaunhöhe: 83 cm`, '265-00040', 290.4, 'Stk', `Hadra Drehflügeltor für Doppelstabmatten SMALL, 1-flügelig, Grün für Zaunhöhe: 83 cm`, true, false, 1, 'material')
-          ]
+            {
+              id: "bossmann-002-uv804-50054",
+              category: "section-02-material",
+              subcategory: "leistungen-materialien",
+              title: "Alberts Maschendraht-Zaun-Set - Pfosten zum Einbetonieren - Anthrazit-Metallic - incl. Pfosten und Befestigungen",
+              sku: "uv804-50054",
+              type: "material",
+              unit: "",
+              basePrice: 268.35,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 1,
+              scalable: false,
+              quantity: 1,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            },
+            {
+              id: "bossmann-003-265-00040",
+              category: "section-02-material",
+              subcategory: "leistungen-materialien",
+              title: "Hadra Drehflügeltor für Doppelstabmatten SMALL, 1-flügelig, Grün für Zaunhöhe: 83 cm",
+              sku: "265-00040",
+              type: "material",
+              unit: "",
+              basePrice: 290.4,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 1,
+              scalable: false,
+              quantity: 1,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     },
     {
-      id: 'optionale-positionen',
-      title: 'Optionale Positionen',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-03-optionale-positionen",
+      title: "Optionale Positionen",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: true,
       subsections: [
         {
-          id: 'optionale-positionen-sub',
-          title: 'Leistungen & Materialien',
-          type: 'optional',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "optional",
           products: [
-            createProduct('012-00598', 'optionale-positionen', 'optionale-positionen-sub', `DZT VARIO compact 2-flügeliges Tor - 2960 x 1400 mm grün`, '012-00598', 1191.55, 'Stk', `DZT VARIO compact 2-flügeliges Tor - 2960 x 1400 mm grün`, false, true, 1, 'optional')
-          ]
+            {
+              id: "bossmann-004-012-00598",
+              category: "section-03-optionale-positionen",
+              subcategory: "leistungen-materialien",
+              title: "DZT VARIO compact 2-flügeliges Tor - 2960 x 1400 mm grün",
+              sku: "012-00598",
+              type: "optional",
+              unit: "",
+              basePrice: 1191.55,
+              enabled: false,
+              optional: true,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 1,
+              scalable: false,
+              quantity: 1,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     }
-  ]
+  ],
 };
 
 export const packageZaeuneSteck: RenovationPackage = {
-  id: 'zaeuneSteck',
-  title: 'Steckzaun',
+  id: "zaeuneSteck",
+  title: "Steckzaun",
   defaultArea: 20,
   defaultFloorCount: 1,
   categories: [
     {
-      id: 'art-der-ausfuehrung',
-      title: 'Art der Ausführung',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-01-art-der-ausfuhrung",
+      title: "Art der Ausführung",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: false,
       subsections: [
         {
-          id: 'art-der-ausfuehrung-sub',
-          title: 'Leistungen & Materialien',
-          type: 'service',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
           products: [
-            createProduct('mon-10305', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `STECKZAUN | 🛠 Montage`, 'MON-10305', 98, 'lfm', `🛠 Montage`, true, false, 20, 'service'),
-            createProduct('uv257-00567', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `GroJa Lumino Alu-Steckzaun Steckzaun quadratisch 180x180 cm, ohne Pfosten`, 'uv257-00567', 478.43, 'Stk', `GroJa Lumino Alu-Steckzaun Steckzaun quadratisch 180x180 cm, ohne Pfosten`, true, false, 24, 'material'),
-            createProduct('uv257-00946', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `GroJa WPC-Steckzaunpfosten inkl. Kappe zum Aufdübeln, 10x10 cm - Terra`, 'uv257-00946', 41.73, 'Stk', `GroJa WPC-Steckzaunpfosten inkl. Kappe zum Aufdübeln, 10x10 cm - Terra`, true, false, 48, 'material'),
-            createProduct('uv257-00569', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `GroJa Lumino Alu-Steckzaun Tor 1-flügelig 100 x 180 cm, ohne Pfosten - mit Alurahmen`, 'uv257-00569', 780.95, 'Stk', `GroJa Lumino Alu-Steckzaun Tor 1-flügelig 100 x 180 cm, ohne Pfosten - mit Alurahmen`, true, false, 1, 'material')
-          ]
+            {
+              id: "bossmann-001-mon-10305",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "STECKZAUN | 🛠 Montage",
+              sku: "MON-10305",
+              type: "service",
+              unit: "lfm",
+              basePrice: 98,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 20,
+              scalable: false,
+              quantity: 20,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            },
+            {
+              id: "bossmann-002-uv257-00567",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "GroJa Lumino Alu-Steckzaun Steckzaun quadratisch 180x180 cm, ohne Pfosten",
+              sku: "uv257-00567",
+              type: "material",
+              unit: "Stk.",
+              basePrice: 478.43,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 24,
+              scalable: false,
+              quantity: 24,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            },
+            {
+              id: "bossmann-003-uv257-00946",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "GroJa WPC-Steckzaunpfosten inkl. Kappe zum Aufdübeln, 10x10 cm - Terra",
+              sku: "uv257-00946",
+              type: "material",
+              unit: "Stk.",
+              basePrice: 41.73,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 48,
+              scalable: false,
+              quantity: 48,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            },
+            {
+              id: "bossmann-004-uv257-00569",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "GroJa Lumino Alu-Steckzaun Tor 1-flügelig 100 x 180 cm, ohne Pfosten - mit Alurahmen",
+              sku: "uv257-00569",
+              type: "material",
+              unit: "Stk.",
+              basePrice: 780.95,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 1,
+              scalable: false,
+              quantity: 1,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     },
     {
-      id: 'optionale-positionen',
-      title: 'Optionale Positionen',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-02-optionale-positionen",
+      title: "Optionale Positionen",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: true,
       subsections: [
         {
-          id: 'optionale-positionen-sub',
-          title: 'Leistungen & Materialien',
-          type: 'optional',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "optional",
           products: [
-            createProduct('uv257-00746', 'optionale-positionen', 'optionale-positionen-sub', `GroJa Lumino Alu-Steckzaun Tor 2-flügelig 300 x 180 cm, ohne Pfosten - mit Anthrazitrahmen - anthrazitgrau`, 'uv257-00746', 2804.95, 'Stk', `GroJa Lumino Alu-Steckzaun Tor 2-flügelig 300 x 180 cm, ohne Pfosten - mit Anthrazitrahmen - anthrazitgrau`, false, true, 1, 'optional')
-          ]
+            {
+              id: "bossmann-005-uv257-00746",
+              category: "section-02-optionale-positionen",
+              subcategory: "leistungen-materialien",
+              title: "GroJa Lumino Alu-Steckzaun Tor 2-flügelig 300 x 180 cm, ohne Pfosten - mit Anthrazitrahmen - anthrazitgrau",
+              sku: "uv257-00746",
+              type: "optional",
+              unit: "Stk.",
+              basePrice: 2804.95,
+              enabled: false,
+              optional: true,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 1,
+              scalable: false,
+              quantity: 1,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     }
-  ]
+  ],
 };
 
 export const packageZaeuneVorgarten: RenovationPackage = {
-  id: 'zaeuneVorgarten',
-  title: 'Vorgartenzaun',
+  id: "zaeuneVorgarten",
+  title: "Vorgartenzaun",
   defaultArea: 20,
   defaultFloorCount: 1,
   categories: [
     {
-      id: 'art-der-ausfuehrung',
-      title: 'Art der Ausführung',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-01-art-der-ausfuhrung",
+      title: "Art der Ausführung",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: false,
       subsections: [
         {
-          id: 'art-der-ausfuehrung-sub',
-          title: 'Leistungen & Materialien',
-          type: 'service',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
           products: [
-            createProduct('mon-10307', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `VORGARTENZAUN | 🛠 Montage`, 'MON-10307', 98, 'lfm', `🛠 Montage`, true, false, 20, 'service'),
-            createProduct('679-00661', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `LIGHTLINE Vorgarten gerade, weiß 180 x 80 cm`, '679-00661', 178.2, 'Stk', `LIGHTLINE Vorgarten gerade, weiß 180 x 80 cm`, true, false, 24, 'material'),
-            createProduct('679-01292', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `LIGHTLINE KS-Vorgartentor weiß 100 x 80 cm`, '679-01292', 609.4, 'Stk', `LIGHTLINE KS-Vorgartentor weiß 100 x 80 cm`, true, false, 1, 'material')
-          ]
+            {
+              id: "bossmann-001-mon-10307",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "VORGARTENZAUN | 🛠 Montage",
+              sku: "MON-10307",
+              type: "service",
+              unit: "lfm",
+              basePrice: 98,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 20,
+              scalable: false,
+              quantity: 20,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            },
+            {
+              id: "bossmann-002-679-00661",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "LIGHTLINE Vorgarten gerade, weiß 180 x 80 cm",
+              sku: "679-00661",
+              type: "material",
+              unit: "",
+              basePrice: 178.2,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 24,
+              scalable: false,
+              quantity: 24,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            },
+            {
+              id: "bossmann-003-679-01292",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "LIGHTLINE KS-Vorgartentor weiß 100 x 80 cm",
+              sku: "679-01292",
+              type: "material",
+              unit: "",
+              basePrice: 609.4,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 1,
+              scalable: false,
+              quantity: 1,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     }
-  ]
+  ],
 };
 
 export const packageZaeuneSichtschutzstreifen: RenovationPackage = {
-  id: 'zaeuneSichtschutzstreifen',
-  title: 'Sichtschutzstreifen',
+  id: "zaeuneSichtschutzstreifen",
+  title: "Sichtschutzstreifen",
   defaultArea: 20,
   defaultFloorCount: 1,
   categories: [
     {
-      id: 'basis',
-      title: 'Basis',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-01-leistungen-materialien",
+      title: "Leistungen & Materialien",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: false,
       subsections: [
         {
-          id: 'basis-sub',
-          title: 'Leistungen & Materialien',
-          type: 'service',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
           products: [
-            createProduct('zaun-10012', 'basis', 'basis-sub', `SICHTSCHUTZSTREIFEN| 🛠 Montage`, 'ZAUN-10012', 89, 'lfm', `🛠 Montage`, true, false, 1, 'service')
-          ]
+            {
+              id: "bossmann-001-zaun-10012",
+              category: "section-01-leistungen-materialien",
+              subcategory: "leistungen-materialien",
+              title: "SICHTSCHUTZSTREIFEN| 🛠 Montage",
+              sku: "ZAUN-10012",
+              type: "service",
+              unit: "lfm",
+              basePrice: 89,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 1,
+              scalable: false,
+              quantity: 1,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     }
-  ]
+  ],
 };

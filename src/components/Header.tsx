@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
+import { useTheme } from '../hooks/useTheme';
 
 type NavItem = { to: string; label: string; activeOn?: string[] };
 
@@ -29,6 +30,7 @@ const FEATURED_PROJECT = {
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
   const { pathname } = useLocation();
 
   useEffect(() => { setOpen(false); }, [pathname]);
@@ -86,6 +88,20 @@ export default function Header() {
               );
             })}
           </ul>
+          <button
+            type="button"
+            className="pv-theme-toggle"
+            aria-label={theme === 'dark' ? 'Zum hellen Design wechseln' : 'Zum dunklen Design wechseln'}
+            aria-pressed={theme === 'dark'}
+            title={theme === 'dark' ? 'Helles Design' : 'Dunkles Design'}
+            onClick={toggleTheme}
+          >
+            <span className="pv-theme-toggle__track" aria-hidden="true">
+              <span className="pv-theme-toggle__sun" />
+              <span className="pv-theme-toggle__moon" />
+              <span className="pv-theme-toggle__knob" />
+            </span>
+          </button>
           <Link className="btn btn--light pv-header__cta" to="/blitz-angebot">
             Blitz-Angebot <span className="arrow">&gt;</span>
           </Link>

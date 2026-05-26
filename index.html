@@ -24,6 +24,21 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Prima Vista" />
     <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('prima-vista-theme-choice');
+          var systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = saved === 'dark' || saved === 'light' ? saved : (systemDark ? 'dark' : 'light');
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.style.colorScheme = theme;
+        } catch (e) {
+          var fallbackDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.dataset.theme = fallbackDark ? 'dark' : 'light';
+          document.documentElement.style.colorScheme = fallbackDark ? 'dark' : 'light';
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

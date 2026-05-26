@@ -56,9 +56,9 @@ type PersistedState = Partial<Pick<ReadyState, 'livingArea' | 'rows' | 'collapse
   dataSignature?: string;
 };
 
-const STORAGE_VERSION = 'v3';
-const BOSSMANN_STORAGE_VERSION = 'v4';
-const BOSSMANN_DATA_VERSION = 'bossmann-v1';
+const STORAGE_VERSION = 'v4';
+const BOSSMANN_STORAGE_VERSION = 'v5';
+const BOSSMANN_DATA_VERSION = 'bossmann-v2';
 const BOSSMANN_PACKAGE_IDS = new Set([
   '1e', '1e-d', '2e', '2e-d',           // house variants
   'studio', '2zi', '3zi', 'maisonette', // wohnung variants

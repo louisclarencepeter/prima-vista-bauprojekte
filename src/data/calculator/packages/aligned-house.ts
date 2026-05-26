@@ -1,7 +1,7 @@
 import type { RenovationPackage } from '../types';
 import { createProduct, type ProductSeed } from '../engine';
 
-type BossmannRow = readonly [string, string, number, string, number, ProductSeed['type'], string];
+type SourceRow = readonly [string, string, number, string, number, ProductSeed['type'], string];
 
 const CATEGORY_META: Record<string, { id: string; lead: string }> = {
   'Dach & Fassade (Neu)': { id: 'roof', lead: 'Dachsanierung, Dämmung, Eindeckung und Rinnen.' },
@@ -17,10 +17,10 @@ const CATEGORY_META: Record<string, { id: string; lead: string }> = {
   'Tueren & Fenster': { id: 'doors-windows', lead: 'Innentueren, Haustuer, Fenster, Balkontuer und Rolladen.' },
   'Kueche & Moebel': { id: 'kitchen', lead: 'Kuechenmontage, Einbaukueche und kleine Ausstattungspositionen.' },
   'Fassade & Aussenanlagen': { id: 'facade-outdoor', lead: 'WDVS, Abdichtung, Terrasse, Zaun und Container.' },
-  'Weitere Positionen': { id: 'misc', lead: 'Weitere Bossmann-Standardpositionen.' },
+  'Weitere Positionen': { id: 'misc', lead: 'Weitere Standardpositionen.' },
 };
 
-const HOUSE_ROWS: Record<string, BossmannRow[]> = {
+const HOUSE_ROWS: Record<string, SourceRow[]> = {
   "1e": [
     ["Abbruch & Rohbau", "ABBRUCH-DECKEN (Leichtbau) | 🛠 Demontage-Leistungspaket", 21.14, "qm", 5, "extra", "ROHB-101-1-ZU"],
     ["Abbruch & Rohbau", "ABBRUCH-WÄNDE (6-16 cm) | 🛠 Demontage-Leistungspaket", 78.21, "qm", 8, "extra", "ROHB-101.1-MAT"],
@@ -555,7 +555,7 @@ function slug(value: string): string {
 
 export function createBossmannHousePackage(id: string, title: string, defaultArea: number, defaultFloorCount: number): RenovationPackage {
   const rows = HOUSE_ROWS[id] ?? HOUSE_ROWS['1e'];
-  const grouped = new Map<string, BossmannRow[]>();
+  const grouped = new Map<string, SourceRow[]>();
   rows.forEach((row) => {
     const category = row[0];
     grouped.set(category, [...(grouped.get(category) ?? []), row]);
@@ -568,7 +568,7 @@ export function createBossmannHousePackage(id: string, title: string, defaultAre
     defaultFloorCount,
     categories: Array.from(grouped, ([categoryTitle, categoryRows], categoryIndex) => {
       const meta = CATEGORY_META[categoryTitle] ?? CATEGORY_META['Weitere Positionen'];
-      const sectionRows = new Map<ProductSeed['type'], BossmannRow[]>();
+      const sectionRows = new Map<ProductSeed['type'], SourceRow[]>();
       categoryRows.forEach((row) => {
         const type = row[5];
         sectionRows.set(type, [...(sectionRows.get(type) ?? []), row]);
@@ -596,7 +596,7 @@ export function createBossmannHousePackage(id: string, title: string, defaultAre
               type: row[5],
               enabled: true,
               optional: false,
-              description: 'Bossmann-Standardposition fuer das Haussanierungsangebot.',
+              description: 'Standardposition fuer das Haussanierungsangebot.',
             })),
           };
         }),
