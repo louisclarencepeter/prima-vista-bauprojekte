@@ -1,145 +1,318 @@
-import type { RenovationPackage, RenovationProduct } from '../types';
+import type { RenovationPackage } from '../types';
 
-function createProduct(
-  id: string,
-  category: string,
-  subcategory: string,
-  title: string,
-  basePrice: number,
-  unit: string,
-  description: string,
-  enabled = true,
-  optional = false,
-  baseQuantity = 1,
-  type: 'service' | 'material' | 'extra' | 'optional' = 'service'
-): RenovationProduct {
-  return {
-    id,
-    category,
-    subcategory,
-    title,
-    sku: `PV-ABD-${id.toUpperCase().substring(0, 6)}`,
-    type,
-    unit,
-    basePrice,
-    enabled,
-    optional,
-    minQuantity: 1,
-    quantityStep: 1,
-    baseQuantity,
-    scalable: unit === 'qm' || unit === 'lfm' || unit === 'Stk' || unit === 'm',
-    quantity: baseQuantity,
-    canDuplicate: false,
-    canRemove: true,
-    canReplace: false,
-    description,
-    alternatives: []
-  };
-}
-
-const COMMON_PREP_CATEGORY = {
-  id: 'vorbereitung',
-  title: 'Vorbereitung & Baustelle',
-  lead: 'Allgemeine Vorbereitungsarbeiten für die Abdichtung.',
-  subsections: [
-    {
-      id: 'einrichtung',
-      title: 'Baustelleneinrichtung',
-      type: 'service' as const,
-      products: [
-        createProduct('baustelle-ein', 'vorbereitung', 'einrichtung', 'Baustelleneinrichtung & Schutz', 1500, 'pauschal', 'An- und Abfahrt, Schmutzschleusen, Abdecken.', true, false, 1, 'service'),
-        createProduct('abbruch', 'vorbereitung', 'einrichtung', 'Rückbau & Entsorgung', 850, 'pauschal', 'Fachgerechter Abbruch und Entsorgung.', false, true, 1, 'service')
-      ]
-    }
-  ]
-};
-
-// Placeholder for Alles
 export const packageAbdichtungAlles: RenovationPackage = {
-  id: 'abdichtung',
-  title: 'Komplette Abdichtung',
+  id: "abdichtung",
+  title: "Komplette Abdichtung",
   defaultArea: 100,
   defaultFloorCount: 1,
   categories: [
-    COMMON_PREP_CATEGORY
-  ]
+    {
+      id: "section-01-art-der-ausfuhrung",
+      title: "Art der Ausführung",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: false,
+      subsections: [
+        {
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
+          products: [
+            {
+              id: "bossmann-001-abbd-101-1-mat",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "PERIMETERDÄMMUNG Abdichtung | 🛠 Montage-Leistungspaket",
+              sku: "ABBD-101.1-MAT",
+              type: "service",
+              unit: "qm",
+              basePrice: 249,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 1,
+              scalable: false,
+              quantity: 1,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
+        }
+      ],
+    },
+    {
+      id: "section-02-material",
+      title: "Material",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: true,
+      subsections: [
+        {
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
+          products: [
+            {
+              id: "bossmann-002-uv868-00421",
+              category: "section-02-material",
+              subcategory: "leistungen-materialien",
+              title: "weber.therm EPS 032 Sockel standard Polystyrol Perimeter-Dämmplatte",
+              sku: "uv868-00421",
+              type: "material",
+              unit: "",
+              basePrice: 22.62,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 1,
+              scalable: false,
+              quantity: 1,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
+        }
+      ],
+    },
+    {
+      id: "section-03-optionale-positionen",
+      title: "Optionale Positionen",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: true,
+      subsections: [
+        {
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "optional",
+          products: [
+            {
+              id: "bossmann-003-abbd-101-2-mat",
+              category: "section-03-optionale-positionen",
+              subcategory: "leistungen-materialien",
+              title: "HORIZONTAL | Abdichtung des Kellergeschosses",
+              sku: "ABBD-101.2-MAT",
+              type: "optional",
+              unit: "qm",
+              basePrice: 119,
+              enabled: false,
+              optional: true,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 1,
+              scalable: false,
+              quantity: 1,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            },
+            {
+              id: "bossmann-004-abbd-101-3-mat",
+              category: "section-03-optionale-positionen",
+              subcategory: "leistungen-materialien",
+              title: "DICHTSYSTEM | Anti Feuchtigkeit",
+              sku: "ABBD-101.3-MAT",
+              type: "optional",
+              unit: "qm",
+              basePrice: 69.25,
+              enabled: false,
+              optional: true,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 1,
+              scalable: false,
+              quantity: 1,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
+        }
+      ],
+    }
+  ],
 };
 
-// Horizontal-Abdichtung
 export const packageAbdichtungHorizontal: RenovationPackage = {
-  id: 'abdichtungHorizontal',
-  title: 'Horizontal-Abdichtung',
+  id: "abdichtungHorizontal",
+  title: "Horizontal-Abdichtung",
   defaultArea: 30,
   defaultFloorCount: 1,
   categories: [
-    COMMON_PREP_CATEGORY,
     {
-      id: 'abdichtungHorizontal-cat',
-      title: 'Horizontal-Abdichtung (Details)',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-01-art-der-ausfuhrung",
+      title: "Art der Ausführung",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: false,
       subsections: [
         {
-          id: 'abdichtung',
-          title: 'Leistungen & Material',
-          type: 'service',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
           products: [
-            createProduct('abbd-101-2-mat', 'abdichtung', 'abdichtung', `HORIZONTAL`, 119, 'qm', `Abdichtung des Kellergeschosses`, false, false, 1, 'material')
-          ]
+            {
+              id: "bossmann-001-abbd-101-2-mat",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "HORIZONTAL | Abdichtung des Kellergeschosses",
+              sku: "ABBD-101.2-MAT",
+              type: "material",
+              unit: "qm",
+              basePrice: 119,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 1,
+              scalable: false,
+              quantity: 1,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     }
-  ]
+  ],
 };
 
-// Perimeter-Abdichtung
 export const packageAbdichtungPerimeter: RenovationPackage = {
-  id: 'abdichtungPerimeter',
-  title: 'Perimeter-Abdichtung',
+  id: "abdichtungPerimeter",
+  title: "Perimeter-Abdichtung",
   defaultArea: 30,
   defaultFloorCount: 1,
   categories: [
-    COMMON_PREP_CATEGORY,
     {
-      id: 'abdichtungPerimeter-cat',
-      title: 'Perimeter-Abdichtung (Details)',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-01-art-der-ausfuhrung",
+      title: "Art der Ausführung",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: false,
       subsections: [
         {
-          id: 'abdichtung',
-          title: 'Leistungen & Material',
-          type: 'service',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
           products: [
-            createProduct('abbd-101-1-mat', 'abdichtung', 'abdichtung', `PERIMETERDÄMMUNG Abdichtung`, 249, 'qm', `🛠 Montage-Leistungspaket`, false, false, 50, 'service'),
-            createProduct('uv868-00421', 'abdichtung', 'abdichtung', `weber.therm EPS 032 Sockel standard Polystyrol Perimeter-Dämmplatte`, 22.62, 'Stk', `weber.therm EPS 032 Sockel standard Polystyrol Perimeter-Dämmplatte`, false, false, 55, 'material')
-          ]
+            {
+              id: "bossmann-001-abbd-101-1-mat",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "PERIMETERDÄMMUNG Abdichtung | 🛠 Montage-Leistungspaket",
+              sku: "ABBD-101.1-MAT",
+              type: "service",
+              unit: "qm",
+              basePrice: 249,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 50,
+              scalable: false,
+              quantity: 50,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
+    },
+    {
+      id: "section-02-material",
+      title: "Material",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: true,
+      subsections: [
+        {
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
+          products: [
+            {
+              id: "bossmann-002-uv868-00421",
+              category: "section-02-material",
+              subcategory: "leistungen-materialien",
+              title: "weber.therm EPS 032 Sockel standard Polystyrol Perimeter-Dämmplatte",
+              sku: "uv868-00421",
+              type: "material",
+              unit: "",
+              basePrice: 22.62,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 55,
+              scalable: false,
+              quantity: 55,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
+        }
+      ],
     }
-  ]
+  ],
 };
 
-// Keller-Abdichtung (Innen)
 export const packageAbdichtungKeller: RenovationPackage = {
-  id: 'abdichtungKeller',
-  title: 'Keller-Abdichtung (Innen)',
+  id: "abdichtungKeller",
+  title: "Keller-Abdichtung (Innen)",
   defaultArea: 60,
   defaultFloorCount: 1,
   categories: [
-    COMMON_PREP_CATEGORY,
     {
-      id: 'abdichtungKeller-cat',
-      title: 'Keller-Abdichtung (Innen) (Details)',
-      lead: 'Ausgewählte Leistungen und Materialien.',
+      id: "section-01-art-der-ausfuhrung",
+      title: "Art der Ausführung",
+      lead: "Ausgewählte Leistungen und Materialien.",
+      collapsedByDefault: false,
       subsections: [
         {
-          id: 'abdichtung',
-          title: 'Leistungen & Material',
-          type: 'service',
+          id: "leistungen-materialien",
+          title: "Leistungen & Materialien",
+          type: "service",
           products: [
-            createProduct('abbd-101-3-mat', 'abdichtung', 'abdichtung', `DICHTSYSTEM`, 69.25, 'qm', `Anti Feuchtigkeit`, false, false, 1, 'material')
-          ]
+            {
+              id: "bossmann-001-abbd-101-3-mat",
+              category: "section-01-art-der-ausfuhrung",
+              subcategory: "leistungen-materialien",
+              title: "DICHTSYSTEM | Anti Feuchtigkeit",
+              sku: "ABBD-101.3-MAT",
+              type: "material",
+              unit: "qm",
+              basePrice: 69.25,
+              enabled: true,
+              optional: false,
+              minQuantity: 1,
+              quantityStep: 1,
+              baseQuantity: 1,
+              scalable: false,
+              quantity: 1,
+              canDuplicate: false,
+              canRemove: true,
+              canReplace: false,
+              description: "Kalkulationsposition fuer Montage, Material oder Zusatzleistung.",
+              alternatives: [],
+            }
+          ],
         }
-      ]
+      ],
     }
-  ]
+  ],
 };
