@@ -11,7 +11,7 @@ import {
 } from '../icons';
 import { formatEuro } from '../../data/calculator/engine';
 import type { RenovationProduct, RenovationProductAlternative } from '../../data/calculator/types';
-import type { KalkulatorHandoff } from '../../data/blitzAngebot';
+import { inferTradeFromSku, type KalkulatorHandoff } from '../../data/blitzAngebot';
 import { useRenovationCalculator } from '../../hooks/useRenovationCalculator';
 import '../../styles/pages/renovation-calculator.css';
 
@@ -85,6 +85,16 @@ export default function RenovationCalculator({
         const categoryRows = category.subsections.flatMap((subsection) => subsection.rows);
         const activeRows = categoryRows.filter((row) => row.enabled);
         const subtotal = activeRows.reduce((sum, row) => sum + rowTotal(row), 0);
+        const trade = inferTradeFromSku(activeRows[0]?.sku);
+        const detailRows = activeRows.map((row) => ({
+          // Strip trailing "| Varianten" / "**Varianten**" / "| Montage-..." cruft
+          // for a tighter human-readable label.
+          label: row.title.replace(/\s*\|\s*\*?\*?(Varianten|VARIANTEN)\*?\*?\s*/gi, '').trim(),
+          quantity: row.quantity,
+          unit: row.unit,
+          unitPrice: row.basePrice,
+          subtotal: rowTotal(row),
+        }));
 
         return {
           key: BLITZ_CATEGORY_KEYS[category.id] ?? category.id,
@@ -93,6 +103,9 @@ export default function RenovationCalculator({
           activeCount: activeRows.length,
           totalCount: categoryRows.length,
           subtotal,
+          tradeKey: trade?.key,
+          tradeLabel: trade?.label,
+          rows: detailRows,
         };
       })
       .filter((category) => category.subtotal > 0)
@@ -108,6 +121,9 @@ export default function RenovationCalculator({
         key: category.key,
         label: category.label,
         subtotal: category.subtotal,
+        tradeKey: category.tradeKey,
+        tradeLabel: category.tradeLabel,
+        rows: category.rows,
       })),
       totalMin: totals.net * 0.9,
       totalMax: totals.net * 1.15,

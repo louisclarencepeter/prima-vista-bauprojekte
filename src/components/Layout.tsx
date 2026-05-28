@@ -3,6 +3,7 @@ import { Outlet, useLocation, useNavigationType } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import SocialRail from './SocialRail';
+import BookingFloat from './BookingFloat';
 import Chat from './Chat';
 import CookieConsent from './CookieConsent';
 import { LightboxProvider } from './Lightbox';
@@ -195,6 +196,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <SocialRail />
+      <BookingFloat />
       {isDesktop && <Chat />}
       <CookieConsent />
       <Footer />
