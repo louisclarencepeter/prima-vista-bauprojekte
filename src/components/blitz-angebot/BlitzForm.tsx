@@ -5,6 +5,9 @@ import {
   BLITZ_GEWERKE_OPTIONS,
   INITIAL_BLITZ_FORM,
   formatKalkulatorMessage,
+  formatPickAmount,
+  formatRowQuantity,
+  groupPicksByTrade,
   mapKalkulatorPicksToBlitzGewerke,
   type BlitzFormState,
   type KalkulatorHandoff,
@@ -32,9 +35,20 @@ export default function BlitzForm() {
       art: handoff.kind,
       groesse: String(handoff.area),
       gewerke: mapKalkulatorPicksToBlitzGewerke(handoff.picks),
-      msg: formatKalkulatorMessage(handoff),
+      // Leave msg empty: the kalkulator detail block is rendered read-only
+      // in step 4, and prepended to the user's note at submit time.
+      msg: '',
     };
   });
+  const pickGroups = handoff ? groupPicksByTrade(handoff.picks) : [];
+  const [allExpanded, setAllExpanded] = useState(false);
+  // Bump to force <details> elements to re-sync their `open` state when the
+  // master toggle changes (since uncontrolled <details> remember user toggles).
+  const [expandSync, setExpandSync] = useState(0);
+  function toggleAll() {
+    setAllExpanded((v) => !v);
+    setExpandSync((n) => n + 1);
+  }
   const [errors, setErrors] = useState<BlitzErrors>({});
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -105,6 +119,9 @@ export default function BlitzForm() {
         BLITZ_ART_OPTIONS.find((o) => o.value === form.art)?.label ?? form.art;
       const starterminLabel =
         STARTTERMIN_LABELS[form.starttermin] ?? form.starttermin;
+      const userNote = form.msg.trim();
+      const kalkulatorBlock = handoff ? formatKalkulatorMessage(handoff) : '';
+      const fullMsg = [kalkulatorBlock, userNote].filter(Boolean).join('\n\n');
       const res = await fetch('/api/blitz', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
@@ -115,7 +132,7 @@ export default function BlitzForm() {
           starttermin: form.starttermin,
           starterminLabel,
           gewerke: form.gewerke,
-          msg: form.msg.trim(),
+          msg: fullMsg,
           name: form.name.trim(),
           email: form.email.trim(),
           tel: form.tel.trim(),
@@ -272,6 +289,100 @@ export default function BlitzForm() {
 
           {step === 4 && (
             <div className="form-step fade-in">
+              {handoff && pickGroups.length > 0 && (
+                <div className="blitz-summary" aria-label="Übernommene Kalkulation">
+                  <div className="blitz-summary__head">
+                    <span className="blitz-summary__eyebrow">
+                      <span className="rule-red"></span> Aus dem Kalkulator
+                    </span>
+                    <span className="blitz-summary__meta">
+                      {handoff.kindLabel} · {handoff.area}&nbsp;m²
+                    </span>
+                  </div>
+                  <div className="blitz-summary__toolbar">
+                    <span className="blitz-summary__count">
+                      {pickGroups.length} {pickGroups.length === 1 ? 'Gewerk' : 'Gewerke'}
+                    </span>
+                    <button
+                      type="button"
+                      className="blitz-summary__toggle"
+                      onClick={toggleAll}
+                      aria-expanded={allExpanded}
+                    >
+                      {allExpanded ? 'Alle einklappen' : 'Alle Details anzeigen'}
+                    </button>
+                  </div>
+                  <ul className="blitz-summary__groups">
+                    {pickGroups.map((group) => {
+                      const showItems =
+                        group.items.length > 1 || group.items[0]?.label !== group.label;
+                      return (
+                        <li key={group.key} className="blitz-summary__group">
+                          <details
+                            key={`${group.key}-${expandSync}`}
+                            className="blitz-summary__details"
+                            open={allExpanded}
+                          >
+                            <summary className="blitz-summary__group-head">
+                              <span className="blitz-summary__group-name">{group.label}</span>
+                              <span className="blitz-summary__group-value">
+                                {formatPickAmount(group.subtotal)}
+                              </span>
+                            </summary>
+                            {showItems && (
+                              <ul className="blitz-summary__items">
+                                {group.items.map((item) => (
+                                  <li key={item.key} className="blitz-summary__item">
+                                    <div className="blitz-summary__item-head">
+                                      <span className="blitz-summary__item-name">{item.label}</span>
+                                      <span className="blitz-summary__item-value">
+                                        {formatPickAmount(item.subtotal)}
+                                      </span>
+                                    </div>
+                                    {item.rows && item.rows.length > 0 && (
+                                      <ul className="blitz-summary__rows">
+                                        {item.rows.map((row, ri) => (
+                                          <li key={`${item.key}-${ri}`} className="blitz-summary__row">
+                                            <span className="blitz-summary__row-name">{row.label}</span>
+                                            <span className="blitz-summary__row-qty">
+                                              {formatRowQuantity(row.quantity, row.unit)}
+                                            </span>
+                                            <span className="blitz-summary__row-value">
+                                              {formatPickAmount(row.subtotal)}
+                                            </span>
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    )}
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                            {!showItems && group.items[0]?.rows && group.items[0].rows.length > 0 && (
+                              <ul className="blitz-summary__rows blitz-summary__rows--top">
+                                {group.items[0].rows.map((row, ri) => (
+                                  <li key={`${group.key}-r-${ri}`} className="blitz-summary__row">
+                                    <span className="blitz-summary__row-name">{row.label}</span>
+                                    <span className="blitz-summary__row-qty">
+                                      {formatRowQuantity(row.quantity, row.unit)}
+                                    </span>
+                                    <span className="blitz-summary__row-value">
+                                      {formatPickAmount(row.subtotal)}
+                                    </span>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          </details>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                  <p className="blitz-summary__hint">
+                    Diese Aufstellung wird mit Ihrer Anfrage übernommen.
+                  </p>
+                </div>
+              )}
               <div className="form-field">
                 <label htmlFor="msg">Besonderheiten / Kurzfassung Ihres Vorhabens</label>
                 <textarea
