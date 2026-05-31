@@ -183,11 +183,12 @@ export default defineConfig(({ mode }) => {
       VitePWA({
         registerType: 'autoUpdate',
         injectRegister: 'auto',
-        includeAssets: [
-          'assets/icons/apple-touch-icon.png',
-          'assets/img/logo.png',
-          'robots.txt',
-        ],
+        // Only list assets NOT already covered by workbox.globPatterns below.
+        // The PNG icons/logo are matched by the `png` glob (with a revision
+        // hash); listing them here too produced a second, unrevisioned entry
+        // for the same URL, which made Workbox throw
+        // `add-to-cache-list-conflicting-entries` and abort SW install.
+        includeAssets: ['robots.txt'],
         manifest: {
           name: 'Prima Vista Bauprojekte',
           short_name: 'Prima Vista',
@@ -226,6 +227,12 @@ export default defineConfig(({ mode }) => {
           // Cap files at 4 MB so Workbox doesn't refuse our larger WebP heroes.
           maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
           globPatterns: ['**/*.{js,css,html,woff2,webp,svg,png,ico}'],
+          // The PWA manifest icons are already injected into the precache
+          // (with revision:null) by vite-plugin-pwa. Letting the png glob also
+          // match them adds a second, hash-revisioned entry for the same URL,
+          // which makes Workbox throw `add-to-cache-list-conflicting-entries`
+          // and abort SW install. Ignore them here so each appears only once.
+          globIgnores: ['**/assets/icons/icon-*.png'],
           navigateFallback: '/index.html',
           // Don't fall back to index.html for API or function URLs.
           navigateFallbackDenylist: [/^\/api\//, /^\/\.netlify\//],
