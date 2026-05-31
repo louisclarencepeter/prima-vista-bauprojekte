@@ -27,8 +27,6 @@ declare global {
   }
 }
 
-const googleClientId = import.meta.env.VITE_GOOGLE_CLIENT_ID as string | undefined;
-
 function GoogleG() {
   return (
     <svg viewBox="0 0 18 18" width="18" height="18" aria-hidden="true" focusable="false">
@@ -46,6 +44,9 @@ export default function AdminLogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  // Public Google OAuth client id, served at runtime by /api/auth/session when
+  // Google login is configured on the server. Null = hide the Google button.
+  const [googleClientId, setGoogleClientId] = useState<string | null>(null);
   const googleButtonRef = useRef<HTMLDivElement | null>(null);
   const googleWrapRef = useRef<HTMLDivElement | null>(null);
 
@@ -54,9 +55,14 @@ export default function AdminLogin() {
   useEffect(() => {
     let cancelled = false;
     fetch('/api/auth/session')
-      .then((res) => res.json() as Promise<{ isAdmin: boolean }>)
+      .then((res) => res.json() as Promise<{ isAdmin: boolean; googleClientId?: string | null }>)
       .then((data) => {
-        if (!cancelled && data.isAdmin) navigate('/admin/blog', { replace: true });
+        if (cancelled) return;
+        if (data.isAdmin) {
+          navigate('/admin/blog', { replace: true });
+          return;
+        }
+        setGoogleClientId(data.googleClientId ?? null);
       })
       .catch(() => undefined);
     return () => {
@@ -124,7 +130,7 @@ export default function AdminLogin() {
       script.onload = null;
       cleanupResize();
     };
-  }, [navigate]);
+  }, [navigate, googleClientId]);
 
   const submit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();

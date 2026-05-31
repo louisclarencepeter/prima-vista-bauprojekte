@@ -1,5 +1,6 @@
 import type { Config, Context } from '@netlify/functions';
 import { adminCookie, clearAdminCookie, loginAdmin, loginGoogleAdmin, verifyAdmin } from './_shared/auth';
+import { getEnv } from './_shared/env';
 import { asString, json, methodNotAllowed, readJson } from './_shared/http';
 
 async function handleLogin(req: Request) {
@@ -42,7 +43,14 @@ async function handleGoogleLogin(req: Request) {
 
 function handleSession(req: Request, context: Context) {
   const admin = verifyAdmin(req, context);
-  return json({ isAdmin: !!admin, admin });
+  // Expose the (public) Google client id at runtime so the login button can
+  // render without a build-time VITE_ var. Only advertise it when Google login
+  // is fully configured (client id + allowed admin email), so the button never
+  // appears in a state where sign-in would fail.
+  const clientId = getEnv('GOOGLE_CLIENT_ID');
+  const adminEmail = getEnv('ADMIN_GOOGLE_EMAIL') ?? getEnv('ADMIN_EMAIL');
+  const googleClientId = clientId && adminEmail ? clientId : null;
+  return json({ isAdmin: !!admin, admin, googleClientId });
 }
 
 function handleLogout() {

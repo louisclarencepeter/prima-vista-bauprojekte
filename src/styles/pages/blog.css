@@ -134,11 +134,14 @@
   border-color: rgba(26, 26, 26, .1);
 }
 
+/* Skeleton fills derive from currentColor (the themed text color) so they keep
+   contrast against their surface in BOTH light and dark mode — the design
+   tokens invert between themes, so a fixed colour would vanish in one of them. */
 .sk-line {
   display: block;
   height: 12px;
   border-radius: 6px;
-  background: var(--pv-cream);
+  background: color-mix(in srgb, currentColor 13%, transparent);
 }
 
 .sk-line--meta {
@@ -164,7 +167,7 @@
 .sk-shimmer {
   position: relative;
   overflow: hidden;
-  background: var(--pv-cream);
+  background: color-mix(in srgb, currentColor 13%, transparent);
 }
 
 .sk-shimmer::after {
@@ -175,7 +178,7 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, .55),
+    color-mix(in srgb, currentColor 16%, transparent),
     transparent
   );
   animation: blog-skeleton-sweep 1.4s ease-in-out infinite;
@@ -185,6 +188,67 @@
   100% {
     transform: translateX(100%);
   }
+}
+
+/* Article (single post) skeleton — mirrors the hero + body layout.
+   The real hero only reads as dark because of its cover image + gradient; the
+   skeleton has neither, so give it an explicit dark backdrop and light text
+   (constant across themes, matching the always-dark hero) so the currentColor
+   placeholders keep contrast. */
+/* Qualified with both classes so these beat the base .blog-article__hero rule,
+   which appears later in this file (equal specificity would otherwise lose). */
+.blog-article__hero.blog-article__hero--skeleton {
+  min-height: calc(82dvh - 88px);
+  background: #141312;
+  color: var(--pv-bone);
+}
+
+.blog-article__hero.blog-article__hero--skeleton::after {
+  display: none; /* no cover image to darken, so skip the gradient overlay */
+}
+
+.sk-line--back {
+  width: 72px;
+  height: 11px;
+  margin-bottom: 26px;
+}
+
+.sk-line--hero-title {
+  width: 82%;
+  height: clamp(40px, 7vw, 88px);
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+
+.sk-line--hero-title.sk-line--short {
+  width: 56%;
+}
+
+.sk-line--hero-lede {
+  width: 60%;
+  max-width: 620px;
+  height: 18px;
+  margin-top: 26px;
+}
+
+.blog-article__hero--skeleton .blog-article__meta .sk-line--meta {
+  width: 96px;
+  height: 11px;
+}
+
+.blog-skeleton-body {
+  display: grid;
+  gap: 16px;
+}
+
+.blog-skeleton-body .sk-line {
+  height: 16px;
+}
+
+/* A short line every fourth row reads as a paragraph break. */
+.blog-skeleton-body .sk-line--short {
+  width: 44%;
+  margin-bottom: 20px;
 }
 
 @media (prefers-reduced-motion: reduce) {
