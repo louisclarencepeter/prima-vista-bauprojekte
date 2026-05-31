@@ -146,8 +146,8 @@ export default function AdminLogin() {
       <form className="blog-admin-panel" onSubmit={submit}>
         <span className="pv-eyebrow">Admin</span>
         <h1>Magazin-Login</h1>
-        <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="E-Mail" required />
-        <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="Passwort" required />
+        <input type="email" name="email" autoComplete="username" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="E-Mail" required />
+        <input type="password" name="password" autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="Passwort" required />
         <button className="btn btn--solid" type="submit">Einloggen</button>
         {googleClientId && (
           <>
