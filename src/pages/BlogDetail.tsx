@@ -115,11 +115,34 @@ export default function BlogDetail() {
 
   if (!post) {
     return (
-      <section className="blog-shell">
-        <div className="blog-shell__inner">
-          <p className="blog-state">Beitrag wird geladen.</p>
-        </div>
-      </section>
+      <article className="blog-article" aria-busy="true">
+        <p className="blog-state blog-state--sr" role="status">
+          Beitrag wird geladen.
+        </p>
+        <header className="blog-article__hero blog-article__hero--skeleton" aria-hidden="true">
+          <div className="blog-article__hero-inner">
+            <span className="sk-line sk-line--back sk-shimmer" />
+            <span className="sk-line sk-line--hero-title sk-shimmer" />
+            <span className="sk-line sk-line--hero-title sk-line--short sk-shimmer" />
+            <span className="sk-line sk-line--hero-lede sk-shimmer" />
+            <div className="blog-article__meta">
+              <span className="sk-line sk-line--meta sk-shimmer" />
+              <span className="sk-line sk-line--meta sk-shimmer" />
+              <span className="sk-line sk-line--meta sk-shimmer" />
+            </div>
+          </div>
+        </header>
+        <section className="blog-article__main" aria-hidden="true">
+          <div className="blog-skeleton-body">
+            {Array.from({ length: 9 }).map((_, index) => (
+              <span
+                key={index}
+                className={`sk-line sk-shimmer${index % 4 === 3 ? ' sk-line--short' : ''}`}
+              />
+            ))}
+          </div>
+        </section>
+      </article>
     );
   }
 
